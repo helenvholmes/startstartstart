@@ -29,7 +29,8 @@ Three rules shape every step here:
 
 - **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask two or three questions at a time, not a block of them. If there's more to say, offer it ("Want the details?") instead of writing it.
 - Explain each new term in one plain sentence the first time it comes up (`../accounts-setup/references/glossary.md` has wording). Match how they talk; if they're fluent, skip the explanations.
-- Wait for their OK at the four gates below (stack, plan, preview, launch). Between gates, keep going without asking permission for each small step.
+- They want you to build. Check in only three times: after recommending the stack and pages (step 2), at the preview (step 5), and before going live (step 7). Everywhere else, keep going without asking.
+- Don't narrate the process or reassure them about it: no "here's the plan", no "nothing gets built until you OK it", no "great!" openers. Just do the work, show the result, and ask the one question that needs an answer.
 - Say before doing anything that's hard to undo: making a repo public, connecting a domain, deleting anything.
 - Never ask for a password or token in the chat. Account setup has its own skill for that.
 
@@ -37,7 +38,7 @@ Three rules shape every step here:
 
 First, work out whether this session runs on the person's own computer or on a remote or cloud machine (`../accounts-setup/SKILL.md` step 0 says how, and which steps depend on your tool). In the cloud, the steps marked **Cloud** below replace the local ones: nothing is installed, the work lives in the GitHub repository they made before starting, and they see drafts through Vercel preview links.
 
-Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 4 works through Vercel's website too.
+Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 3 works through Vercel's website too.
 
 **Cloud:** skip `check.sh`, which checks the person's own computer. Follow "In the cloud" in `accounts-setup` instead: confirm you can push to their repository and that the Vercel tools are there.
 
@@ -60,32 +61,22 @@ Assume they'll update the site later by asking their AI assistant, so content li
 
 Summarize what you heard in three or four short lines and ask if it's right.
 
-## 2. Recommend a stack (gate)
+## 2. Recommend a stack and plan (one check-in)
 
-Use `references/stacks.md` to choose. Then give, in a short message they can read in under a minute:
+Choose with `references/stacks.md`, then send one short message they can read in under a minute:
 
-- **One recommendation**, each piece with one sentence on why it fits *this person*, tied to their answers ("you said it's mostly projects to read, so each project is a simple text file and the pages are plain HTML, with no JavaScript to break")
-- **One or two alternatives** and the plain trade-off for each
-- **What it costs** and what they'll have to keep up (usually: free, and updating a dependency now and then)
+- **What you'll build it with**, each piece with a few words on why it fits *them* ("mostly projects to read, so plain pages with no JavaScript to break")
+- **The pages** (`/`, `/work`, `/work/<project>`, `/about`, …)
+- **What it costs** (usually nothing) and what they'll have to keep up
+- One alternative, in one line, only if it's a close call
 
 Default to the simplest thing that works: static pages, content as files in the repo, no database, no client-side JavaScript unless an answer needs it. Look up current stable versions before naming them; don't rely on memory.
 
-Wait for their OK. If they change something, adjust and confirm once more.
+End with a plain question ("Sound good?"), and start building as soon as they say yes. If they change something, adjust and go; don't ask again.
 
-## 3. Plan (gate)
+Keep the details to yourself unless they ask: the content model, folder structure, and design tokens are your call. Put the look in one file of design tokens (colors, fonts, type sizes, spacing), so restyling never means hunting through components. If they have no design direction, pick a tasteful neutral one from what they told you and say so in a line; they'll react to the preview, which is easier than choosing in the abstract.
 
-Show, briefly:
-
-- The pages and their addresses (`/`, `/work`, `/work/<project>`, `/about`, …)
-- The content model: for each kind of content, its fields (title, date, summary, cover image, …) and where the files live
-- Where the look is set: one file of design tokens (colors, fonts, type sizes, spacing), so restyling never means hunting through components
-- The folder structure, top two levels only
-
-If they have no design direction, offer two or three short written directions (type, color, layout feel) for them to pick from, and use neutral placeholders until they decide. Their taste is the decision; don't impose yours.
-
-Wait for their OK.
-
-## 4. Create the repo and connect Vercel
+## 3. Create the repo and connect Vercel
 
 Doing this before building means every change gets its own preview link from the start.
 
@@ -100,7 +91,7 @@ Doing this before building means every change gets its own preview link from the
 
 From here on, work on branches. Explain once: `main` is the live site; each branch is a draft with its own preview link, and merging the pull request publishes it.
 
-## 5. Build
+## 4. Build
 
 On a branch (`first-version`), build the plan with placeholder content that is clearly fake ("Project title", lorem-style summaries, gray placeholder images) so nobody mistakes it for real. Include:
 
@@ -112,13 +103,13 @@ On a branch (`first-version`), build the plan with placeholder content that is c
 
 Commit in small steps with messages that say why. Push the branch and open a pull request with `gh pr create`, describing what's in it in plain words.
 
-## 6. Preview (gate)
+## 5. Preview (check-in)
 
 Vercel posts a preview link on the pull request (`gh pr view --web` opens it; the connector can fetch it too). Give them the link and ask them to look on their phone and their computer. Make the changes they ask for on the same branch; each push updates the preview.
 
 Then help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. The audit should run on real content where possible.
 
-## 7. Audit
+## 6. Audit
 
 **Cloud:** the audit needs a browser running against the site. Try starting it in the session as below; if packages or a browser can't be installed because of the session's network settings, run whatever checks you can (the security and dependency checks need no browser), run the browser checks against the Vercel preview link if your browser tool can reach it, and list what wasn't checked.
 
@@ -126,13 +117,13 @@ With the branch checked out, start the dev server and a production build (`build
 
 Show the report and fix only the findings they choose, each as its own commit on the branch.
 
-## 8. Launch (gate)
+## 7. Launch (check-in)
 
 1. Confirm they're ready, then merge the pull request (`gh pr merge --squash --delete-branch`, or have them click Merge on GitHub so they've done it once). Vercel publishes `main` within a minute or two. Check the live address.
 2. **Domain**, if they have one: in Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and walk them through where those go at the registrar they named in the interview (look up that registrar's current steps rather than guessing menu names). If the domain points at an existing site, confirm before changing anything, since that site will stop showing at the address. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
 3. **Analytics**, if they asked: Vercel Web Analytics is the simplest; it's turned on in the project's settings and needs one small package.
 
-## 9. Hand off
+## 8. Hand off
 
 Leave them able to carry on without you. Summarize in a few lines:
 
@@ -144,6 +135,6 @@ Leave them able to carry on without you. Summarize in a few lines:
 ## Don't
 
 - Add a database, CMS, auth or paid service unless an interview answer needs it, and never without saying what it costs.
-- Push to `main` directly after step 4, force-push, or rewrite history.
+- Push to `main` directly after step 3, force-push, or rewrite history.
 - Commit anything secret, or any real personal details the person didn't put in themselves (address, phone number).
 - Leave demo pages, sample data or starter-template leftovers behind.

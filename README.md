@@ -60,9 +60,9 @@ it comes up, and never ask me to paste a password or token into this chat.
 From here, Claude leads. Expect it to:
 
 1. **Check your computer** and install anything missing. When something needs you, like approving an install or signing in on a website, it tells you exactly what to click and waits.
-2. **Connect your accounts.** You'll sign in to GitHub and Vercel in your browser. Nothing is shared until you approve it.
+2. **Connect your accounts.** You'll sign in to GitHub and Vercel in your browser.
 3. **Ask about your site:** what it's for, what goes on it, what you already know.
-4. **Recommend a setup** and explain why it fits you. Nothing gets built until you say OK.
+4. **Suggest a setup**, then start building once you say it sounds good.
 5. **Build a first draft** with placeholder text, and give you a private link to look at it on your phone and computer.
 6. **Check it** for accessibility, layout, speed and security, and fix what you choose.
 7. **Put it live** when you say so, and connect your domain if you have one.
