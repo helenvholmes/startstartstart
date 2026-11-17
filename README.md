@@ -20,8 +20,6 @@ You'll also need:
 - **An email address** for two free accounts, GitHub and Vercel. Don't make them in advance; Claude walks you through both, and signing up for Vercel *with* GitHub links them from the start.
 - **Optional:** a domain name, like `yourname.com`, if you already own one. You can add one later.
 
-You won't need to type any passwords into Claude. Every sign-in happens on the service's own website.
-
 ## Start in the Claude desktop app
 
 The desktop app is the easiest way to start: no terminal needed.
