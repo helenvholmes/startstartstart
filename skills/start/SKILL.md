@@ -7,13 +7,25 @@ description: Take someone from "I want a portfolio site" to a live site on their
 
 The person should end up with a site they own outright (code in their GitHub, hosting in their Vercel account), that they understand well enough to update, and that passed a pre-launch audit before anyone saw it.
 
+## If you're reading this from GitHub
+
+The person usually starts by asking you to read this repository, rather than installing it. Before step 0, get a copy you can run scripts from, **outside their project folder** so nothing of this repository ends up in their site:
+
+```
+git clone --depth 1 https://github.com/helenvholmes/portfolio-starter "${TMPDIR:-/tmp}/portfolio-starter"
+```
+
+Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy, and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
+
+## How to work
+
 Three rules shape every step here:
 
 - **Decisions the person makes on purpose are theirs.** Their taste, their words, their choice of color or layout: suggest, never override. Still say plainly when a choice fails someone (contrast too low, text too small), and offer the smallest fix that keeps the intent.
 - **Test with the real content.** The person writes their own content, so check the site with what they'll actually put on it, not invented worst cases.
 - **Every change is small and reversible.** Show it before committing, make each change separately, and leave no test scaffolding behind.
 
-## How to work with the person
+## Talking with the person
 
 - Explain each new term in one plain sentence the first time it comes up (`../accounts-setup/references/glossary.md` has wording). Match how they talk; if they're fluent, skip the explanations.
 - Wait for their OK at the four gates below (stack, plan, preview, launch). Between gates, keep going without asking permission for each small step.
@@ -105,7 +117,7 @@ Then help them swap the placeholders for real content, or show them how to do it
 
 **Cloud:** the audit needs a browser running against the site. Try starting it in the session as below; if packages or a browser can't be installed because of the session's network settings, run whatever checks you can (the security and dependency checks need no browser), run the browser checks against the Vercel preview link if your browser tool can reach it, and list what wasn't checked.
 
-With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills) (in Claude it's installed alongside this plugin as `/helenvholmes:audit`). It checks layout, accessibility, motion, performance and security, and needs a browser you can drive; if none is available, install Playwright for it and say so. If the audit skills aren't installed, offer to install them, or skip this step and say what wasn't checked.
+With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills). If it isn't already installed, clone that repository next to this one (outside their project folder) and follow `skills/audit/SKILL.md`, which runs the other check skills in that repository. It checks layout, accessibility, motion, performance and security, and needs a browser you can drive; if none is available, install Playwright for it and say so. If you can't get the audit skills, skip this step and say what wasn't checked.
 
 Show the report and fix only the findings they choose, each as its own commit on the branch.
 
