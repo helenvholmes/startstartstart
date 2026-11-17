@@ -52,7 +52,7 @@ Ask a few questions at a time, conversationally, and skip any their earlier answ
 
    If they share a Figma link, read it with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a few words what you take from it (type, color, layout feel) so they can correct you before you plan.
 6. Should any page be private, so only people you give a password to can see it? (a pitch deck, a case study under NDA, references)
-7. Do you have a domain name, like `yourname.com`? (Fine if not: the site gets a free address, and you can add one later.) If they do, follow up: where did you buy it? (GoDaddy, Namecheap, Squarespace, Google Domains, Cloudflare, Porkbun…) If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Note too whether it's pointing at an existing site, since connecting it will replace that.
+7. Do you have a domain name, like `yourname.com`? (Fine if not: you can add one later.) If they do, follow up: where did you buy it? (GoDaddy, Namecheap, Squarespace, Google Domains, Cloudflare, Porkbun…) If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Note too whether it's pointing at an existing site, since connecting it will replace that.
 8. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
