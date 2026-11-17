@@ -15,7 +15,7 @@ By the end you'll have:
 
 You'll also need:
 
-- **A Mac, Windows PC, or Linux computer** where you can install apps. A phone, tablet, or Chromebook won't work, and neither will Claude in a web browser: the site gets built on your computer.
+- **A computer.** The easiest way is the Claude desktop app on a Mac, Windows PC, or Linux computer where you can install apps. On a Chromebook, a work computer you can't install apps on, or a tablet with a keyboard, you can [use Claude in the cloud](#no-desktop-app-use-claude-in-the-cloud) from a web browser instead.
 - **About an hour** for the first session. Setting up accounts takes 10 to 20 minutes; the rest is deciding what you want and looking at drafts.
 - **An email address** for two free accounts, GitHub and Vercel. Don't make them in advance; Claude walks you through both, and signing up for Vercel *with* GitHub links them from the start.
 - **Optional:** a domain name, like `yourname.com`, if you already own one. You can add one later.
@@ -45,7 +45,7 @@ Keep it empty. Claude will fill it.
 ### 3. Open the Code tab and start a session
 
 1. Click **Code** at the top of the sidebar.
-2. Under the prompt box there's a row of controls. Make sure the first one, the environment, is set to **Local**, so Claude works on your computer. (A **Cloud** session can't use this skill.)
+2. Under the prompt box there's a row of controls. Make sure the first one, the environment, is set to **Local**, so Claude works on your computer. (To work in the cloud instead, see [the cloud steps](#no-desktop-app-use-claude-in-the-cloud); they start differently.)
 3. Click the folder control next to it and choose the `portfolio` folder you just made.
 
 ### 4. Install the skills
@@ -88,6 +88,45 @@ From here, Claude leads. Expect it to:
 
 You can stop at any point and come back later: open the Code tab, choose the same folder, and say where you left off.
 
+## No desktop app? Use Claude in the cloud
+
+If you can't install the desktop app, Claude can build your site on its own computer in the cloud and save everything straight to GitHub. Nothing gets installed on yours, and you can do it from a web browser. It takes a little more setup at the start, because a cloud session needs your GitHub project to exist before it begins.
+
+### 1. Make a GitHub account and an empty project
+
+1. Sign up at [github.com/signup](https://github.com/signup) if you don't have an account.
+2. Go to [github.com/new](https://github.com/new). This makes a *repository*: the online folder your site's code will live in.
+3. Name it something like `portfolio`, choose **Public**, and tick **Add a README file**. (A cloud session can only start from a repository that has something in it.)
+4. Click **Create repository**.
+
+### 2. Connect Vercel to your Claude account
+
+Vercel is the service that puts your site on the internet.
+
+1. In Claude in your browser, open **Settings → Connectors**.
+2. Find **Vercel** and connect it. If it isn't listed, add a custom connector with the address `https://mcp.vercel.com`.
+3. Sign in on Vercel's page. If you don't have a Vercel account, choose **Continue with GitHub** to make one that's linked to GitHub from the start.
+
+### 3. Start a cloud session on your project
+
+1. Go to [claude.ai/code](https://claude.ai/code).
+2. The first time, it asks you to connect GitHub. Allow it, and give it access to the repository you just made.
+3. Choose that repository and start a session.
+
+### 4. Start
+
+Copy this into the prompt box and press Enter:
+
+```
+Read the skills at github.com/helenvholmes/portfolio-starter
+(skills/start and skills/accounts-setup) and follow skills/start/SKILL.md.
+This is a cloud session on my new repository. I'm new to GitHub, so
+explain each new term the first time it comes up, and never ask me to
+paste a password or token into this chat.
+```
+
+From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts through preview links instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say where you left off.
+
 ## Prefer the terminal?
 
 If you're comfortable typing commands:
@@ -102,7 +141,7 @@ If you're comfortable typing commands:
 
 - **The Code tab asks you to upgrade:** your account doesn't have a paid plan, or you're signed in with a different account.
 - **`portfolio-starter:start` isn't in the `/` list:** open **+** → **Plugins** → **Manage plugins** and check that **portfolio-starter** is installed and turned on.
-- **Claude says it's in a cloud session:** start a new session and set the environment to **Local**.
+- **Claude says it's in a cloud session but you meant to work on your computer:** start a new session and set the environment to **Local**. If you meant the cloud, follow [the cloud steps](#no-desktop-app-use-claude-in-the-cloud) instead.
 - **You pasted a password or token into the chat by mistake:** change that password, or delete the token on the site that made it (Claude can tell you where), then carry on.
 
 ## What it costs
@@ -118,7 +157,7 @@ The skills are plain `SKILL.md` files, so agents other than Claude that read ski
 
 1. Put both folders from `skills/` where your agent looks for skills. The open [`skills`](https://skills.sh) installer can do it: `npx skills add helenvholmes/portfolio-starter`. Copying the folders by hand works too.
 2. Install the pre-launch checks the same way: `npx skills add helenvholmes/skills`. In Claude these come along automatically; elsewhere they don't.
-3. Open a local session in an empty folder and ask your agent to run the `start` skill.
+3. Open a session in an empty folder (or, for a cloud agent, on an empty repository) and ask your agent to run the `start` skill.
 
 The skills ask your agent to use its own way of connecting to Vercel and GitHub. If it doesn't know one, Vercel's helper configures most agents: `npx -y add-mcp https://mcp.vercel.com -g`.
 

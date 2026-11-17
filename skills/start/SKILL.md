@@ -22,9 +22,11 @@ Three rules shape every step here:
 
 ## 0. Accounts
 
-If this session is running on a remote or cloud machine rather than the person's own computer, stop and help them start a local session in an empty folder: the site has to be built on their computer. `../accounts-setup/SKILL.md` step 0 covers this, and which steps depend on your tool.
+First, work out whether this session runs on the person's own computer or on a remote or cloud machine (`../accounts-setup/SKILL.md` step 0 says how, and which steps depend on your tool). In the cloud, the steps marked **Cloud** below replace the local ones: nothing is installed, the work lives in the GitHub repository they made before starting, and they see drafts through Vercel preview links.
 
-Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 6 works through Vercel's website too.
+Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 4 works through Vercel's website too.
+
+**Cloud:** skip `check.sh`, which checks the person's own computer. Follow "In the cloud" in `accounts-setup` instead: confirm you can push to their repository and that the Vercel tools are there.
 
 ## 1. Interview
 
@@ -70,6 +72,8 @@ Wait for their OK.
 
 Doing this before building means every change gets its own preview link from the start.
 
+**Cloud:** the repository already exists, so skip creating it (steps 1 and 4 below). Scaffold into the current checkout, keeping their README until the new one replaces it, commit, and push to `main` before connecting Vercel.
+
 1. Ask for the repo name (suggest something like `portfolio` or their domain without the dot) and confirm public or private.
 2. Scaffold the project with the framework's official starter, minimal template. Add a `.gitignore` covering `node_modules`, build output, `.env*` and OS files, and an `.nvmrc` with the Node major version.
 3. Replace the starter's home page with a one-line placeholder ("Site coming soon") so nothing half-built goes out.
@@ -99,6 +103,8 @@ Then help them swap the placeholders for real content, or show them how to do it
 
 ## 7. Audit
 
+**Cloud:** the audit needs a browser running against the site. Try starting it in the session as below; if packages or a browser can't be installed because of the session's network settings, run whatever checks you can (the security and dependency checks need no browser), run the browser checks against the Vercel preview link if your browser tool can reach it, and list what wasn't checked.
+
 With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills) (in Claude it's installed alongside this plugin as `/helenvholmes:audit`). It checks layout, accessibility, motion, performance and security, and needs a browser you can drive; if none is available, install Playwright for it and say so. If the audit skills aren't installed, offer to install them, or skip this step and say what wasn't checked.
 
 Show the report and fix only the findings they choose, each as its own commit on the branch.
@@ -114,7 +120,7 @@ Show the report and fix only the findings they choose, each as its own commit on
 Leave them able to carry on without you. Summarize in a few lines:
 
 - Where everything lives: the GitHub repo URL, the Vercel project, the live address
-- How to update the site: edit or add a content file, commit, push (or ask their AI assistant), check the preview, merge
+- How to update the site: edit or add a content file, commit, push (or ask their AI assistant), check the preview, merge. In the cloud: start a new session on the same repository and ask for the change
 - What to keep an eye on: dependency update pull requests, the domain's yearly renewal
 - What's left that they mentioned but you didn't do
 

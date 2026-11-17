@@ -30,7 +30,16 @@ Three steps depend on which agent and app you're running in: how the person runs
 - **If you are Claude** (Claude Code in a terminal, the Claude desktop app's Code tab, or an IDE extension), read `references/claude.md` now and follow it at those steps.
 - **Otherwise**, use your own tool's documented way of letting the person run a command themselves and of adding a remote MCP server, and say which you're using. If you don't know your tool's way, Vercel's `add-mcp` helper configures most agents: `npx -y add-mcp https://mcp.vercel.com -g`.
 
-If the session is running on a remote or cloud machine rather than the person's own computer, stop here: the site has to be built on their computer, where they can see and keep it. Tell them how to start a local session in an empty folder, and run this again there.
+### In the cloud
+
+If the session is running on a remote or cloud machine rather than the person's own computer, the work happens in a GitHub repository they made before starting, and most of this skill doesn't apply:
+
+- **Skip steps 2 and 3.** Nothing is installed on their computer, and the session reaches GitHub through the agent's own GitHub connection. Check it works: `git remote -v` points at their repository and `git push --dry-run` succeeds. If not, tell them to reconnect GitHub in the agent's settings and give it access to this repository.
+- **Step 4** happens in their agent account's connector settings, not in this session. If the Vercel tools aren't there, walk them through connecting Vercel in those settings (the reference file for your tool says where), then have them start a new session on the same repository.
+- **Skip step 5.** The agent's GitHub connection already covers it.
+- **Step 6:** say what's connected and where to disconnect it.
+
+If they don't have a repository yet, stop and walk them through making one on github.com (Public, with a README), connecting it to the agent, and starting a new session on it.
 
 ## 1. See where they're starting
 

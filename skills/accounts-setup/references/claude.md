@@ -6,7 +6,12 @@ The steps in `SKILL.md` that depend on the tool, for Claude Code in a terminal a
 
 `CLAUDE_CODE_ENTRYPOINT` in the environment usually says. If it's unset or unclear, ask the person in one line: "Are you in the Claude desktop app, or a terminal window?" Assume the desktop app for people new to this.
 
-**Cloud sessions** (claude.ai/code, or **Cloud** chosen as the environment in the desktop app) run on a remote machine, and plugins don't load there. Stop and tell them to start a new session with the environment set to **Local**, on an empty folder.
+**Cloud sessions** (claude.ai/code, or **Cloud** chosen as the environment in the desktop app) run on a remote machine, on a fresh clone of a GitHub repository. Follow "In the cloud" in `SKILL.md`, with these specifics:
+
+- Plugins installed on their computer don't load there. The skills arrive either because the person asked you to read them from github.com/helenvholmes/portfolio-starter, or because they enabled them in their claude.ai account.
+- GitHub access comes through the Claude GitHub App. If you can't push, they reconnect GitHub at claude.ai/code and give the app access to this repository. The session can't create new repositories, so the person makes it on github.com first.
+- Connectors from their claude.ai account are passed in, already signed in; there's no `/mcp` step. If Vercel's tools are missing, they connect Vercel at claude.ai under **Settings → Connectors** (or add a custom connector with `https://mcp.vercel.com`), then start a new session on the same repository.
+- To disconnect later: claude.ai **Settings → Connectors**, and GitHub's Settings → Applications for the Claude GitHub App.
 
 ## The person runs a command themselves
 
