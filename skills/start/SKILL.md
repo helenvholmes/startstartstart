@@ -48,7 +48,9 @@ Ask a few questions at a time, conversationally, and skip any their earlier answ
 2. What goes on it: projects or case studies, writing, photos, a resume, links?
 3. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
 4. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
-5. Do you have a look in mind: a design file, sketches, sites you like? Share links if so.
+5. Do you have a look in mind? If you have a design in Figma, share the link. Sites you like, sketches, screenshots or photos of things whose style you love are great too: links and images both work, as many as you like.
+
+   If they share a Figma link, read it with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a few words what you take from it (type, color, layout feel) so they can correct you before you plan.
 6. Should any page be private, so only people you give a password to can see it? (a pitch deck, a case study under NDA, references)
 7. Do you have a domain name? Do you want to know how many people visit?
 8. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
