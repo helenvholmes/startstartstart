@@ -17,7 +17,7 @@ You'll also need:
 
 - **A computer.** The easiest way is the Claude desktop app on a Mac, Windows PC, or Linux computer where you can install apps. On a Chromebook, a work computer you can't install apps on, or a tablet with a keyboard, you can [use Claude in the cloud](#no-desktop-app-use-claude-in-the-cloud) from a web browser instead.
 - **About an hour** for the first session. Setting up accounts takes 10 to 20 minutes; the rest is deciding what you want and looking at drafts.
-- **Free GitHub and Vercel accounts.** Already have them? Great, Claude uses the ones you have and links them. If you don't, there's no need to make them in advance: Claude walks you through both, and signing up for Vercel *with* GitHub links them from the start.
+- **Free GitHub and Vercel accounts.** If you don't already have them the skill will help you get them set up.
 - **Optional:** a domain name, like `yourname.com`, if you already own one. You can add one later.
 
 ## Start in the Claude desktop app
