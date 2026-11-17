@@ -49,8 +49,9 @@ Ask a few questions at a time, conversationally, and skip any their earlier answ
 3. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
 4. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
 5. Do you have a look in mind: a design file, sketches, sites you like? Share links if so.
-6. Do you have a domain name? Do you want to know how many people visit?
-7. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
+6. Should any page be private, so only people you give a password to can see it? (a pitch deck, a case study under NDA, references)
+7. Do you have a domain name? Do you want to know how many people visit?
+8. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
 
