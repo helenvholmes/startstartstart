@@ -1,15 +1,13 @@
 # Portfolio starter
 
-Go from an empty folder to your own portfolio website, live on the internet, with Claude doing the building and explaining each step as it goes. You don't need to know how to code or how GitHub works.
+Create your own portfolio website with Claude as the builder. No coding, GitHub, or previous Vercel knowledge necessary.
 
 By the end you'll have:
 
 - A website at your own address (or a free `yourname.vercel.app` one)
-- Its code saved in your own GitHub account, so it's backed up and yours to keep
+- Your code saved in your own GitHub account, so it's backed up and yours to keep
 - Hosting on your own Vercel account that updates the site every time you save a change
 - A site that's been checked for accessibility, layout, performance and security before anyone sees it
-
-Claude asks what the site is for, recommends what to build it with and why, and waits for your OK before building, before showing it to anyone, and before it goes live.
 
 ## Before you start
 
