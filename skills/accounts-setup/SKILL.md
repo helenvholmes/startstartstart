@@ -1,6 +1,6 @@
 ---
 name: accounts-setup
-description: Get someone who is new to GitHub ready to build and ship a website with an AI coding agent — install the tools they're missing (git, the GitHub CLI, Node.js), sign them in to GitHub with the GitHub CLI, set their git name and email, and connect the agent to their Vercel account (and, if they want it, their GitHub account) through MCP. Use this whenever the user says they're new to GitHub or git, asks to "set up GitHub", "connect Vercel", "log in to GitHub", fix "gh: command not found" or "not logged in" errors, or is about to create their first repo or deploy, even if they only mention one of the two services.
+description: "Get someone who is new to GitHub ready to build and ship a website with an AI coding agent — install the tools they're missing (git, the GitHub CLI, Node.js), sign them in to GitHub with the GitHub CLI, set their git name and email, and connect the agent to their Vercel account (and, if they want it, their GitHub account) through MCP. Use this whenever the user says they're new to GitHub or git, asks to \"set up GitHub\", \"connect Vercel\", \"log in to GitHub\", fix \"gh: command not found\" or \"not logged in\" errors, or is about to create their first repo or deploy, even if they only mention one of the two services."
 ---
 
 # Accounts setup
