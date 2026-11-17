@@ -48,6 +48,11 @@ Anything typed either way is visible in the session. For tokens, send them to a 
 - **Desktop app:** **Settings → Connectors**, then disconnect Vercel or GitHub.
 - **Terminal:** `claude mcp remove vercel --scope user` (and `github`).
 
+## Showing the site while you build
+
+- **Desktop app:** start the dev server in the background, then open its address (for example `http://localhost:4321`) in the app's built-in browser or preview pane, using your preview or browser tool if you have one, so the site appears beside the chat. If you have no such tool, tell them to click the address.
+- **Terminal:** start the dev server in the background and open the address in their default browser: `open <address>` on macOS, `xdg-open <address>` on Linux, `start <address>` on Windows.
+
 ## Asking questions
 
 Use the AskUserQuestion tool for the skills' interview and setup questions: one question per call, with the choices the skill lists as options (two to four; the person can always type their own answer, so don't add an "Other" choice). Use a short header, like "Site goal" or "Domain". Put the recommended choice first where there is one. When the tool isn't available, ask the same question in one line of plain text and list the choices.

@@ -63,9 +63,11 @@ From here, Claude leads. Expect it to:
 2. **Connect your accounts.** You'll sign in to GitHub and Vercel in your browser.
 3. **Ask about your site:** what it's for, what goes on it, what you already know.
 4. **Suggest a setup**, then start building once you say it sounds good.
-5. **Build a first draft** with placeholder text, and give you a private link to look at it on your phone and computer.
+5. **Build a first draft** with placeholder text and open it in a browser right away, so you can watch it change as Claude works. Then you'll get a private link to check it on your phone.
 6. **Check it** for accessibility, layout, speed and security, and fix what you choose.
 7. **Put it live** when you say so, and connect your domain if you have one.
+
+Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with the portfolio starter at github.com/helenvholmes/portfolio-starter."
 
 You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with the portfolio starter at github.com/helenvholmes/portfolio-starter."
 
@@ -138,6 +140,7 @@ The same message works in other AI coding agents (Codex, Cursor, Copilot, Gemini
 | Skill | What it does |
 |---|---|
 | `start` | Interviews you about the site and what you know, recommends the simplest setup that fits, plans and builds it, gives you preview links, runs the pre-launch checks, and puts it live on your own GitHub and Vercel |
+| `review` | Reviews your case studies the way a hiring manager or client reads them, using Brian Lovin's [advice on presenting design work](https://brianlovin.com/writing/how-to-give-a-great-product-design-portfolio-presentation): context, the problem before the solution, constraints, what you tried, outcomes, and credit. Suggests the changes that matter most and makes only the ones you pick. |
 | `accounts-setup` | Installs git, the GitHub CLI and Node if they're missing, signs you in to GitHub, and connects your agent to Vercel (and optionally GitHub). Never asks you to paste a password or token. Claude-specific steps live in `references/claude.md`. |
 
 The pre-launch checks come from [helenvholmes/skills](https://github.com/helenvholmes/skills), which `start` reads the same way.

@@ -9,8 +9,8 @@ Check current stable versions and any changed defaults in each tool's docs befor
 | If they… | Recommend | Why |
 |---|---|---|
 | Want pages to read (projects, writing, about), any skill level | **Astro**, content as Markdown/MDX in content collections | Builds plain HTML with no JavaScript by default, so it's fast and hard to break. Content files are easy to read and edit. Interactive pieces can be added later, one at a time. |
-| Know HTML and CSS, want one or two pages, and want to see exactly what's going on | **Plain HTML and CSS**, no build step | Nothing to install or update. Vercel serves the files as they are. Outgrow it by moving to Astro, which reads like HTML. |
-| Already know React and want app-like interactivity (filters, transitions between pages, client-side state) | **Next.js**, static pages wherever possible | Familiar to them, and Vercel's own framework. More to learn and update than Astro, so only when the interactivity or their React knowledge earns it. |
+| Mention they know HTML and CSS, want one or two pages, and want to see exactly what's going on | **Plain HTML and CSS**, no build step | Nothing to install or update. Vercel serves the files as they are. Outgrow it by moving to Astro, which reads like HTML. |
+| Mention they already know React and want app-like interactivity (filters, transitions between pages, client-side state) | **Next.js**, static pages wherever possible | Familiar to them, and Vercel's own framework. More to learn and update than Astro, so only when the interactivity or their React knowledge earns it. |
 | Bring up wanting a visual editor in the browser (not asked by default) | First, say honestly that a hosted site builder may suit them better. If they still want their own code: **Astro plus a Git-based CMS** (such as Keystatic, Decap or TinaCMS) | A Git-based CMS saves edits as commits in their repo, so the code stays theirs and there's no database. Compare the current options' setup and pricing before picking one. |
 
 When two rows fit, pick the simpler one and offer the other as the alternative.

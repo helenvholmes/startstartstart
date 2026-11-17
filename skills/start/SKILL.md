@@ -15,7 +15,7 @@ The person usually starts by asking you to read this repository, rather than ins
 git clone --depth 1 https://github.com/helenvholmes/portfolio-starter "${TMPDIR:-/tmp}/portfolio-starter"
 ```
 
-Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy, and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
+Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy (and `skills/review/SKILL.md` when you get to reviewing case studies), and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
 
 ## How to work
 
@@ -46,18 +46,17 @@ Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is miss
 
 Ask **one question at a time**, and skip any their earlier answers already cover. If your tool can show a multiple-choice question card (in Claude, see `../accounts-setup/references/claude.md`), use it for every question below: the choices make answering quick, and the person can always type their own answer instead. Keep each question to one line and each choice to a few words. Where a question has no card choices, ask it in plain text. Don't comment on each answer; go straight to the next question.
 
-1. **What's the site mainly for?** Getting hired · Showing my work to clients · Sharing my writing · Getting booked for gigs or shows
-2. **What will go on it?** (they can pick several) Projects or case studies · Writing · Photos · A resume
-3. **Does anything need to move or respond, or is it pages to read?** Just pages to read · Some animation · A contact form · Something more (a shop, logins)
-4. **How much code do you know?** None yet · Some HTML and CSS · JavaScript · React or another framework
-5. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
+1. **What's the site mainly for?** Getting hired · Getting contracting work
+2. **What will go on it?** (pick multiple) Case studies · Writing · Photos · A resume
+3. **Any add-ons?** (pick multiple) Just pages · Animations · A contact form · Something more
+4. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
 
    If they have a Figma file, sites or images, ask in plain text for the links or images: links and images are both great, as many as they like. Read a Figma link with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a line what you take from it (type, color, layout feel) so they can correct you.
-6. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
-7. **Do you have a domain name, like yourname.com?** No, not yet · Yes
+5. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
+6. **Do you have a domain name, like yourname.com?** No, not yet · Yes
 
    If yes, follow up: **Where did you buy it?** GoDaddy · Namecheap · Squarespace · Cloudflare. If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Ask in plain text for the domain itself, and whether it shows an existing site now, since connecting it will replace that.
-8. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
+7. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
 
@@ -103,6 +102,8 @@ On a branch (`first-version`), build the plan with placeholder content that is c
 - Security headers in `vercel.json` (or the framework's equivalent): CSP, `frame-ancestors`, `X-Content-Type-Options`, `Referrer-Policy`
 - A README in plain language: how to run it, how to add a project or post, how publishing works
 
+**Show it right away.** As soon as the first version builds, start the dev server in the background and open its address in a browser the person can see: your tool's built-in browser or preview pane if it has one (in Claude, see `../accounts-setup/references/claude.md`), otherwise their default browser. Leave it running while you work, so every change shows up as you make it, and tell them the address in one line. **Cloud:** there's no server they can open; skip this and use the Vercel preview link in step 5.
+
 Commit in small steps with messages that say why. Push the branch and open a pull request with `gh pr create`, describing what's in it in plain words.
 
 ## 5. Preview (check-in)
@@ -110,6 +111,8 @@ Commit in small steps with messages that say why. Push the branch and open a pul
 Vercel posts a preview link on the pull request (`gh pr view --web` opens it; the connector can fetch it too). Give them the link and ask them to look on their phone and their computer. Make the changes they ask for on the same branch; each push updates the preview.
 
 Then help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. The audit should run on real content where possible.
+
+**Once they've added real case studies**, offer a review in one line: "Want me to review your case studies the way a hiring manager would?" If yes, run the `review` skill. Offer it once; if they say not now, mention it again at hand-off.
 
 ## 6. Audit
 
@@ -133,6 +136,7 @@ Leave them able to carry on without you. Summarize in a few lines:
 - How to update the site: edit or add a content file, commit, push (or ask their AI assistant), check the preview, merge. In the cloud: start a new session on the same repository and ask for the change
 - What to keep an eye on: dependency update pull requests, the domain's yearly renewal
 - What's left that they mentioned but you didn't do
+- If they have case studies and haven't had one yet: the `review` skill, which critiques them the way a hiring manager reads them
 
 ## Don't
 
