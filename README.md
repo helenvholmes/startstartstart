@@ -4,7 +4,7 @@ Create your own portfolio website with Claude as the builder. No coding, GitHub,
 
 By the end you'll have:
 
-- A website at your own address (or a free `yourname.vercel.app` one)
+- A website at your own address (or a free `yourname.vercel.app`)
 - Your code saved in your own GitHub account, so it's backed up and yours to keep
 - Hosting on your own Vercel account that updates the site every time you save a change
 - A site that's been checked for accessibility, layout, performance and security before anyone sees it
