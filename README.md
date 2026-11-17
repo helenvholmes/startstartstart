@@ -42,15 +42,17 @@ Keep it empty. Claude will fill it.
 2. Under the prompt box there's a row of controls. Make sure the first one, the environment, is set to **Local**, so Claude works on your computer. (To work in the cloud instead, see [the cloud steps](#no-desktop-app-use-claude-in-the-cloud); they start differently.)
 3. Click the folder control next to it and choose the `portfolio` folder you just made.
 
-### 4. Install the skills
+### 4. Install the portfolio starter
 
-Type this into the prompt box and press Enter:
+The starter comes as a *plugin*: one package that holds everything Claude needs for this. Installing it takes two parts.
+
+First, tell Claude where to find it. Type this into the prompt box and press Enter:
 
 ```
 /plugin marketplace add helenvholmes/portfolio-starter
 ```
 
-Then install the plugin:
+This adds Helen's catalog of plugins to Claude. Nothing is installed yet. Then install it:
 
 1. Click the **+** button next to the prompt box and choose **Add plugins** (or **Plugins**, then **Browse plugins**).
 2. Find **portfolio-starter** and select it.
@@ -128,7 +130,7 @@ If you're comfortable typing commands:
 1. Install Claude Code: on macOS or Linux run `curl -fsSL https://claude.ai/install.sh | bash`; on Windows, see the [quickstart](https://code.claude.com/docs/en/quickstart) (Windows also needs [Git for Windows](https://git-scm.com/downloads/win) first). Open a new terminal window and check it with `claude --version`.
 2. Make a folder and go into it: `mkdir portfolio && cd portfolio`.
 3. Start Claude Code with `claude` and sign in when your browser opens.
-4. Install the skills: `/plugin marketplace add helenvholmes/portfolio-starter`, then `/plugin install portfolio-starter@portfolio-starter`.
+4. Install the plugin: `/plugin marketplace add helenvholmes/portfolio-starter` adds the catalog, then `/plugin install portfolio-starter@portfolio-starter` installs it.
 5. Paste the prompt from step 5 above.
 
 ## If something goes wrong
