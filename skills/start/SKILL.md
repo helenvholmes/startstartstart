@@ -27,6 +27,7 @@ Three rules shape every step here:
 
 ## Talking with the person
 
+- **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask two or three questions at a time, not a block of them. If there's more to say, offer it ("Want the details?") instead of writing it.
 - Explain each new term in one plain sentence the first time it comes up (`../accounts-setup/references/glossary.md` has wording). Match how they talk; if they're fluent, skip the explanations.
 - Wait for their OK at the four gates below (stack, plan, preview, launch). Between gates, keep going without asking permission for each small step.
 - Say before doing anything that's hard to undo: making a repo public, connecting a domain, deleting anything.
@@ -42,7 +43,7 @@ Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is miss
 
 ## 1. Interview
 
-Ask a few questions at a time, conversationally, and skip any their earlier answers already cover:
+Ask two or three questions at a time, conversationally, and skip any their earlier answers already cover:
 
 1. Who is the site for, and what should they do after visiting? (hire you, read your writing, book you, just know you exist)
 2. What goes on it: projects or case studies, writing, photos, a resume, links?
@@ -57,11 +58,11 @@ Ask a few questions at a time, conversationally, and skip any their earlier answ
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
 
-Summarize what you heard in a few lines and ask if it's right.
+Summarize what you heard in three or four short lines and ask if it's right.
 
 ## 2. Recommend a stack (gate)
 
-Use `references/stacks.md` to choose. Then give:
+Use `references/stacks.md` to choose. Then give, in a short message they can read in under a minute:
 
 - **One recommendation**, each piece with one sentence on why it fits *this person*, tied to their answers ("you said it's mostly projects to read, so each project is a simple text file and the pages are plain HTML, with no JavaScript to break")
 - **One or two alternatives** and the plain trade-off for each

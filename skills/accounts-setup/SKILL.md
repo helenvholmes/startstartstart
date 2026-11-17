@@ -11,6 +11,7 @@ Work so everything can be undone: show changes before making them, make each one
 
 ## How to talk to the person
 
+- **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask two or three questions at a time, not a block of them. If there's more to say, offer it ("Want the details?") instead of writing it.
 - Assume nothing about what they know. The first time a term comes up (repository, commit, push, branch, pull request, terminal, CLI, MCP, token), explain it in one plain sentence. `references/glossary.md` has wording to borrow. Don't explain it again after that.
 - One step at a time. Say what the step is for, do it or tell them exactly what to do, then confirm it worked before moving on.
 - When a step needs their hands (a browser sign-in, a password prompt, an installer window), tell them precisely what to type or click, then stop and wait. Don't guess that it worked; check.
