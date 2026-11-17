@@ -48,6 +48,10 @@ Anything typed either way is visible in the session. For tokens, send them to a 
 - **Desktop app:** **Settings → Connectors**, then disconnect Vercel or GitHub.
 - **Terminal:** `claude mcp remove vercel --scope user` (and `github`).
 
+## Asking questions
+
+Use the AskUserQuestion tool for the skills' interview and setup questions: one question per call, with the choices the skill lists as options (two to four; the person can always type their own answer, so don't add an "Other" choice). Use a short header, like "Site goal" or "Domain". Put the recommended choice first where there is one. When the tool isn't available, ask the same question in one line of plain text and list the choices.
+
 ## Don't suggest `/plugin`
 
 People start this by pasting a message, not by installing a plugin, and `/plugin` commands don't work in the desktop app anyway. Don't send them to install anything from Claude's plugin menus.

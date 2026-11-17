@@ -11,7 +11,7 @@ Work so everything can be undone: show changes before making them, make each one
 
 ## How to talk to the person
 
-- **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask two or three questions at a time, not a block of them. If there's more to say, offer it ("Want the details?") instead of writing it.
+- **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask one question at a time. If there's more to say, offer it ("Want the details?") instead of writing it.
 - Assume nothing about what they know. The first time a term comes up (repository, commit, push, branch, pull request, terminal, CLI, MCP, token), explain it in one plain sentence. `references/glossary.md` has wording to borrow. Don't explain it again after that.
 - One step at a time. Say what the step is for, do it or tell them exactly what to do, then confirm it worked before moving on.
 - When a step needs their hands (a browser sign-in, a password prompt, an installer window), tell them precisely what to type or click, then stop and wait. Don't guess that it worked; check.
@@ -46,12 +46,12 @@ If they don't have a repository yet, stop and walk them through making one on gi
 
 Run `scripts/check.sh` (from this skill's folder). It prints what's installed and what's signed in, and changes nothing. Read it back to the person in plain words ("You have git and Node, but not the GitHub CLI yet"), then only do the steps they still need. If they've done all of this before, finish in a minute.
 
-Then ask, a few at a time:
+Then ask, one question at a time, using a multiple-choice card if your tool has one (the person can always type their own answer):
 
-1. Do you already have a GitHub account? If so, what's your username? If they have more than one (a personal and a work account, say), ask which one this site belongs to.
-2. Do you have a Vercel account? If not, plan to sign up for one **with GitHub** (step 4), so the two are linked from the start. If they do, use it as it is: it doesn't matter how it was created, since Vercel links to GitHub when the repository is imported. If they belong to more than one Vercel team, ask which one the site goes under (their personal account is usual).
-3. What name do you want on your saved work? This shows publicly next to every change on GitHub. Most people use their real name; a handle is fine.
-4. Should your code be public (anyone can see it, normal for portfolios and open source) or private?
+1. **Do you have a GitHub account?** Yes · No, help me make one. If yes, ask for the username in plain text, unless `check.sh` already showed them signed in. If they have more than one (a personal and a work account, say), ask which one this site belongs to.
+2. **Do you have a Vercel account?** Yes · No · Not sure. If not, plan to sign up for one **with GitHub** (step 4), so the two are linked from the start. If they do, use it as it is: it doesn't matter how it was created, since Vercel links to GitHub when the repository is imported. If they belong to more than one Vercel team, ask which one the site goes under (their personal account is usual).
+3. **What name should appear on your saved work?** It shows publicly next to every change on GitHub. Offer their GitHub display name (from `gh api user --jq .name`, once signed in) as the first choice; most people use their real name, and a handle is fine.
+4. **Should your code be public or private?** Public (normal for portfolios) · Private
 
 Don't ask for their email address yet; step 3 suggests a private one.
 

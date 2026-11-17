@@ -27,7 +27,7 @@ Three rules shape every step here:
 
 ## Talking with the person
 
-- **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask two or three questions at a time, not a block of them. If there's more to say, offer it ("Want the details?") instead of writing it.
+- **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask one question at a time. If there's more to say, offer it ("Want the details?") instead of writing it.
 - Explain each new term in one plain sentence the first time it comes up (`../accounts-setup/references/glossary.md` has wording). Match how they talk; if they're fluent, skip the explanations.
 - They want you to build. Check in only three times: after recommending the stack and pages (step 2), at the preview (step 5), and before going live (step 7). Everywhere else, keep going without asking.
 - Don't narrate the process or reassure them about it: no "here's the plan", no "nothing gets built until you OK it", no "great!" openers. Just do the work, show the result, and ask the one question that needs an answer.
@@ -44,26 +44,28 @@ Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is miss
 
 ## 1. Interview
 
-Ask two or three questions at a time, conversationally, and skip any their earlier answers already cover:
+Ask **one question at a time**, and skip any their earlier answers already cover. If your tool can show a multiple-choice question card (in Claude, see `../accounts-setup/references/claude.md`), use it for every question below: the choices make answering quick, and the person can always type their own answer instead. Keep each question to one line and each choice to a few words. Where a question has no card choices, ask it in plain text. Don't comment on each answer; go straight to the next question.
 
-1. Who is the site for, and what should they do after visiting? (hire you, read your writing, book you, just know you exist)
-2. What goes on it: projects or case studies, writing, photos, a resume, links?
-3. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
-4. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
-5. Do you have a look in mind? If you have a design in Figma, share the link. Sites you like, sketches, screenshots or photos of things whose style you love are great too: links and images both work, as many as you like.
+1. **What's the site mainly for?** Getting hired · Showing my work to clients · Sharing my writing · Getting booked for gigs or shows
+2. **What will go on it?** (they can pick several) Projects or case studies · Writing · Photos · A resume
+3. **Does anything need to move or respond, or is it pages to read?** Just pages to read · Some animation · A contact form · Something more (a shop, logins)
+4. **How much code do you know?** None yet · Some HTML and CSS · JavaScript · React or another framework
+5. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
 
-   If they share a Figma link, read it with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a few words what you take from it (type, color, layout feel) so they can correct you before you plan.
-6. Should any page be private, so only people you give a password to can see it? (a pitch deck, a case study under NDA, references)
-7. Do you have a domain name, like `yourname.com`? (Fine if not: you can add one later.) If they do, follow up: where did you buy it? (GoDaddy, Namecheap, Squarespace, Google Domains, Cloudflare, Porkbun…) If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Note too whether it's pointing at an existing site, since connecting it will replace that.
-8. Anything else you might need that we haven't covered?
+   If they have a Figma file, sites or images, ask in plain text for the links or images: links and images are both great, as many as they like. Read a Figma link with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a line what you take from it (type, color, layout feel) so they can correct you.
+6. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
+7. **Do you have a domain name, like yourname.com?** No, not yet · Yes
+
+   If yes, follow up: **Where did you buy it?** GoDaddy · Namecheap · Squarespace · Cloudflare. If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Ask in plain text for the domain itself, and whether it shows an existing site now, since connecting it will replace that.
+8. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
 
-Summarize what you heard in three or four short lines and ask if it's right.
+Go straight to step 2; its message opens with a line or two of what you heard, so there's no separate summary to confirm.
 
 ## 2. Recommend a stack and plan (one check-in)
 
-Choose with `references/stacks.md`, then send one short message they can read in under a minute:
+Choose with `references/stacks.md`, then send one short message they can read in under a minute. Open with one or two lines of what you heard, then:
 
 - **What you'll build it with**, each piece with a few words on why it fits *them* ("mostly projects to read, so plain pages with no JavaScript to break")
 - **The pages** (`/`, `/work`, `/work/<project>`, `/about`, …)
@@ -72,7 +74,7 @@ Choose with `references/stacks.md`, then send one short message they can read in
 
 Default to the simplest thing that works: static pages, content as files in the repo, no database, no client-side JavaScript unless an answer needs it. Look up current stable versions before naming them; don't rely on memory.
 
-End with a plain question ("Sound good?"), and start building as soon as they say yes. If they change something, adjust and go; don't ask again.
+End with one question, as a card if you can: **Sound good?** Yes, build it · Change something. Start building as soon as they say yes. If they change something, adjust and go; don't ask again.
 
 Keep the details to yourself unless they ask: the content model, folder structure, and design tokens are your call. Put the look in one file of design tokens (colors, fonts, type sizes, spacing), so restyling never means hunting through components. If they have no design direction, pick a tasteful neutral one from what they told you and say so in a line; they'll react to the preview, which is easier than choosing in the abstract.
 
