@@ -22,7 +22,7 @@ Three rules shape every step here:
 
 ## 0. Accounts
 
-If this is a cloud session (claude.ai/code, or **Cloud** chosen in the desktop app), stop and send them to a **Local** session in an empty folder: the site has to be built on their computer, and plugins don't load in the cloud. `../accounts-setup/SKILL.md` step 0 says how to tell.
+If this session is running on a remote or cloud machine rather than the person's own computer, stop and help them start a local session in an empty folder: the site has to be built on their computer. `../accounts-setup/SKILL.md` step 0 covers this, and which steps depend on your tool.
 
 Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 6 works through Vercel's website too.
 
@@ -32,7 +32,7 @@ Ask a few questions at a time, conversationally, and skip any their earlier answ
 
 1. Who is the site for, and what should they do after visiting? (hire you, read your writing, book you, just know you exist)
 2. What goes on it: projects or case studies, writing, photos, a resume, links? Roughly how many now, and in a year?
-3. How do you want to update it later: by editing text files (Claude can help), or through a visual editor in the browser?
+3. How do you want to update it later: by editing text files (with your help), or through a visual editor in the browser?
 4. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
 5. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
 6. Do you have a look in mind: a design file, sketches, sites you like? Share links if so.
@@ -99,7 +99,7 @@ Then help them swap the placeholders for real content, or show them how to do it
 
 ## 7. Audit
 
-With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill (`/helenvholmes:audit`, installed alongside this plugin). It checks layout, accessibility, motion, performance and security, and needs a browser Claude can drive; if none is available, install Playwright for it and say so. If the audit plugin isn't installed, install it with `/plugin install helenvholmes@portfolio-starter`, or skip this step and say what wasn't checked.
+With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills) (in Claude it's installed alongside this plugin as `/helenvholmes:audit`). It checks layout, accessibility, motion, performance and security, and needs a browser you can drive; if none is available, install Playwright for it and say so. If the audit skills aren't installed, offer to install them, or skip this step and say what wasn't checked.
 
 Show the report and fix only the findings they choose, each as its own commit on the branch.
 
@@ -114,7 +114,7 @@ Show the report and fix only the findings they choose, each as its own commit on
 Leave them able to carry on without you. Summarize in a few lines:
 
 - Where everything lives: the GitHub repo URL, the Vercel project, the live address
-- How to update the site: edit or add a content file, commit, push (or ask Claude), check the preview, merge
+- How to update the site: edit or add a content file, commit, push (or ask their AI assistant), check the preview, merge
 - What to keep an eye on: dependency update pull requests, the domain's yearly renewal
 - What's left that they mentioned but you didn't do
 

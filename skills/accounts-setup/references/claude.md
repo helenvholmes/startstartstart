@@ -1,0 +1,48 @@
+# Running in Claude
+
+The steps in `SKILL.md` that depend on the tool, for Claude Code in a terminal and in the Claude desktop app's Code tab.
+
+## Which one you're in
+
+`CLAUDE_CODE_ENTRYPOINT` in the environment usually says. If it's unset or unclear, ask the person in one line: "Are you in the Claude desktop app, or a terminal window?" Assume the desktop app for people new to this.
+
+**Cloud sessions** (claude.ai/code, or **Cloud** chosen as the environment in the desktop app) run on a remote machine, and plugins don't load there. Stop and tell them to start a new session with the environment set to **Local**, on an empty folder.
+
+## The person runs a command themselves
+
+- **Desktop app:** they open the built-in terminal by clicking **Terminal** in the session's title bar (or pressing Ctrl+\`), paste the command, and press Enter.
+- **Terminal:** they type the command into Claude Code with `!` in front, for example `! gh auth login --web`.
+
+Anything typed either way is visible in the session. For tokens, send them to a terminal window outside Claude instead (the Terminal app on a Mac, PowerShell on Windows).
+
+## Add the Vercel MCP server
+
+- **Desktop app:** they click **+** next to the prompt box → **Add connectors** (or **Connectors** → **Browse connectors**), search for **Vercel**, and connect it. If Vercel isn't in the directory, they add it as a custom connector in **Settings → Connectors** with the URL `https://mcp.vercel.com`. Either way, they sign in to Vercel in the browser that opens. If the new tools don't appear in this session, have them start a new session in the same folder and say "continue accounts setup".
+- **Terminal:**
+
+  ```
+  claude mcp add --transport http vercel --scope user https://mcp.vercel.com
+  ```
+
+  Claude Code picks up new servers when it starts, so have them type `/exit`, then `claude --continue` to come back to this conversation. Then they type `/mcp`, choose **vercel**, and sign in in the browser.
+
+## Add the GitHub MCP server
+
+- **Desktop app:** **+** → **Add connectors** → **GitHub**, and approve in the browser.
+- **Terminal:** `claude mcp add --transport http --scope user github https://api.githubcopilot.com/mcp/`, restart as above, then `/mcp` → **github** → sign in. Browser sign-in for this server has been unreliable in Claude Code; if it fails, use the token fallback.
+- **Token fallback:** first `claude mcp remove github --scope user`. Then, in a terminal window outside Claude, they run:
+
+  ```
+  claude mcp add --transport http --scope user github https://api.githubcopilot.com/mcp/ --header "Authorization: Bearer PASTE_TOKEN_HERE"
+  ```
+
+  The token is stored in Claude Code's settings on their computer.
+
+## Remove them
+
+- **Desktop app:** **Settings → Connectors**, then disconnect Vercel or GitHub.
+- **Terminal:** `claude mcp remove vercel --scope user` (and `github`).
+
+## Skill names
+
+In Claude, plugin skills are typed with the plugin's name in front: this plugin's skills are `/portfolio-starter:start` and `/portfolio-starter:accounts-setup`, and the pre-launch checks are `/helenvholmes:audit`.

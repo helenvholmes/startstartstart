@@ -112,14 +112,24 @@ If you're comfortable typing commands:
 - **Vercel:** free on the Hobby plan, which is for personal, non-commercial sites. A portfolio about you is typically fine; a site for a business or one that sells things may need a paid plan. Claude checks Vercel's current terms with you.
 - **A domain (optional):** a yearly fee to a domain registrar. A `.com` is usually somewhere around $10 to $25 a year.
 
+## Using another AI coding agent
+
+The skills are plain `SKILL.md` files, so agents other than Claude that read skills (Codex, Cursor, Copilot, Gemini CLI and others) can use them too. This README's steps are for Claude; elsewhere:
+
+1. Put both folders from `skills/` where your agent looks for skills. The open [`skills`](https://skills.sh) installer can do it: `npx skills add helenvholmes/portfolio-starter`. Copying the folders by hand works too.
+2. Install the pre-launch checks the same way: `npx skills add helenvholmes/skills`. In Claude these come along automatically; elsewhere they don't.
+3. Open a local session in an empty folder and ask your agent to run the `start` skill.
+
+The skills ask your agent to use its own way of connecting to Vercel and GitHub. If it doesn't know one, Vercel's helper configures most agents: `npx -y add-mcp https://mcp.vercel.com -g`.
+
 ## What's in here
 
 | Skill | What it does |
 |---|---|
 | `start` | Interviews you about the site and what you know, recommends the simplest setup that fits, plans and builds it, gives you preview links, runs the pre-launch checks, and puts it live on your own GitHub and Vercel |
-| `accounts-setup` | Installs git, the GitHub CLI and Node if they're missing, signs you in to GitHub, and connects Claude to Vercel (and optionally GitHub). Never asks you to paste a password or token. Run it on its own with `/portfolio-starter:accounts-setup`. |
+| `accounts-setup` | Installs git, the GitHub CLI and Node if they're missing, signs you in to GitHub, and connects your agent to Vercel (and optionally GitHub). Never asks you to paste a password or token. In Claude, run it on its own with `/portfolio-starter:accounts-setup`. Claude-specific steps live in `references/claude.md`. |
 
-The pre-launch checks come from [helenvholmes/skills](https://github.com/helenvholmes/skills), installed automatically as a dependency.
+The pre-launch checks come from [helenvholmes/skills](https://github.com/helenvholmes/skills). In Claude they're installed automatically as a dependency.
 
 `skills/accounts-setup/scripts/check.sh` reports what's installed and signed in for shipping a site, and changes nothing:
 

@@ -77,7 +77,7 @@ if command -v git >/dev/null 2>&1; then
   esac
 fi
 
-# Claude Code MCP servers (lists configured servers; doesn't contact them)
+# MCP servers: only Claude Code's can be listed from here; other agents are checked in their own settings
 if command -v claude >/dev/null 2>&1; then
   list="$(claude mcp list 2>/dev/null)"
   for s in vercel github; do
@@ -85,14 +85,14 @@ if command -v claude >/dev/null 2>&1; then
     if [ -n "$line" ]; then
       case "$line" in
         *Connected*) row "MCP: $s" "ok" "connected";;
-        *) row "MCP: $s" "added" "not signed in yet (type /mcp)";;
+        *) row "MCP: $s" "added" "added; sign in may be needed (/mcp in Claude Code)";;
       esac
     else
       if [ "$s" = vercel ]; then row "MCP: $s" "no" "not added"; else row "MCP: $s" "no" "optional"; fi
     fi
   done
 else
-  row "Claude Code CLI" "info" "not on PATH (normal in the desktop app); check connectors under + > Connectors"
+  row "MCP servers" "info" "can't list from here; check your agent's MCP or connector settings"
 fi
 
 # Vercel CLI is optional
