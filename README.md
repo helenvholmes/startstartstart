@@ -103,7 +103,7 @@ If you can't install the desktop app, Claude can build your site on its own comp
 
 Vercel is the service that puts your site on the internet.
 
-1. In Claude in your browser, open **Settings → Connectors**.
+1. In your browser, go to [claude.ai/customize/connectors](https://claude.ai/customize/connectors).
 2. Find **Vercel** and connect it. If it isn't listed, add a custom connector with the address `https://mcp.vercel.com`.
 3. Sign in on Vercel's page. If you don't have a Vercel account, choose **Continue with GitHub** to make one that's linked to GitHub from the start.
 

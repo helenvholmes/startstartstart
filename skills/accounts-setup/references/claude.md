@@ -10,8 +10,8 @@ The steps in `SKILL.md` that depend on the tool, for Claude Code in a terminal a
 
 - Plugins installed on their computer don't load there. The skills arrive either because the person asked you to read them from github.com/helenvholmes/portfolio-starter, or because they enabled them in their claude.ai account.
 - GitHub access comes through the Claude GitHub App. If you can't push, they reconnect GitHub at claude.ai/code and give the app access to this repository. The session can't create new repositories, so the person makes it on github.com first.
-- Connectors from their claude.ai account are passed in, already signed in; there's no `/mcp` step. If Vercel's tools are missing, they connect Vercel at claude.ai under **Settings → Connectors** (or add a custom connector with `https://mcp.vercel.com`), then start a new session on the same repository.
-- To disconnect later: claude.ai **Settings → Connectors**, and GitHub's Settings → Applications for the Claude GitHub App.
+- Connectors from their claude.ai account are passed in, already signed in; there's no `/mcp` step. If Vercel's tools are missing, they connect Vercel at claude.ai/customize/connectors (or add a custom connector with `https://mcp.vercel.com`), then start a new session on the same repository.
+- To disconnect later: claude.ai/customize/connectors, and GitHub's Settings → Applications for the Claude GitHub App.
 
 ## The person runs a command themselves
 
