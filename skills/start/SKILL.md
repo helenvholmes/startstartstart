@@ -52,7 +52,7 @@ Ask a few questions at a time, conversationally, and skip any their earlier answ
 
    If they share a Figma link, read it with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a few words what you take from it (type, color, layout feel) so they can correct you before you plan.
 6. Should any page be private, so only people you give a password to can see it? (a pitch deck, a case study under NDA, references)
-7. Do you have a domain name, like `yourname.com`? (Fine if not: the site gets a free address, and you can add one later.)
+7. Do you have a domain name, like `yourname.com`? (Fine if not: the site gets a free address, and you can add one later.) If they do, follow up: where did you buy it? (GoDaddy, Namecheap, Squarespace, Google Domains, Cloudflare, Porkbun…) If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Note too whether it's pointing at an existing site, since connecting it will replace that.
 8. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
@@ -128,7 +128,7 @@ Show the report and fix only the findings they choose, each as its own commit on
 ## 8. Launch (gate)
 
 1. Confirm they're ready, then merge the pull request (`gh pr merge --squash --delete-branch`, or have them click Merge on GitHub so they've done it once). Vercel publishes `main` within a minute or two. Check the live address.
-2. **Domain**, if they have one: in Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and where those go at their registrar. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
+2. **Domain**, if they have one: in Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and walk them through where those go at the registrar they named in the interview (look up that registrar's current steps rather than guessing menu names). If the domain points at an existing site, confirm before changing anything, since that site will stop showing at the address. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
 3. **Analytics**, if they asked: Vercel Web Analytics is the simplest; it's turned on in the project's settings and needs one small package.
 
 ## 9. Hand off
