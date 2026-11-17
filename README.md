@@ -140,10 +140,9 @@ The same message works in other AI coding agents (Codex, Cursor, Copilot, Gemini
 | Skill | What it does |
 |---|---|
 | `start` | Interviews you about the site and what you know, recommends the simplest setup that fits, plans and builds it, gives you preview links, runs the pre-launch checks, and puts it live on your own GitHub and Vercel |
-| `review` | Reviews your case studies the way a hiring manager or client reads them, using Brian Lovin's [advice on presenting design work](https://brianlovin.com/writing/how-to-give-a-great-product-design-portfolio-presentation): context, the problem before the solution, constraints, what you tried, outcomes, and credit. Suggests the changes that matter most and makes only the ones you pick. |
 | `accounts-setup` | Installs git, the GitHub CLI and Node if they're missing, signs you in to GitHub, and connects your agent to Vercel (and optionally GitHub). Never asks you to paste a password or token. Claude-specific steps live in `references/claude.md`. |
 
-The pre-launch checks come from [helenvholmes/skills](https://github.com/helenvholmes/skills), which `start` reads the same way.
+The pre-launch checks and the case study review come from [helenvholmes/skills](https://github.com/helenvholmes/skills), which `start` reads the same way. The review follows Brian Lovin's [advice on presenting design work](https://brianlovin.com/writing/how-to-give-a-great-product-design-portfolio-presentation).
 
 `skills/accounts-setup/scripts/check.sh` reports what's installed and signed in for shipping a site, and changes nothing:
 

@@ -15,7 +15,7 @@ The person usually starts by asking you to read this repository, rather than ins
 git clone --depth 1 https://github.com/helenvholmes/portfolio-starter "${TMPDIR:-/tmp}/portfolio-starter"
 ```
 
-Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy (and `skills/review/SKILL.md` when you get to reviewing case studies), and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
+Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy, and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
 
 ## How to work
 
@@ -112,7 +112,7 @@ Vercel posts a preview link on the pull request (`gh pr view --web` opens it; th
 
 Then help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. The audit should run on real content where possible.
 
-**Once they've added real case studies**, offer a review in one line: "Want me to review your case studies the way a hiring manager would?" If yes, run the `review` skill. Offer it once; if they say not now, mention it again at hand-off.
+**Once they've added real case studies**, offer a review in one line: "Want me to review your case studies the way a hiring manager would?" If yes, run the `review` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills): if it isn't installed, read `skills/review/SKILL.md` from that repository, the same way as the audit skills. Offer it once; if they say not now, mention it again at hand-off.
 
 ## 6. Audit
 
