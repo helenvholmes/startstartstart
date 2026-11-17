@@ -28,10 +28,6 @@ The desktop app is the easiest way to start: no terminal needed.
 
 Go to [claude.com/download](https://claude.com/download), download the version for your computer, and open it.
 
-- **Mac:** open the downloaded file and drag Claude into Applications, then open it from there.
-- **Windows:** open the downloaded file and follow the installer, then open Claude from the Start menu.
-- **Linux (Ubuntu or Debian):** follow [Claude Desktop on Linux](https://code.claude.com/docs/en/desktop-linux).
-
 Sign in with the account that has your paid plan.
 
 ### 2. Make an empty folder for your site
