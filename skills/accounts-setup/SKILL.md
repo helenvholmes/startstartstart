@@ -47,8 +47,8 @@ Run `scripts/check.sh` (from this skill's folder). It prints what's installed an
 
 Then ask, a few at a time:
 
-1. Do you already have a GitHub account? If so, what's your username?
-2. Do you have a Vercel account? If not, plan to sign up for one **with GitHub** (step 4), so the two are linked from the start.
+1. Do you already have a GitHub account? If so, what's your username? If they have more than one (a personal and a work account, say), ask which one this site belongs to.
+2. Do you have a Vercel account? If not, plan to sign up for one **with GitHub** (step 4), so the two are linked from the start. If they do, use it as it is: it doesn't matter how it was created, since Vercel links to GitHub when the repository is imported. If they belong to more than one Vercel team, ask which one the site goes under (their personal account is usual).
 3. What name do you want on your saved work? This shows publicly next to every change on GitHub. Most people use their real name; a handle is fine.
 4. Should your code be public (anyone can see it, normal for portfolios and open source) or private?
 
@@ -79,7 +79,7 @@ The GitHub CLI is how you create repositories, save work, and open pull requests
    ```
 
    Tell them what will happen: a code appears, they press Enter to open the browser, paste the code there, and approve. Then they tell you they're done.
-3. Run `gh auth status` and confirm the username matches what they told you.
+3. Run `gh auth status` and confirm the username matches what they told you. If `check.sh` showed them already signed in, skip the sign-in and just confirm the username. If they're signed in to a different account (often a work one), don't sign it out: running the sign-in again adds the right account, and `gh auth switch --user <username>` makes it the active one. Tell them which account is active, and how to switch back.
 4. Run `gh auth setup-git` so git uses that same sign-in when saving to GitHub.
 5. Set their name and email for git. For the email, suggest GitHub's private address, which keeps their real one off every public change:
 
@@ -100,6 +100,8 @@ Vercel's official MCP server, at `https://mcp.vercel.com`, lets you read their p
 2. Add the server using your tool's way (step 0), for all their projects rather than just this folder.
 3. Have them sign in in the browser that opens. If they have no Vercel account, the sign-in page offers to create one: choose **Continue with GitHub**.
 4. Confirm it works by listing their Vercel projects or teams with the Vercel tools. An empty list is fine for a new account.
+
+If the Vercel tools are already connected, confirm they show the account and team the person expects, and skip the rest of this step.
 
 Checkpoint: the Vercel tools answer.
 
