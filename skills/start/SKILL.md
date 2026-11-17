@@ -45,13 +45,14 @@ Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is miss
 Ask a few questions at a time, conversationally, and skip any their earlier answers already cover:
 
 1. Who is the site for, and what should they do after visiting? (hire you, read your writing, book you, just know you exist)
-2. What goes on it: projects or case studies, writing, photos, a resume, links? Roughly how many now, and in a year?
-3. How do you want to update it later: by editing text files (with your help), or through a visual editor in the browser?
-4. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
-5. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
-6. Do you have a look in mind: a design file, sketches, sites you like? Share links if so.
-7. Do you have a domain name? Do you want to know how many people visit?
-8. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
+2. What goes on it: projects or case studies, writing, photos, a resume, links?
+3. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
+4. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
+5. Do you have a look in mind: a design file, sketches, sites you like? Share links if so.
+6. Do you have a domain name? Do you want to know how many people visit?
+7. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
+
+Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
 
 Summarize what you heard in a few lines and ask if it's right.
 
@@ -59,7 +60,7 @@ Summarize what you heard in a few lines and ask if it's right.
 
 Use `references/stacks.md` to choose. Then give:
 
-- **One recommendation**, each piece with one sentence on why it fits *this person*, tied to their answers ("you said you'll update it by editing files, so your projects are Markdown files in the repo, no CMS")
+- **One recommendation**, each piece with one sentence on why it fits *this person*, tied to their answers ("you said it's mostly projects to read, so each project is a simple text file and the pages are plain HTML, with no JavaScript to break")
 - **One or two alternatives** and the plain trade-off for each
 - **What it costs** and what they'll have to keep up (usually: free, and updating a dependency now and then)
 
