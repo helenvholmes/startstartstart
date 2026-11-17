@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-starter",
+  "version": "0.1.0",
+  "description": "Take someone new to GitHub from an empty folder to a live portfolio site on their own GitHub and Vercel: account setup, an interview, a stack recommendation, a guided build with previews, a pre-launch audit, and launch.",
+  "author": {
+    "name": "Helen V. Holmes",
+    "url": "https://helenvholmes.com"
+  },
+  "homepage": "https://github.com/helenvholmes/portfolio-starter",
+  "repository": "https://github.com/helenvholmes/portfolio-starter",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "website",
+    "github",
+    "vercel",
+    "beginner",
+    "setup"
+  ],
+  "dependencies": [
+    "helenvholmes"
+  ]
+}

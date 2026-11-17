@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-starter",
+  "description": "Helen V. Holmes's guided portfolio starter: from an empty folder to a live, checked site on your own GitHub and Vercel, for people new to GitHub.",
+  "owner": {
+    "name": "Helen V. Holmes",
+    "url": "https://helenvholmes.com"
+  },
+  "plugins": [
+    {
+      "name": "portfolio-starter",
+      "source": "./",
+      "description": "Guided setup, build and launch of a portfolio site on GitHub and Vercel, for people new to GitHub."
+    },
+    {
+      "name": "helenvholmes",
+      "source": {
+        "source": "github",
+        "repo": "helenvholmes/skills"
+      },
+      "description": "Pre-ship checks for websites: accessibility, motion, layout, performance and security, run together by one audit skill."
+    }
+  ]
+}

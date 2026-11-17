@@ -1,0 +1,126 @@
+---
+name: start
+description: Take someone from "I want a portfolio site" to a live site on their own GitHub and Vercel accounts — interview them about what the site is for and what they already know, recommend the simplest stack that fits and explain why, plan the pages, build it with placeholder content, give them preview links, run the pre-ship audit, and launch it with their domain. Built for people who are new to GitHub and may be new to code. Use this whenever the user asks to make, start, build or set up a portfolio, personal site, or simple website from scratch, asks what stack or framework a small site should use, or says they want a site "on GitHub and Vercel", even if they've already picked part of the stack.
+---
+
+# Portfolio starter
+
+The person should end up with a site they own outright (code in their GitHub, hosting in their Vercel account), that they understand well enough to update, and that passed a pre-launch audit before anyone saw it.
+
+Three rules shape every step here:
+
+- **Decisions the person makes on purpose are theirs.** Their taste, their words, their choice of color or layout: suggest, never override. Still say plainly when a choice fails someone (contrast too low, text too small), and offer the smallest fix that keeps the intent.
+- **Test with the real content.** The person writes their own content, so check the site with what they'll actually put on it, not invented worst cases.
+- **Every change is small and reversible.** Show it before committing, make each change separately, and leave no test scaffolding behind.
+
+## How to work with the person
+
+- Explain each new term in one plain sentence the first time it comes up (`../accounts-setup/references/glossary.md` has wording). Match how they talk; if they're fluent, skip the explanations.
+- Wait for their OK at the four gates below (stack, plan, preview, launch). Between gates, keep going without asking permission for each small step.
+- Say before doing anything that's hard to undo: making a repo public, connecting a domain, deleting anything.
+- Never ask for a password or token in the chat. Account setup has its own skill for that.
+
+## 0. Accounts
+
+If this is a cloud session (claude.ai/code, or **Cloud** chosen in the desktop app), stop and send them to a **Local** session in an empty folder: the site has to be built on their computer, and plugins don't load in the cloud. `../accounts-setup/SKILL.md` step 0 says how to tell.
+
+Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 6 works through Vercel's website too.
+
+## 1. Interview
+
+Ask a few questions at a time, conversationally, and skip any their earlier answers already cover:
+
+1. Who is the site for, and what should they do after visiting? (hire you, read your writing, book you, just know you exist)
+2. What goes on it: projects or case studies, writing, photos, a resume, links? Roughly how many now, and in a year?
+3. How do you want to update it later: by editing text files (Claude can help), or through a visual editor in the browser?
+4. Does anything need to move, respond or change: animation, filters, a contact form, a shop, logins? Or is it pages to read?
+5. What do you already know? (nothing yet, HTML and CSS, JavaScript, React, something else)
+6. Do you have a look in mind: a design file, sketches, sites you like? Share links if so.
+7. Do you have a domain name? Do you want to know how many people visit?
+8. Anything else: budget (the default is free), accessibility needs, or something you want to learn along the way?
+
+Summarize what you heard in a few lines and ask if it's right.
+
+## 2. Recommend a stack (gate)
+
+Use `references/stacks.md` to choose. Then give:
+
+- **One recommendation**, each piece with one sentence on why it fits *this person*, tied to their answers ("you said you'll update it by editing files, so your projects are Markdown files in the repo, no CMS")
+- **One or two alternatives** and the plain trade-off for each
+- **What it costs** and what they'll have to keep up (usually: free, and updating a dependency now and then)
+
+Default to the simplest thing that works: static pages, content as files in the repo, no database, no client-side JavaScript unless an answer needs it. Look up current stable versions before naming them; don't rely on memory.
+
+Wait for their OK. If they change something, adjust and confirm once more.
+
+## 3. Plan (gate)
+
+Show, briefly:
+
+- The pages and their addresses (`/`, `/work`, `/work/<project>`, `/about`, …)
+- The content model: for each kind of content, its fields (title, date, summary, cover image, …) and where the files live
+- Where the look is set: one file of design tokens (colors, fonts, type sizes, spacing), so restyling never means hunting through components
+- The folder structure, top two levels only
+
+If they have no design direction, offer two or three short written directions (type, color, layout feel) for them to pick from, and use neutral placeholders until they decide. Their taste is the decision; don't impose yours.
+
+Wait for their OK.
+
+## 4. Create the repo and connect Vercel
+
+Doing this before building means every change gets its own preview link from the start.
+
+1. Ask for the repo name (suggest something like `portfolio` or their domain without the dot) and confirm public or private.
+2. Scaffold the project with the framework's official starter, minimal template. Add a `.gitignore` covering `node_modules`, build output, `.env*` and OS files, and an `.nvmrc` with the Node major version.
+3. Replace the starter's home page with a one-line placeholder ("Site coming soon") so nothing half-built goes out.
+4. Commit, then create and push the repo: `gh repo create <name> --public|--private --source=. --push`. Explain commit and push as you go.
+5. Connect it to Vercel so pushes deploy by themselves. Walk them through it on Vercel's website, click by click (or, if the Vercel tools can create and link a project, offer to do it for them): Add New → Project → Import the repo (the first time, Vercel asks to install its GitHub app; choosing only this repo is fine) → check the framework preset was detected → Deploy. Tell them the `*.vercel.app` address it gives is public but nobody knows it yet.
+6. If the Vercel connector is set up, confirm the project and its first deployment through it. If the build fails, read the logs through it and fix it.
+
+From here on, work on branches. Explain once: `main` is the live site; each branch is a draft with its own preview link, and merging the pull request publishes it.
+
+## 5. Build
+
+On a branch (`first-version`), build the plan with placeholder content that is clearly fake ("Project title", lorem-style summaries, gray placeholder images) so nobody mistakes it for real. Include:
+
+- Responsive layouts from 320px up, light and dark themes from the same tokens, `prefers-reduced-motion` respected (gentler, not necessarily none)
+- Semantic HTML, visible focus styles, alt text fields required in the content model
+- A 404 page, page titles and descriptions, social share images, a sitemap, `robots.txt`
+- Security headers in `vercel.json` (or the framework's equivalent): CSP, `frame-ancestors`, `X-Content-Type-Options`, `Referrer-Policy`
+- A README in plain language: how to run it, how to add a project or post, how publishing works
+
+Commit in small steps with messages that say why. Push the branch and open a pull request with `gh pr create`, describing what's in it in plain words.
+
+## 6. Preview (gate)
+
+Vercel posts a preview link on the pull request (`gh pr view --web` opens it; the connector can fetch it too). Give them the link and ask them to look on their phone and their computer. Make the changes they ask for on the same branch; each push updates the preview.
+
+Then help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. The audit should run on real content where possible.
+
+## 7. Audit
+
+With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill (`/helenvholmes:audit`, installed alongside this plugin). It checks layout, accessibility, motion, performance and security, and needs a browser Claude can drive; if none is available, install Playwright for it and say so. If the audit plugin isn't installed, install it with `/plugin install helenvholmes@portfolio-starter`, or skip this step and say what wasn't checked.
+
+Show the report and fix only the findings they choose, each as its own commit on the branch.
+
+## 8. Launch (gate)
+
+1. Confirm they're ready, then merge the pull request (`gh pr merge --squash --delete-branch`, or have them click Merge on GitHub so they've done it once). Vercel publishes `main` within a minute or two. Check the live address.
+2. **Domain**, if they have one: in Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and where those go at their registrar. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
+3. **Analytics**, if they asked: Vercel Web Analytics is the simplest; it's turned on in the project's settings and needs one small package.
+
+## 9. Hand off
+
+Leave them able to carry on without you. Summarize in a few lines:
+
+- Where everything lives: the GitHub repo URL, the Vercel project, the live address
+- How to update the site: edit or add a content file, commit, push (or ask Claude), check the preview, merge
+- What to keep an eye on: dependency update pull requests, the domain's yearly renewal
+- What's left that they mentioned but you didn't do
+
+## Don't
+
+- Add a database, CMS, auth or paid service unless an interview answer needs it, and never without saying what it costs.
+- Push to `main` directly after step 4, force-push, or rewrite history.
+- Commit anything secret, or any real personal details the person didn't put in themselves (address, phone number).
+- Leave demo pages, sample data or starter-template leftovers behind.
