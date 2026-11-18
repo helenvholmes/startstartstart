@@ -61,7 +61,7 @@ Ask **one question at a time**, and skip any their earlier answers already cover
    If yes, follow up: **Where did you buy it?** GoDaddy · Namecheap · Squarespace · Cloudflare. If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Ask in plain text for the domain itself, and whether it shows an existing site now, since connecting it will replace that.
 8. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
 
-Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
+Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo.
 
 Go straight to step 2; its message opens with a line or two of what you heard, so there's no separate summary to confirm.
 
