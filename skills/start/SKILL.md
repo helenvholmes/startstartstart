@@ -99,6 +99,7 @@ On a branch (`first-version`), build the plan with placeholder content that is c
 - Responsive layouts from 320px up, light and dark themes from the same tokens, `prefers-reduced-motion` respected (gentler, not necessarily none)
 - Semantic HTML, visible focus styles, alt text fields required in the content model
 - A 404 page, page titles and descriptions, social share images, a sitemap, `robots.txt`
+- **Case studies shown once, as cards.** The work page (and any selected work on the home page) lists each case study a single time, as a card: cover image, title, a one-line summary, and the year. Don't also add a table or text list of the same projects; showing everything twice reads as filler.
 - **Contact: email first.** The site's job is getting them hired or contract work, so the easiest way to reach them is an email link, shown first and most prominently wherever contact appears (footer, about page, end of case studies). LinkedIn comes next. Add other profiles (GitHub, Dribbble, Instagram, …) only if they ask for them. Use clearly fake placeholders until they give real ones, and when you ask for the email, suggest one they're happy to have public, since anything on the page can be seen by anyone.
 - Security headers in `vercel.json` (or the framework's equivalent): CSP, `frame-ancestors`, `X-Content-Type-Options`, `Referrer-Policy`
 - A README in plain language: how to run it, how to add a project or post, how publishing works
