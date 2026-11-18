@@ -132,7 +132,15 @@ Help them swap the placeholders for real content, or show them how to do it them
 
 ### Setting up password protection
 
-Build it the free way in `references/stacks.md`, and check it locally (the password works, the page is blocked without it, it's left out of the sitemap and search) before pushing any real private content.
+Never ask for the password in the chat, and never write it into a file yourself. Do these in order, one step at a time:
+
+1. **Make the repository private first.** A password on the site doesn't hide the files on GitHub: in a public repository, anyone can read the NDA case study there. Check with `gh repo view --json visibility`. If it's public, explain that in one line and ask, as a question card, to make it private (Make it private · Keep it public and leave the private material out). With a yes, run `gh repo edit --visibility private --accept-visibility-change-consequences`. Vercel's free plan deploys private repositories too.
+2. **Build the check** the free way in `references/stacks.md`, with the private pages in their own section of the site (for example `/private/…`). Read the password from an environment variable called `SITE_PASSWORD`, and make sure the check runs in the local dev server as well as on Vercel, so what they see locally is what visitors get.
+3. **Let them see the NDA work locally.** Confirm `.gitignore` covers `.env*`, then create `.env.local` in the project with one line, `SITE_PASSWORD=`, and nothing after the equals sign. Have them open that file (give them its full path, or open it in your tool's editor if it has one), type the password they want right after `=`, and save. Tell them this file stays on their computer: it's never saved to GitHub. Then restart the dev server so it reads the file, open a private page in the browser, and have them enter the password. Also open it once in a private window (or after clearing the cookie) to show it's blocked without the password.
+4. **Set the same password on Vercel.** Walk them through it on Vercel's website: their project → **Settings** → **Environment Variables** → add `SITE_PASSWORD` with their password, for **Production** and **Preview**, and save. Don't use your Vercel tools for this step: they'd need the password in the chat. Then push, and once the new version is live, have them check the private page on their phone: it should ask for the password.
+5. Only now add their real NDA content, and check once more that the private pages are left out of the sitemap and search, and aren't linked from public pages unless they want a visible "password required" link.
+
+If they forget the password, they can change it the same way: edit `.env.local` for their computer, and the environment variable on Vercel (then push or redeploy) for the live site.
 
 ### Setting up my custom domain
 
