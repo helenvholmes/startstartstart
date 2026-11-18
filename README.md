@@ -62,11 +62,10 @@ From here, Claude leads. Expect it to:
 
 1. **Check your computer** and install anything missing. When something needs you, like approving an install or signing in on a website, it tells you exactly what to click and waits.
 2. **Connect your accounts.** You'll sign in to GitHub and Vercel in your browser.
-3. **Ask about your site:** what it's for, what goes on it, what you already know.
+3. **Ask about your site:** what it's for, what goes on it, and what you'd like it to look like.
 4. **Suggest a setup**, then start building once you say it sounds good.
 5. **Build a first draft** with placeholder text and open it in a browser right away, so you can watch it change as Claude works. Then you'll get your site's address to check it on your phone.
-6. **Check it** for accessibility, layout, speed and security, and fix what you choose.
-7. **Put it live** when you say so, and connect your domain if you have one.
+6. **Let you choose what's next**, one thing at a time: adding your real content, connecting your domain, setting up a password-protected page, or a check for accessibility, layout, speed and security before you share it.
 
 Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with the portfolio starter at github.com/helenvholmes/portfolio-starter."
 

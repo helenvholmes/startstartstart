@@ -29,7 +29,7 @@ Three rules shape every step here:
 
 - **Keep every message short.** A few sentences is usually enough; a long message is one they'll skim or skip. Lead with what they need to do or decide, then stop. No recaps of what you just did, no preambles, no restating their answers back at length. Use a list only for steps they'll follow or options they'll choose between. Ask one question at a time. If there's more to say, offer it ("Want the details?") instead of writing it.
 - Explain each new term in one plain sentence the first time it comes up (`../accounts-setup/references/glossary.md` has wording). Match how they talk; if they're fluent, skip the explanations.
-- They want you to build. Check in only three times: after recommending the stack and pages (step 2), at the preview (step 5), and before going live (step 7). Everywhere else, keep going without asking.
+- They want you to build. Check in after recommending the stack and pages (step 2), and use the "What's next" question in step 5 to let them steer after that. Everywhere else, keep going without asking.
 - Don't narrate the process or reassure them about it: no "here's the plan", no "nothing gets built until you OK it", no "great!" openers. Just do the work, show the result, and ask the one question that needs an answer.
 - Say before doing anything that's hard to undo: making a repo public, connecting a domain, deleting anything.
 - Never ask for a password or token in the chat. Account setup has its own skill for that.
@@ -111,15 +111,36 @@ Build the plan with placeholder content that is clearly fake ("Project title", l
 
 Commit in small steps with messages that say why, and push to `main` when there's something worth looking at. Explain commit and push in a sentence the first time.
 
-## 5. Preview (check-in)
+## 5. What's next (repeat until done)
 
-Give them their site's `*.vercel.app` address and ask them to look on their phone too. It opens without signing in, unlike Vercel's preview links, so don't send those. Make the changes they ask for, push, and the same address updates.
+Give them their site's `*.vercel.app` address in one line, so they can look on their phone too (it opens without signing in, unlike Vercel's preview links, so don't send those). Don't recap what you built or list what's left. Then ask, as a question card:
 
-Then help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. The audit should run on real content where possible.
+**What do you want to work on next?**
+
+- Adding real content
+- Setting up my custom domain (only if they have one)
+- Setting up password protection (only if they asked for a private page)
+- Running the pre-launch check (only once real content is in)
+
+They can always type something else instead, like a change to how it looks; make it, push, and ask again. After each task, ask the same question again with what's left, until everything is done; then go to step 6.
+
+### Adding real content
+
+Help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. Use what they gave you in the interview (their resume, links, images) to draft first, for them to edit.
 
 **Once they've added real case studies**, offer a review in one line: "Want me to review your case studies the way a hiring manager would?" If yes, run the `review` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills): if it isn't installed, read `skills/review/SKILL.md` from that repository, the same way as the audit skills. Offer it once; if they say not now, mention it again at hand-off.
 
-## 6. Audit
+### Setting up password protection
+
+Build it the free way in `references/stacks.md`, and check it locally (the password works, the page is blocked without it, it's left out of the sitemap and search) before pushing any real private content.
+
+### Setting up my custom domain
+
+If the site still has placeholder content, say in one line that the domain will show it as it is now, and let them choose whether to go ahead.
+
+In Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and walk them through where those go at the registrar they named in the interview (look up that registrar's current steps rather than guessing menu names). If the domain points at an existing site, confirm before changing anything, since that site will stop showing at the address. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
+
+### Running the pre-launch check
 
 **Cloud:** the audit needs a browser running against the site. Try starting it in the session as below; if packages or a browser can't be installed because of the session's network settings, run whatever checks you can (the security and dependency checks need no browser), run the browser checks against their site's address if your browser tool can reach it, and list what wasn't checked.
 
@@ -127,13 +148,11 @@ Start the dev server and a production build (`build`, then `preview` or the fram
 
 Show the report and fix only the findings they choose, each as its own commit.
 
-## 7. Launch (check-in)
+### Analytics
 
-1. Confirm they're ready, make sure everything is pushed to `main`, and check their site's address shows the latest version. Without a domain, that address is the site, ready to share.
-2. **Domain**, if they have one: in Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and walk them through where those go at the registrar they named in the interview (look up that registrar's current steps rather than guessing menu names). If the domain points at an existing site, confirm before changing anything, since that site will stop showing at the address. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
-3. **Analytics**, if they asked: Vercel Web Analytics is the simplest; it's turned on in the project's settings and needs one small package.
+Only if they ask: Vercel Web Analytics is the simplest; it's turned on in the project's settings and needs one small package.
 
-## 8. Hand off
+## 6. Hand off
 
 Leave them able to carry on without you. Summarize in a few lines:
 
