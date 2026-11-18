@@ -52,10 +52,7 @@ Keep it empty. Claude will fill it.
 ### 4. Paste this and press Enter
 
 ```
-Read the portfolio starter at github.com/helenvholmes/portfolio-starter
-and follow skills/start/SKILL.md to help me build a portfolio site in
-this folder. I'm new to GitHub, so explain each new term the first time
-it comes up, and never ask me to paste a password or token into this chat.
+Read the portfolio starter at github.com/helenvholmes/portfolio-starter and follow skills/start/SKILL.md to help me build a portfolio site in this folder. I'm new to GitHub, so explain each new term the first time it comes up, and never ask me to paste a password or token into this chat.
 ```
 
 From here, Claude leads. Expect it to:
@@ -99,11 +96,7 @@ Vercel is the service that puts your site on the internet.
 ### 4. Paste this and press Enter
 
 ```
-Read the portfolio starter at github.com/helenvholmes/portfolio-starter
-and follow skills/start/SKILL.md to help me build a portfolio site in
-this repository. This is a cloud session. I'm new to GitHub, so explain
-each new term the first time it comes up, and never ask me to paste a
-password or token into this chat.
+Read the portfolio starter at github.com/helenvholmes/portfolio-starter and follow skills/start/SKILL.md to help me build a portfolio site in this repository. This is a cloud session. I'm new to GitHub, so explain each new term the first time it comes up, and never ask me to paste a password or token into this chat.
 ```
 
 From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with the portfolio starter at github.com/helenvholmes/portfolio-starter."
