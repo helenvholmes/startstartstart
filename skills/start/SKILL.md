@@ -1,6 +1,6 @@
 ---
 name: start
-description: Take someone from "I want a portfolio site" to a live site on their own GitHub and Vercel accounts — interview them about what the site is for and what they already know, recommend the simplest stack that fits and explain why, plan the pages, build it with placeholder content, give them preview links, run the pre-ship audit, and launch it with their domain. Built for people who are new to GitHub and may be new to code. Use this whenever the user asks to make, start, build or set up a portfolio, personal site, or simple website from scratch, asks what stack or framework a small site should use, or says they want a site "on GitHub and Vercel", even if they've already picked part of the stack.
+description: Take someone from "I want a portfolio site" to a live site on their own GitHub and Vercel accounts — interview them about what the site is for and what they already know, recommend the simplest stack that fits and explain why, plan the pages, build it with placeholder content, show it to them as it goes, run the pre-ship audit, and launch it with their domain. Built for people who are new to GitHub and may be new to code. Use this whenever the user asks to make, start, build or set up a portfolio, personal site, or simple website from scratch, asks what stack or framework a small site should use, or says they want a site "on GitHub and Vercel", even if they've already picked part of the stack.
 ---
 
 # Portfolio starter
@@ -82,22 +82,22 @@ Keep the details to yourself unless they ask: the content model, folder structur
 
 ## 3. Create the repo and connect Vercel
 
-Doing this before building means every change gets its own preview link from the start.
+Doing this before building means every change you push shows up at their site's address within a minute or two, so they can check it on their phone from the start.
 
-**Cloud:** the repository already exists, so skip creating it (steps 1 and 4 below). Scaffold into the current checkout, keeping their README until the new one replaces it, commit, and push to `main` before connecting Vercel.
+**Cloud:** the repository already exists, so skip creating it (steps 1 and 4 below). Push to `main` as below; if the session isn't allowed to push to `main`, it will push a branch instead: open a pull request and walk them through clicking **Merge** on GitHub each time, in one line, without explaining branches. Scaffold into the current checkout, keeping their README until the new one replaces it, commit, and push to `main` before connecting Vercel.
 
 1. Ask for the repo name (suggest something like `portfolio` or their domain without the dot) and confirm public or private.
 2. Scaffold the project with the framework's official starter, minimal template. Add a `.gitignore` covering `node_modules`, build output, `.env*` and OS files, and an `.nvmrc` with the Node major version.
 3. Replace the starter's home page with a one-line placeholder ("Site coming soon") so nothing half-built goes out.
 4. Commit, then create and push the repo: `gh repo create <name> --public|--private --source=. --push`. Explain commit and push as you go.
-5. Connect it to Vercel so pushes deploy by themselves. Walk them through it on Vercel's website, click by click (or, if the Vercel tools can create and link a project, offer to do it for them): Add New → Project → Import the repo (the first time, Vercel asks to install its GitHub app; choosing only this repo is fine) → check the framework preset was detected → Deploy. If they belong to more than one Vercel team, check the project is going under the one they chose. If the repo isn't in Vercel's list, their GitHub app for Vercel is limited to other repositories: have them follow the link on that page to adjust its access and add this repo, rather than giving it access to everything. Tell them the `*.vercel.app` address it gives is public but nobody knows it yet.
+5. Connect it to Vercel so pushes deploy by themselves. Walk them through it on Vercel's website, click by click (or, if the Vercel tools can create and link a project, offer to do it for them): Add New → Project → Import the repo (the first time, Vercel asks to install its GitHub app; choosing only this repo is fine) → check the framework preset was detected → Deploy. If they belong to more than one Vercel team, check the project is going under the one they chose. If the repo isn't in Vercel's list, their GitHub app for Vercel is limited to other repositories: have them follow the link on that page to adjust its access and add this repo, rather than giving it access to everything. Tell them the `*.vercel.app` address it gives is their site: it's public, but nobody knows it until they share it, so it's fine for drafts.
 6. If the Vercel connector is set up, confirm the project and its first deployment through it. If the build fails, read the logs through it and fix it.
 
-From here on, work on branches. Explain once: `main` is the live site; each branch is a draft with its own preview link, and merging the pull request publishes it.
+**Always work on `main`.** Don't create branches or pull requests: they're one more idea for a beginner to hold, and this site doesn't need them. Each push to `main` updates their site's address. Never push anything that must stay private (real content for a password-protected page, personal details) until the protection is in place and checked.
 
 ## 4. Build
 
-On a branch (`first-version`), build the plan with placeholder content that is clearly fake ("Project title", lorem-style summaries, gray placeholder images) so nobody mistakes it for real. Include:
+Build the plan with placeholder content that is clearly fake ("Project title", lorem-style summaries, gray placeholder images) so nobody mistakes it for real. Include:
 
 - Responsive layouts from 320px up, light and dark themes from the same tokens, `prefers-reduced-motion` respected (gentler, not necessarily none)
 - Semantic HTML, visible focus styles, alt text fields required in the content model
@@ -107,13 +107,13 @@ On a branch (`first-version`), build the plan with placeholder content that is c
 - Security headers in `vercel.json` (or the framework's equivalent): CSP, `frame-ancestors`, `X-Content-Type-Options`, `Referrer-Policy`
 - A README in plain language: how to run it, how to add a project or post, how publishing works
 
-**Show it right away.** As soon as the first version builds, start the dev server in the background and open its address in a browser the person can see: your tool's built-in browser or preview pane if it has one (in Claude, see `../accounts-setup/references/claude.md`), otherwise their default browser. Leave it running while you work, so every change shows up as you make it, and tell them the address in one line. **Cloud:** there's no server they can open; skip this and use the Vercel preview link in step 5.
+**Show it right away.** As soon as the first version builds, start the dev server in the background and open its address in a browser the person can see: your tool's built-in browser or preview pane if it has one (in Claude, see `../accounts-setup/references/claude.md`), otherwise their default browser. Leave it running while you work, so every change shows up as you make it, and tell them the address in one line. **Cloud:** there's no server they can open; skip this and use their site's address in step 5.
 
-Commit in small steps with messages that say why. Push the branch and open a pull request with `gh pr create`, describing what's in it in plain words.
+Commit in small steps with messages that say why, and push to `main` when there's something worth looking at. Explain commit and push in a sentence the first time.
 
 ## 5. Preview (check-in)
 
-Vercel posts a preview link on the pull request (`gh pr view --web` opens it; the connector can fetch it too). Give them the link and ask them to look on their phone and their computer. Make the changes they ask for on the same branch; each push updates the preview.
+Give them their site's `*.vercel.app` address and ask them to look on their phone too. It opens without signing in, unlike Vercel's preview links, so don't send those. Make the changes they ask for, push, and the same address updates.
 
 Then help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. The audit should run on real content where possible.
 
@@ -121,15 +121,15 @@ Then help them swap the placeholders for real content, or show them how to do it
 
 ## 6. Audit
 
-**Cloud:** the audit needs a browser running against the site. Try starting it in the session as below; if packages or a browser can't be installed because of the session's network settings, run whatever checks you can (the security and dependency checks need no browser), run the browser checks against the Vercel preview link if your browser tool can reach it, and list what wasn't checked.
+**Cloud:** the audit needs a browser running against the site. Try starting it in the session as below; if packages or a browser can't be installed because of the session's network settings, run whatever checks you can (the security and dependency checks need no browser), run the browser checks against their site's address if your browser tool can reach it, and list what wasn't checked.
 
-With the branch checked out, start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills). If it isn't already installed, clone that repository next to this one (outside their project folder) and follow `skills/audit/SKILL.md`, which runs the other check skills in that repository. It checks layout, accessibility, motion, performance and security, and needs a browser you can drive; if none is available, install Playwright for it and say so. If you can't get the audit skills, skip this step and say what wasn't checked.
+Start the dev server and a production build (`build`, then `preview` or the framework's equivalent), then run the `audit` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills). If it isn't already installed, clone that repository next to this one (outside their project folder) and follow `skills/audit/SKILL.md`, which runs the other check skills in that repository. It checks layout, accessibility, motion, performance and security, and needs a browser you can drive; if none is available, install Playwright for it and say so. If you can't get the audit skills, skip this step and say what wasn't checked.
 
-Show the report and fix only the findings they choose, each as its own commit on the branch.
+Show the report and fix only the findings they choose, each as its own commit.
 
 ## 7. Launch (check-in)
 
-1. Confirm they're ready, then merge the pull request (`gh pr merge --squash --delete-branch`, or have them click Merge on GitHub so they've done it once). Vercel publishes `main` within a minute or two. Check the live address.
+1. Confirm they're ready, make sure everything is pushed to `main`, and check their site's address shows the latest version. Without a domain, that address is the site, ready to share.
 2. **Domain**, if they have one: in Vercel, Project → Settings → Domains → add it, then give them the exact DNS records Vercel shows, and walk them through where those go at the registrar they named in the interview (look up that registrar's current steps rather than guessing menu names). If the domain points at an existing site, confirm before changing anything, since that site will stop showing at the address. DNS can take from minutes to a day; say so. Add both `example.com` and `www.example.com`, with one redirecting to the other.
 3. **Analytics**, if they asked: Vercel Web Analytics is the simplest; it's turned on in the project's settings and needs one small package.
 
@@ -138,14 +138,14 @@ Show the report and fix only the findings they choose, each as its own commit on
 Leave them able to carry on without you. Summarize in a few lines:
 
 - Where everything lives: the GitHub repo URL, the Vercel project, the live address
-- How to update the site: edit or add a content file, commit, push (or ask their AI assistant), check the preview, merge. In the cloud: start a new session on the same repository and ask for the change
-- What to keep an eye on: dependency update pull requests, the domain's yearly renewal
+- How to update the site: ask their AI assistant for the change (or edit a content file themselves), commit and push to `main`, and it's live in a minute or two. In the cloud: start a new session on the same repository and ask for the change
+- What to keep an eye on: the domain's yearly renewal
 - What's left that they mentioned but you didn't do
 - If they have case studies and haven't had one yet: the `review` skill, which critiques them the way a hiring manager reads them
 
 ## Don't
 
 - Add a database, CMS, auth or paid service unless an interview answer needs it, and never without saying what it costs.
-- Push to `main` directly after step 3, force-push, or rewrite history.
+- Create branches or pull requests, force-push, or rewrite history.
 - Commit anything secret, or any real personal details the person didn't put in themselves (address, phone number).
 - Leave demo pages, sample data or starter-template leftovers behind.
