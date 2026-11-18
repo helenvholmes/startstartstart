@@ -47,16 +47,19 @@ Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is miss
 Ask **one question at a time**, and skip any their earlier answers already cover. If your tool can show a multiple-choice question card (in Claude, see `../accounts-setup/references/claude.md`), use it for every question below: the choices make answering quick, and the person can always type their own answer instead. Keep each question to one line and each choice to a few words. Where a question has no card choices, ask it in plain text. Don't comment on each answer; go straight to the next question.
 
 1. **What's the site mainly for?** Getting hired · Getting contracting work
-2. **What will go on it?** (pick multiple) Case studies · Writing · Photos · A resume
-3. **Any add-ons?** (pick multiple) Just pages · Animations · A contact form · Something more
-4. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
+2. **Do you have a resume you can share?** Yes, I'll attach it · Here's my LinkedIn instead · Not right now
+
+   A resume gives you a head start on describing them: use it to draft the intro and about page, and to suggest which roles and projects could become case studies. Everything you draft from it is a starting point for them to edit, in their voice; never add claims, titles or numbers that aren't in it. Keep personal details off the site (phone number, home address) unless they ask for them. LinkedIn profiles usually can't be read without signing in, so if they send a link, ask them to save the profile as a PDF instead (on their profile, the **More** or **Resources** button → **Save to PDF**; LinkedIn moves it around) and attach that. If they don't have either, carry on; ask for a few lines about their work when you write the about page.
+3. **What will go on it?** (pick multiple) Case studies · Writing · Photos · A resume
+4. **Any add-ons?** (pick multiple) Just pages · Animations · A contact form · Something more
+5. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
 
    If they have a Figma file, sites or images, ask in plain text for the links or images: links and images are both great, as many as they like. Read a Figma link with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a line what you take from it (type, color, layout feel) so they can correct you.
-5. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
-6. **Do you have a domain name, like yourname.com?** No, not yet · Yes
+6. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
+7. **Do you have a domain name, like yourname.com?** No, not yet · Yes
 
    If yes, follow up: **Where did you buy it?** GoDaddy · Namecheap · Squarespace · Cloudflare. If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Ask in plain text for the domain itself, and whether it shows an existing site now, since connecting it will replace that.
-7. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
+8. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo. Only consider a visual editor if they bring one up.
 
