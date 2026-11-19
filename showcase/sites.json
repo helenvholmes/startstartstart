@@ -6,18 +6,30 @@
       "purpose": "Getting hired",
       "url": "examples/maya-okafor/",
       "shot": "shots/maya-okafor.jpg",
-      "features": ["Case studies", "A password-protected page", "Light and dark"],
-      "prompt": "I'm a product designer looking for a senior role. Case studies, one of them under NDA. Warm and editorial, with a serif."
+      "features": [
+        "Case studies",
+        "A password-protected page",
+        "Light and dark"
+      ],
+      "prompt": "I'm a product designer looking for a senior role. Case studies, one of them under NDA. Warm and editorial, with a serif.",
+      "peek": "shots/maya-okafor-full.jpg"
     },
     {
-      "name": "Theo Lindqvist",
+      "name": "Edda Lindqvist",
       "role": "Photographer",
       "purpose": "Getting contracting work",
-      "url": "examples/theo-lindqvist/",
-      "shot": "shots/theo-lindqvist.jpg",
+      "url": "examples/edda-lindqvist/",
+      "shot": "shots/edda-lindqvist.jpg",
       "scheme": "dark",
-      "features": ["Photos", "Series filters", "Dark first"],
-      "prompt": "I'm a landscape photographer. Mostly photos, big, on a dark background. Clients should be able to email me about commissions."
+      "features": [
+        "Photos",
+        "Series filters",
+        "A photo viewer",
+        "Prints",
+        "Dark first"
+      ],
+      "prompt": "I'm a landscape photographer. Mostly photos, big, on a dark background. Clients should be able to email me about commissions.",
+      "peek": "shots/edda-lindqvist-full.jpg"
     },
     {
       "name": "Priya Raman",
@@ -25,8 +37,31 @@
       "purpose": "Getting contracting work",
       "url": "examples/priya-raman/",
       "shot": "shots/priya-raman.jpg",
-      "features": ["Services and prices", "Writing", "Contact form", "Animations"],
-      "prompt": "I'm a freelance designer for small businesses. Show my services and prices, a few projects, my blog posts, and a contact form. Bright and friendly."
+      "features": [
+        "Services and prices",
+        "A case study",
+        "Writing",
+        "Contact form",
+        "Animations"
+      ],
+      "prompt": "I'm a freelance designer for small businesses. Show my services and prices, a few projects, my blog posts, and a contact form. Bright and friendly.",
+      "peek": "shots/priya-raman-full.jpg"
+    },
+    {
+      "name": "Jun Park",
+      "role": "Design engineer",
+      "purpose": "Getting hired",
+      "url": "examples/jun-park/",
+      "shot": "shots/jun-park.jpg",
+      "features": [
+        "Working project demos",
+        "A case study",
+        "Resume",
+        "A now page",
+        "Light and dark"
+      ],
+      "prompt": "I'm a frontend engineer moving into design engineering. Side projects with demos, a short CV, and what I'm working on now. Minimal and monospace.",
+      "peek": "shots/jun-park-full.jpg"
     }
   ],
   "community": []

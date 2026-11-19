@@ -1,12 +1,17 @@
 # Showcase
 
-A small static site that shows what people have built with the portfolio starter, plus three example sites for fictional people.
+A small static site that shows what people have built with *startstartstart!*, plus four example sites for fictional people.
 
 - `index.html`, `styles.css`, `app.js`: the showcase page. It reads `sites.json` and renders a card for each site.
+- `start.js`: the copy button for the starter prompt, and the looping demo next to it. The demo is plain HTML in `index.html`; edit the messages there.
+- `sky.js`: the shimmering pixel sky behind the header and hero. Dots lean toward the cursor, and stir when the window is resized. It sits still for people who have reduced motion turned on.
 - `sites.json`: the list. `examples` are the fictional demo sites; `community` is real submissions.
-- `examples/`: the three demo sites, each a single HTML file.
+- `examples/`: the four demo sites, each a single HTML file.
 - `shots/`: home-page screenshots used on the cards.
+- `fonts/`: Newsreader Light, the serif, hosted here so it looks the same everywhere. Free under the SIL Open Font License (`fonts/OFL-newsreader.txt`).
+- `logo.js`: the animated *startstartstart!* logo, drawn as SVG from outlines of Ancho (by Beatriz Lozano). It plays a few loops on load, then rests; hovering replays it.
 - `scripts/screenshot.mjs`: takes any missing screenshots.
+- `og.png`: the 1200×630 image shown when the site's link is shared. Its source is `og/index.html`, which says how to regenerate it.
 
 ## Adding a submitted site
 

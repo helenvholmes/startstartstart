@@ -1,4 +1,4 @@
-# Portfolio starter
+# *startstartstart!*
 
 Create your own portfolio website with Claude as the builder. No coding, GitHub, or previous Vercel knowledge necessary.
 
@@ -54,7 +54,7 @@ Keep it empty. Claude will fill it.
 ### 4. Paste this and press Enter
 
 ```
-Read the portfolio starter at github.com/helenvholmes/portfolio-starter
+Read startstartstart! at github.com/helenvholmes/portfolio-starter
 and follow skills/start/SKILL.md to help me build a portfolio site in
 this folder. I'm new to GitHub, so explain each new term the first time
 it comes up, and never ask me to paste a password or token into this chat.
@@ -69,9 +69,9 @@ From here, Claude leads. Expect it to:
 5. **Build a first draft** with placeholder text and open it in a browser right away, so you can watch it change as Claude works. Then you'll get your site's address to check it on your phone.
 6. **Let you choose what's next**, one thing at a time: adding your real content, connecting your domain, setting up a password-protected page, or a check for accessibility, layout, speed and security before you share it.
 
-Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with the portfolio starter at github.com/helenvholmes/portfolio-starter."
+Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
 
-You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with the portfolio starter at github.com/helenvholmes/portfolio-starter."
+You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
 
 ## No desktop app? Use Claude in the cloud
 
@@ -101,14 +101,14 @@ Vercel is the service that puts your site on the internet.
 ### 4. Paste this and press Enter
 
 ```
-Read the portfolio starter at github.com/helenvholmes/portfolio-starter
+Read startstartstart! at github.com/helenvholmes/portfolio-starter
 and follow skills/start/SKILL.md to help me build a portfolio site in
 this repository. This is a cloud session. I'm new to GitHub, so explain
 each new term the first time it comes up, and never ask me to paste a
 password or token into this chat.
 ```
 
-From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with the portfolio starter at github.com/helenvholmes/portfolio-starter."
+From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
 
 ## Prefer the terminal?
 
@@ -131,7 +131,7 @@ If you're comfortable typing commands:
 Once your site is live with your real content, please share it. Seeing real sites is the best way for the next person to picture theirs, and it tells us the starter is working.
 
 - **[Submit your site](https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml)**: a short form on GitHub, signed in with the account your site is saved in. It asks for your address, your name, what you do, and (optionally) what was easy or confusing.
-- Or ask Claude at the end of a session: "Add my site to the portfolio starter showcase." It fills in what it knows and gives you the link to send.
+- Or ask Claude at the end of a session: "Submit my site to the *startstartstart!* showcase." It fills in what it knows and gives you the link to send.
 
 Only share a site you're happy for anyone to see. Changed your mind later? Open an issue and it comes down.
 

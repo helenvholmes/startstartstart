@@ -3,7 +3,7 @@ name: start
 description: Take someone from "I want a portfolio site" to a live site on their own GitHub and Vercel accounts — interview them about what the site is for and what they already know, recommend the simplest stack that fits and explain why, plan the pages, build it with placeholder content, show it to them as it goes, run the pre-ship audit, and launch it with their domain. Built for people who are new to GitHub and may be new to code. Use this whenever the user asks to make, start, build or set up a portfolio, personal site, or simple website from scratch, asks what stack or framework a small site should use, or says they want a site "on GitHub and Vercel", even if they've already picked part of the stack.
 ---
 
-# Portfolio starter
+# *startstartstart!*
 
 The person should end up with a site they own outright (code in their GitHub, hosting in their Vercel account), that they understand well enough to update, and that passed a pre-launch audit before anyone saw it.
 
@@ -170,11 +170,11 @@ Leave them able to carry on without you. Summarize in a few lines:
 - What's left that they mentioned but you didn't do
 - If they have case studies and haven't had one yet: the `review` skill, which critiques them the way a hiring manager reads them
 
-Then, if the site is live with their real content, offer once, in one line: "Want to add your site to the portfolio starter showcase, so others can see what's possible?" See "Adding a site to the showcase" below. If they say no, drop it.
+Then, if the site is live with their real content, offer once, in one line: "Want to add your site to the *startstartstart!* showcase, so others can see what's possible?" See "Adding a site to the showcase" below. If they say no, drop it.
 
 ## Adding a site to the showcase
 
-Use this when they say yes at hand-off, or ask for it any time ("Add my site to the portfolio starter showcase").
+Use this when they say yes at hand-off, or ask for it any time ("Submit my site to the *startstartstart!* showcase").
 
 Never submit it for them, even if your GitHub tools could: it puts their name and site on a public page, so they send it themselves. Build a link to the showcase form with what you already know filled in, URL-encoding each value:
 

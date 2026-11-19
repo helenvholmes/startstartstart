@@ -4,89 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Priya Raman · Brand and web designer (example)</title>
-<meta name="description" content="An example portfolio for a fictional freelance designer, built to show what the portfolio starter can make.">
+<meta name="description" content="An example portfolio for a fictional freelance designer, built to show what startstartstart! can make.">
 <meta name="robots" content="noindex">
-<style>
-  :root {
-    --bg: #fbf7ff;
-    --surface: #ffffff;
-    --text: #1d1530;
-    --muted: #5f5675;
-    --line: #e6def3;
-    --accent: #5b2ee0;
-    --accent-text: #ffffff;
-    --pop: #ffcf3f;
-    --mint: #b8f0d8;
-    --pink: #ffc7dd;
-    --sans: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif;
-    --space: clamp(1rem, 3vw, 2rem);
-    --radius: 18px;
-    color-scheme: light dark;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #140f22; --surface: #1e1832; --text: #f2eeff; --muted: #b1a8c9; --line: #2f2747; --accent: #a98bff; --accent-text: #140f22; --pop: #e0b21f; --mint: #2c6b55; --pink: #7a3a56; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 1.0625rem/1.6 var(--sans); }
-  a { color: inherit; }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--pop); outline-offset: 2px; }
-  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 var(--space); }
-  .banner { background: var(--accent); color: var(--accent-text); font-size: .8125rem; text-align: center; padding: .45rem 1rem; }
-  header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; gap: 1rem; flex-wrap: wrap; }
-  .logo { font-weight: 800; font-size: 1.25rem; text-decoration: none; display: flex; align-items: center; gap: .5rem; }
-  .logo b { width: 1.75rem; height: 1.75rem; border-radius: 50%; background: conic-gradient(var(--accent) 0 25%, var(--pop) 0 50%, var(--mint) 0 75%, var(--pink) 0); }
-  nav { display: flex; gap: 1.25rem; align-items: center; font-size: .9375rem; flex-wrap: wrap; }
-  nav a { text-decoration: none; }
-  .btn { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 700; padding: .65rem 1.2rem; border-radius: 999px; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
-  .hero { padding: clamp(2.5rem, 8vw, 5.5rem) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 2.5rem; align-items: center; }
-  .hero h1 { font-size: clamp(2.5rem, 6.5vw, 4.5rem); line-height: 1.02; letter-spacing: -.03em; margin: 0 0 1.25rem; font-weight: 800; }
-  .hero h1 span { background: var(--pop); color: #1d1530; padding: 0 .2em; border-radius: .2em; }
-  .hero p { color: var(--muted); font-size: 1.1875rem; margin: 0 0 1.75rem; max-width: 36ch; }
-  .avail { display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; color: var(--muted); margin-left: 1rem; }
-  .avail::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: #22b573; }
-  .shapes { aspect-ratio: 1; max-width: 26rem; width: 100%; justify-self: center; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .shapes i { border-radius: var(--radius); }
-  .shapes i:nth-child(1) { background: var(--accent); border-radius: 50% 50% var(--radius) 50%; }
-  .shapes i:nth-child(2) { background: var(--mint); }
-  .shapes i:nth-child(3) { background: var(--pink); border-radius: 50%; }
-  .shapes i:nth-child(4) { background: var(--pop); border-radius: var(--radius) 50% 50% 50%; }
-  @media (prefers-reduced-motion: no-preference) {
-    .shapes i { animation: bob 6s ease-in-out infinite; }
-    .shapes i:nth-child(2) { animation-delay: -1.5s; } .shapes i:nth-child(3) { animation-delay: -3s; } .shapes i:nth-child(4) { animation-delay: -4.5s; }
-    @keyframes bob { 50% { transform: translateY(-8px) rotate(2deg); } }
-  }
-  h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); letter-spacing: -.02em; margin: 0 0 1.5rem; }
-  section { padding: 3rem 0; }
-  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
-  .service { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
-  .service h3 { margin: .75rem 0 .35rem; font-size: 1.1875rem; }
-  .service p { margin: 0; color: var(--muted); font-size: .9375rem; }
-  .service .price { margin-top: 1rem; font-weight: 700; font-size: .875rem; }
-  .dot { width: 2.25rem; height: 2.25rem; border-radius: 10px; }
-  .work { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; }
-  .project { text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-  .project .cover { aspect-ratio: 16/10; display: grid; place-items: center; font-weight: 800; font-size: clamp(1.75rem, 4vw, 2.5rem); letter-spacing: -.03em; }
-  .project .body { padding: 1.25rem 1.5rem 1.5rem; }
-  .project h3 { margin: 0 0 .25rem; font-size: 1.1875rem; }
-  .project p { margin: 0; color: var(--muted); font-size: .9375rem; }
-  .project small { display: block; margin-top: .75rem; color: var(--muted); }
-  blockquote { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
-  blockquote footer { font-size: .9375rem; color: var(--muted); margin-top: 1rem; }
-  .writing ul { list-style: none; padding: 0; margin: 0; }
-  .writing li { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); padding: 1rem 0; }
-  .writing li span { color: var(--muted); font-size: .875rem; white-space: nowrap; }
-  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: calc(var(--radius) * 1.5); padding: clamp(1.5rem, 5vw, 3rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 2rem; margin-bottom: 3rem; }
-  .contact p { color: var(--muted); margin: 0 0 1rem; }
-  .email { font-size: 1.25rem; font-weight: 700; color: var(--accent); }
-  form { display: grid; gap: .75rem; }
-  label { font-size: .875rem; font-weight: 700; }
-  input, textarea { width: 100%; font: inherit; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--text); margin-top: .3rem; }
-  textarea { min-height: 7rem; resize: vertical; }
-  .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .875rem; padding: 0 0 2.5rem; }
-</style>
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
 </head>
 <body>
-<div class="banner">An example site for a fictional person, made to show what the <a href="https://github.com/helenvholmes/portfolio-starter">portfolio starter</a> can build.</div>
+<div class="banner"><a href="../../#examples">← All examples</a> · An example site for a fictional person, made to show what <a href="../../"><em>startstartstart!</em></a> can build.</div>
 <div class="wrap">
   <header>
     <a class="logo" href="#"><b aria-hidden="true"></b>Priya Raman</a>
@@ -105,30 +29,30 @@
   <section id="services">
     <h2>What I can help with</h2>
     <div class="services">
-      <div class="service"><div class="dot" style="background:var(--accent)"></div><h3>Brand identity</h3><p>Logo, colors, type and a short guide your team can actually follow.</p><div class="price">From $3,500 · 4 weeks</div></div>
-      <div class="service"><div class="dot" style="background:var(--mint)"></div><h3>Websites</h3><p>A fast, accessible site you can update yourself, without a monthly platform fee.</p><div class="price">From $4,000 · 5 weeks</div></div>
-      <div class="service"><div class="dot" style="background:var(--pink)"></div><h3>Packaging and print</h3><p>Labels, menus and signage, ready for your printer.</p><div class="price">From $1,200 · 2 weeks</div></div>
+      <div class="service"><div class="dot" style="background:var(--accent)"></div><h3>Brand identity</h3><p>Logo, colours, type and a short guide your team can actually follow.</p><div class="price">From £2,800 · 4 weeks</div></div>
+      <div class="service"><div class="dot" style="background:var(--mint)"></div><h3>Websites</h3><p>A fast, accessible site you can update yourself, without a monthly platform fee.</p><div class="price">From £3,200 · 5 weeks</div></div>
+      <div class="service"><div class="dot" style="background:var(--pink)"></div><h3>Packaging and print</h3><p>Labels, menus and signage, ready for your printer.</p><div class="price">From £950 · 2 weeks</div></div>
     </div>
   </section>
 
   <section id="work">
     <h2>Recent projects</h2>
     <div class="work">
-      <a class="project" href="#"><div class="cover" style="background:var(--pop);color:#1d1530">Bloom&nbsp;&amp;&nbsp;Bean</div><div class="body"><h3>A neighborhood café's new look</h3><p>Identity, menus and a website that doubled online orders.</p><small>Brand · Web · 2025</small></div></a>
+      <a class="project" href="bloom-and-bean/"><div class="cover" style="background:var(--pop);color:#1d1530">Bloom&nbsp;&amp;&nbsp;Bean</div><div class="body"><h3>A neighbourhood café's new look</h3><p>Identity, menus and a website that doubled online orders.</p><small>Brand · Web · 2025</small></div></a>
       <a class="project" href="#"><div class="cover" style="background:var(--mint);color:#0e3b2b">kindred.</div><div class="body"><h3>Physio clinic, three locations</h3><p>A calm, clear brand and booking-first website.</p><small>Brand · Web · 2025</small></div></a>
       <a class="project" href="#"><div class="cover" style="background:var(--pink);color:#4a1530">Tiny Fern</div><div class="body"><h3>Plant shop packaging</h3><p>A label system that scales from 12 products to 80.</p><small>Packaging · 2024</small></div></a>
     </div>
   </section>
 
   <section>
-    <blockquote>"Priya understood what we were going for in one conversation. Customers keep telling us the new menus are the first thing they notice."<footer>Sam, owner of Bloom &amp; Bean (a fictional café)</footer></blockquote>
+    <blockquote><p>“Priya understood what we were going for in one conversation. Customers keep telling us the new menus are the first thing they notice.”</p><footer>Sam, owner of Bloom &amp; Bean (a fictional café)</footer></blockquote>
   </section>
 
   <section id="writing" class="writing">
     <h2>Writing</h2>
     <ul>
       <li><a href="#">What a small business actually needs from a website</a><span>Oct 2025</span></li>
-      <li><a href="#">How I price brand projects, and why I share it</a><span>Jun 2025</span></li>
+      <li><a href="writing/how-i-price/">How I price brand projects, and why I share it</a><span>Jun 2025</span></li>
       <li><a href="#">Five questions to ask before you hire a designer</a><span>Feb 2025</span></li>
     </ul>
   </section>
@@ -140,12 +64,13 @@
       <a class="email" href="mailto:hi@example.com">hi@example.com</a>
       <p style="margin-top:1rem"><a href="#">LinkedIn</a> · <a href="#">Dribbble</a></p>
     </div>
-    <form action="#contact" aria-describedby="form-note">
+    <form id="contact-form" aria-describedby="form-note">
       <label>Your name<input name="name" autocomplete="name" required></label>
       <label>Email<input name="email" type="email" autocomplete="email" required></label>
       <label>What are you working on?<textarea name="message" required></textarea></label>
       <button class="btn" type="submit">Send</button>
       <small id="form-note" style="color:var(--muted)">On a real site this goes through a form service like Formspree. This example doesn't send anything.</small>
+      <p class="sent" id="sent" role="status" hidden></p>
     </form>
   </section>
 

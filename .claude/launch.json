@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "showcase",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [".claude/serve.py", "4321", "showcase"],
+      "port": 4321
+    }
+  ]
+}
