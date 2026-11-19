@@ -9,6 +9,8 @@ By the end you'll have:
 - Hosting on your own Vercel account that updates the site every time you save a change
 - A site that's been checked for accessibility, layout, performance and security before anyone sees it
 
+Want to see what that looks like? Browse the [showcase](showcase/): example sites for three fictional people, and real sites people have built with this.
+
 There's nothing to install from here. You paste one message into Claude, and Claude reads the instructions in this repository and walks you through the rest.
 
 ## Before you start
@@ -124,6 +126,15 @@ If you're comfortable typing commands:
 - **Claude says it's in a cloud session but you meant to work on your computer:** start a new session and set where Claude runs to your computer. If you meant the cloud, follow [the cloud steps](#no-desktop-app-use-claude-in-the-cloud) instead.
 - **You pasted a password or token into the chat by mistake:** change that password, or delete the token on the site that made it (Claude can tell you where), then carry on.
 
+## Built something? Add it to the showcase
+
+Once your site is live with your real content, please share it. Seeing real sites is the best way for the next person to picture theirs, and it tells us the starter is working.
+
+- **[Submit your site](https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml)**: a short form on GitHub, signed in with the account your site is saved in. It asks for your address, your name, what you do, and (optionally) what was easy or confusing.
+- Or ask Claude at the end of a session: "Add my site to the portfolio starter showcase." It fills in what it knows and gives you the link to send.
+
+Only share a site you're happy for anyone to see. Changed your mind later? Open an issue and it comes down.
+
 ## What it costs
 
 - **Claude:** your paid plan.
@@ -141,6 +152,8 @@ The same message works in other AI coding agents (Codex, Cursor, Copilot, Gemini
 |---|---|
 | `start` | Interviews you about the site and what you know, recommends the simplest setup that fits, plans and builds it, shows it to you as it goes, runs the pre-launch checks, and puts it live on your own GitHub and Vercel |
 | `accounts-setup` | Installs git, the GitHub CLI and Node if they're missing, signs you in to GitHub, and connects your agent to Vercel (and optionally GitHub). Never asks you to paste a password or token. Claude-specific steps live in `references/claude.md`. |
+
+The [`showcase`](showcase/) folder is a small static site of example portfolios and community submissions. Its README says how to add a submitted site and how to deploy it.
 
 The pre-launch checks and the case study review come from [helenvholmes/skills](https://github.com/helenvholmes/skills), which `start` reads the same way. The review follows Brian Lovin's [advice on presenting design work](https://brianlovin.com/writing/how-to-give-a-great-product-design-portfolio-presentation).
 

@@ -170,6 +170,20 @@ Leave them able to carry on without you. Summarize in a few lines:
 - What's left that they mentioned but you didn't do
 - If they have case studies and haven't had one yet: the `review` skill, which critiques them the way a hiring manager reads them
 
+Then, if the site is live with their real content, offer once, in one line: "Want to add your site to the portfolio starter showcase, so others can see what's possible?" See "Adding a site to the showcase" below. If they say no, drop it.
+
+## Adding a site to the showcase
+
+Use this when they say yes at hand-off, or ask for it any time ("Add my site to the portfolio starter showcase").
+
+Never submit it for them, even if your GitHub tools could: it puts their name and site on a public page, so they send it themselves. Build a link to the showcase form with what you already know filled in, URL-encoding each value:
+
+```
+https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml&title=Showcase:%20<name>&url=<live address>&name=<name>&role=<what they do>
+```
+
+Use the custom domain if it's connected, otherwise the `*.vercel.app` address. Take the name and role from the site itself. Give them the link in one line: it opens a form on GitHub (they're already signed in from setup) where they can check the details, tick what's on the site, add a note about how it went, and click **Create**. Don't fill in the notes for them; that's their feedback to give.
+
 ## Don't
 
 - Add a database, CMS, auth or paid service unless an interview answer needs it, and never without saying what it costs.

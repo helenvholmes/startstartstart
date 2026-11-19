@@ -1,0 +1,67 @@
+name: Add my site to the showcase
+description: Built a site with the portfolio starter? Share it so others can see what's possible.
+title: "Showcase: "
+labels: ["showcase"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing! Once it's checked, your site goes on the [showcase](https://github.com/helenvholmes/portfolio-starter/tree/main/showcase) with your name, a screenshot of your home page, and a link.
+
+        Only share a site that's live and that you're happy for anyone to see.
+  - type: input
+    id: url
+    attributes:
+      label: Your site's address
+      placeholder: https://yourname.com
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name to show
+      description: As you'd like it to appear on the showcase.
+      placeholder: Alex Rivera
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: What you do, in a few words
+      placeholder: Product designer, Brooklyn
+    validations:
+      required: true
+  - type: dropdown
+    id: purpose
+    attributes:
+      label: What's the site mainly for?
+      options:
+        - Getting hired
+        - Getting contracting work
+        - Something else
+    validations:
+      required: true
+  - type: checkboxes
+    id: features
+    attributes:
+      label: What's on it?
+      description: Pick any that apply.
+      options:
+        - label: Case studies
+        - label: Writing
+        - label: Photos
+        - label: A password-protected page
+        - label: A custom domain
+        - label: Animations
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything you'd like to tell us?
+      description: Optional. What worked, what was confusing, what you'd change about the starter. It helps make it better for the next person.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Permission
+      options:
+        - label: I made this site, and I'm happy for it to be shown on the showcase with a screenshot.
+          required: true

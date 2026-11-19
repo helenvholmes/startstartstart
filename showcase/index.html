@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Starter Showcase</title>
+<meta name="description" content="Portfolio sites people have built with Claude and the portfolio starter, with no coding or GitHub experience needed.">
+<meta property="og:title" content="Portfolio Starter Showcase">
+<meta property="og:description" content="Portfolio sites people have built with Claude and the portfolio starter.">
+<meta property="og:image" content="shots/maya-okafor.jpg">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="mark" href="./">Portfolio starter</a>
+  <nav aria-label="Main">
+    <a href="#examples">Examples</a>
+    <a href="#community">Showcase</a>
+    <a href="https://github.com/helenvholmes/portfolio-starter">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <h1>Your own portfolio site, built by talking to Claude.</h1>
+    <p>No coding, GitHub or Vercel experience needed. Paste one message, answer a few questions, and you end up with a site on your own domain that you own outright.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/helenvholmes/portfolio-starter#readme">Start yours</a>
+      <a class="btn" href="https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml">Submit your site</a>
+    </div>
+  </section>
+
+  <section class="wrap" id="examples" aria-labelledby="examples-title">
+    <div class="head">
+      <h2 id="examples-title">What it can make</h2>
+      <p>Three example sites for fictional people, each from a different kind of interview answer. Yours will look like you, not like these.</p>
+    </div>
+    <div class="grid" data-list="examples">
+      <p class="empty">Loading examples…</p>
+    </div>
+  </section>
+
+  <section class="wrap" id="community" aria-labelledby="community-title">
+    <div class="head">
+      <h2 id="community-title">Built with the starter</h2>
+      <p>Real sites from people who used it.</p>
+    </div>
+    <div class="grid" data-list="community">
+      <div class="empty-card">
+        <h3>Be the first.</h3>
+        <p>Made a site with the portfolio starter? Share it here so the next person can see what's possible.</p>
+        <a class="btn primary" href="https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml">Submit your site</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap submit" aria-labelledby="submit-title">
+    <div class="submit-box">
+    <h2 id="submit-title">Add your site</h2>
+    <ol>
+      <li>Make sure your site is live and has your real content in it.</li>
+      <li>Open the <a href="https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml">showcase form</a> on GitHub. You'll need to be signed in, with the same account your site is saved in.</li>
+      <li>Fill in your address, your name and what you do, and submit. Once it's checked, your site shows up here.</li>
+    </ol>
+    <p>Or ask Claude: "Add my site to the portfolio starter showcase."</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>Made with the <a href="https://github.com/helenvholmes/portfolio-starter">portfolio starter</a>. MIT licensed.</span>
+</footer>
+
+<template id="card">
+  <article class="card">
+    <a class="shot" target="_blank" rel="noopener"><img alt="" loading="lazy" width="1280" height="800"></a>
+    <div class="body">
+      <h3><a class="title" target="_blank" rel="noopener"></a></h3>
+      <p class="role"></p>
+      <p class="prompt"></p>
+      <ul class="tags"></ul>
+    </div>
+  </article>
+</template>
+</body>
+</html>
