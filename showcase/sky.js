@@ -47,7 +47,6 @@ const sky = (canvas, watch, opts) => {
     // Which way, and how far, this dot gets pushed when the window is resized.
     angle: rand() * Math.PI * 2,
     reach: 6 + rand() * 22,
-    dim: 1,
   });
 
   // The cloud, in its own coordinates (0, 0 is its centre).
@@ -88,6 +87,9 @@ const sky = (canvas, watch, opts) => {
   }
 
   let width = 0, height = 0, ox = 0, oy = 0, color = "#fff", timer = 0;
+  // The clear patches behind text (see layout).
+  const PAD_X = 14, PAD_Y = 10, FADE = 22, CLEAR = 0.04;
+  let cols = 0, rows = 0, clear = new Float32Array(0);
   // How stirred up the dots are (0 to 1). Resizing the window adds to it, then it settles.
   let stir = 0, lastWidth = 0, lastTime = 0;
 
@@ -170,27 +172,50 @@ const sky = (canvas, watch, opts) => {
     // Where the cloud's centre goes, snapped to the dot grid so the dots stay crisp.
     [ox, oy] = opts.place(width, height).map((v) => Math.round(v / CELL) * CELL);
 
-    // Where the text sits, with a little padding, so dots behind it can dim.
-    const boxes = [];
+    // Keep the text readable: a clear patch behind each line of the nav, headings
+    // and intro, fading back to full strength over FADE pixels. It's stored as a
+    // grid with one value per dot cell, and checked wherever a dot is actually
+    // drawn, so dots pulled toward the cursor or scattered by a resize fade out
+    // as they pass behind the text too.
+    cols = Math.ceil(width / CELL) + 1;
+    rows = Math.ceil(height / CELL) + 1;
+    clear = new Float32Array(cols * rows).fill(1);
     for (const el of document.querySelectorAll(opts.dim)) {
       const range = document.createRange();
       range.selectNodeContents(el);
       for (const r of range.getClientRects()) {
-        boxes.push({ l: r.left - rect.left - 12, r: r.right - rect.left + 12, t: r.top - rect.top - 8, b: r.bottom - rect.top + 8 });
+        const l = r.left - rect.left - PAD_X, rr = r.right - rect.left + PAD_X;
+        const t = r.top - rect.top - PAD_Y, b = r.bottom - rect.top + PAD_Y;
+        const c0 = Math.max(0, Math.floor((l - FADE) / CELL)), c1 = Math.min(cols - 1, Math.ceil((rr + FADE) / CELL));
+        const r0 = Math.max(0, Math.floor((t - FADE) / CELL)), r1 = Math.min(rows - 1, Math.ceil((b + FADE) / CELL));
+        for (let row = r0; row <= r1; row++) {
+          for (let col = c0; col <= c1; col++) {
+            const x = col * CELL, y = row * CELL;
+            const out = Math.hypot(Math.max(l - x, 0, x - rr), Math.max(t - y, 0, y - b));
+            const k = Math.min(1, out / FADE);
+            const v = CLEAR + (1 - CLEAR) * k * k * (3 - 2 * k);
+            const i = row * cols + col;
+            if (v < clear[i]) clear[i] = v;
+          }
+        }
       }
     }
-    const dim = (x, y) => (boxes.some((b) => x > b.l && x < b.r && y > b.t && y < b.b) ? 0.3 : 1);
-    for (const d of cloud) d.dim = dim(d.x + ox, d.y + oy);
-    for (const d of stars) d.dim = dim(d.x, d.y);
+  };
+  const clearAt = (x, y) => {
+    const col = Math.round(x / CELL), row = Math.round(y / CELL);
+    return col < 0 || row < 0 || col >= cols || row >= rows ? 1 : clear[row * cols + col];
   };
 
   const draw = (time) => {
     // Let the stir settle: it halves about every 0.4 seconds once resizing stops.
     // Capped, so waking after a long rest eases in instead of jumping.
-    const dt = lastTime ? Math.min(time - lastTime, 100) : 0;
+    // A time of 0 means a one-off still frame (reduced motion, or off screen): it
+    // mustn't move the clock, or the next frame sees time running backwards and
+    // the easing below turns into NaN, which flattens every dot to one brightness.
+    const dt = time && lastTime ? Math.max(0, Math.min(time - lastTime, 100)) : 0;
     stir *= Math.exp(-dt / 600);
     if (stir < 0.002) stir = 0;
-    lastTime = time;
+    if (time) lastTime = time;
 
     // Ease the pull's centre after the pointer, and its strength in and out.
     if (still.matches) want = 0;
@@ -240,7 +265,9 @@ const sky = (canvas, watch, opts) => {
       // Mid-shimmer brightness when resting, full shimmer when awake.
       const wave = 0.5 + 0.5 * Math.sin(time * d.speed + d.phase) * alive;
       const level = 1 - d.depth + d.depth * wave;
-      ctx.globalAlpha = Math.min(1, d.base * d.dim * level * (1 + stir * 0.8 + glow * 0.4));
+      const see = clearAt(x, y);
+      if (see < 0.05) return;
+      ctx.globalAlpha = Math.min(1, d.base * see * level * (1 + stir * 0.8 + glow * 0.4));
       ctx.fillRect(x, y, DOT, DOT);
     };
     for (const d of stars) plot(d, d.x, d.y);
@@ -266,13 +293,22 @@ const sky = (canvas, watch, opts) => {
   const resize = new ResizeObserver(refresh);
   resize.observe(canvas);
   resize.observe(watch);
-  new IntersectionObserver(([e]) => { visible = e.isIntersecting; loop(); }).observe(canvas);
+  // Scrolling the sky back into view counts as activity, so a sky that came to
+  // rest while you were further down the page starts shimmering again.
+  new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting;
+    if (visible) { lastActive = performance.now(); asleep = false; }
+    loop();
+  }).observe(canvas);
   document.addEventListener("visibilitychange", loop);
   still.addEventListener("change", () => { refresh(); loop(); });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", refresh);
   // Also redraw if the page's theme is switched by a data-theme attribute.
   new MutationObserver(refresh).observe(document.documentElement, { attributeFilter: ["data-theme"] });
   document.fonts.ready.then(refresh); // the headline's line breaks change once its font loads
+  // Measure the text again once it has finished sliding in, so the clear patches
+  // sit where the text ends up, not where it started.
+  addEventListener("animationend", (e) => { if (e.target.matches?.(opts.dim)) refresh(); });
   refresh();
   loop();
 };
