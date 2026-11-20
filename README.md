@@ -13,6 +13,14 @@ Want to see what that looks like? Browse the [showcase](showcase/): example site
 
 There's nothing to install from here. You paste one message into Claude, and Claude reads the instructions in this repository and walks you through the rest.
 
+<!-- When the listing in Claude's plugin directory goes live: uncomment this, replace
+DIRECTORY_LINK with its public link (Copy public link at claude.ai/directory/manage),
+and change "There's nothing to install from here." above to "You don't need to install anything."
+
+**Using the Claude app?** You can also [add *startstartstart!* from Claude's plugin directory](DIRECTORY_LINK). Then open the Code tab in an empty folder (steps 2 and 3 below) and say "Help me build a portfolio site." It's the same as pasting the message, without the message.
+-->
+
+
 ## Before you start
 
 > **You need a paid Claude plan.** Claude Code, the part of Claude that builds things on your computer, isn't on the free plan. It needs a Pro, Max, Ultra, Team, or Enterprise subscription. Pro is enough for this.

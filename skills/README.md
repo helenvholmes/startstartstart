@@ -38,3 +38,8 @@ Everything here is instructions for Claude: there are no scripts or programs. No
 ## Source and help
 
 Source, full setup guide and issues: [github.com/helenvholmes/startstartstart](https://github.com/helenvholmes/startstartstart). MIT licensed.
+
+## Privacy
+
+*startstartstart!* collects nothing: there's no service behind it, and your work stays on your computer and in your own GitHub and Vercel accounts. The full [privacy policy](https://startstartstart.app/privacy/) also covers the website.
+
