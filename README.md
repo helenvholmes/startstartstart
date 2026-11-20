@@ -144,7 +144,7 @@ Only share a site you're happy for anyone to see. Changed your mind later? Open 
 
 ## Using another AI coding agent
 
-The same message works in other AI coding agents (Codex, Cursor, Copilot, Gemini CLI and others), as long as the agent can read from GitHub and run commands on your computer. The instructions tell each agent to use its own way of connecting to Vercel and GitHub. If it doesn't know one, Vercel's helper configures most agents: `npx -y add-mcp https://mcp.vercel.com -g`.
+The same message works in other AI coding agents (Codex, Cursor, Copilot, Gemini CLI and others), as long as the agent can read from GitHub and run commands on your computer. The instructions tell each agent to use its own way of connecting to Vercel and GitHub. If it doesn't know one, Vercel's helper configures most agents: `npx -y add-mcp@2.6.1 https://mcp.vercel.com -g`.
 
 ## What's in here
 
@@ -157,15 +157,11 @@ The [`showcase`](showcase/) folder is a small static site of example portfolios 
 
 The pre-launch checks and the case study review come from [helenvholmes/skills](https://github.com/helenvholmes/skills), which `start` reads the same way. The review follows Brian Lovin's [advice on presenting design work](https://brianlovin.com/writing/how-to-give-a-great-product-design-portfolio-presentation).
 
-`skills/accounts-setup/scripts/check.sh` reports what's installed and signed in for shipping a site, and changes nothing:
-
-```bash
-bash skills/accounts-setup/scripts/check.sh
-```
+The `skills` folder is also the Claude plugin: its manifest is in `skills/.claude-plugin/`, and `skills/README.md` is the plugin's own description.
 
 ## What it runs and connects to
 
-Everything here is instructions for Claude, plus that one read-only script. Nothing runs in the background, and nothing is sent anywhere except the services below. Claude asks before each step that installs something or signs you in.
+Everything here is instructions for Claude: there are no scripts or programs. Nothing runs in the background, and nothing is sent anywhere except the services below. Claude asks before each step that installs something or signs you in.
 
 - **On your computer:** installs git, the GitHub CLI and Node.js if they're missing, using your system's own installer (Homebrew, winget, apt and so on). It sets your git name and email, and creates your site's project in the folder you chose.
 - **GitHub:** signs you in through the GitHub CLI's browser sign-in, creates a repository for your site in your account, and saves your work there. It also downloads the pre-launch checks from [helenvholmes/skills](https://github.com/helenvholmes/skills) into a temporary folder.

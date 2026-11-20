@@ -29,7 +29,7 @@ Work so everything can be undone: show changes before making them, make each one
 Three steps depend on which agent and app you're running in: how the person runs a command themselves (step 3), how an MCP server is added and signed in to (steps 4 and 5), and how they're removed (step 6). Everything else is the same everywhere.
 
 - **If you are Claude** (Claude Code in a terminal, the Claude desktop app's Code tab, or an IDE extension), read `references/claude.md` now and follow it at those steps.
-- **Otherwise**, use your own tool's documented way of letting the person run a command themselves and of adding a remote MCP server, and say which you're using. If you don't know your tool's way, Vercel's `add-mcp` helper configures most agents: `npx -y add-mcp https://mcp.vercel.com -g`.
+- **Otherwise**, use your own tool's documented way of letting the person run a command themselves and of adding a remote MCP server, and say which you're using. If you don't know your tool's way, Vercel's `add-mcp` helper configures most agents: `npx -y add-mcp@2.6.1 https://mcp.vercel.com -g`.
 
 ### In the cloud
 
@@ -44,11 +44,26 @@ If they don't have a repository yet, stop and walk them through making one on gi
 
 ## 1. See where they're starting
 
-Run `scripts/check.sh` (from this skill's folder). It prints what's installed and what's signed in, and changes nothing. Read it back to the person in plain words ("You have git and Node, but not the GitHub CLI yet"), then only do the steps they still need. If they've done all of this before, finish in a minute.
+Run these checks yourself. Each one only reads, and changes nothing. A missing command just means that tool isn't installed yet.
+
+| Check | Command | Ready when |
+|---|---|---|
+| System and package managers | `uname -s` (on Windows, `ver`), then see which of `brew`, `winget`, `apt`, `dnf`, `pacman` exist | Information for step 2 |
+| git | `git --version` | Any version |
+| GitHub CLI | `gh --version` | Any version |
+| Node.js | `node --version` | 20 or newer; older counts as missing |
+| GitHub sign-in | `gh auth status --hostname github.com`, then `gh api user --jq .login` for the username | Signed in |
+| git name and email | `git config --global user.name` and `git config --global user.email` | Both set |
+| Default branch | `git config --global init.defaultBranch` | Information; unset means git uses `master` |
+| git uses the GitHub CLI sign-in | `git config --global credential.https://github.com.helper` | Mentions `gh`; otherwise step 3 runs `gh auth setup-git` |
+| Vercel and GitHub connectors | Your tool's own list of connectors or MCP servers (in Claude Code, `claude mcp list`) | Vercel connected; GitHub is optional |
+| Vercel CLI | `vercel --version` | Optional |
+
+Read the results back to the person in plain words ("You have git and Node, but not the GitHub CLI yet"), then only do the steps they still need. If they've done all of this before, finish in a minute.
 
 Then ask, one question at a time, using a multiple-choice card if your tool has one (the person can always type their own answer):
 
-1. **Do you have a GitHub account?** Yes · No, help me make one. If yes, ask for the username in plain text, unless `check.sh` already showed them signed in. If they have more than one (a personal and a work account, say), ask which one this site belongs to.
+1. **Do you have a GitHub account?** Yes · No, help me make one. If yes, ask for the username in plain text, unless the checks already showed them signed in. If they have more than one (a personal and a work account, say), ask which one this site belongs to.
 2. **Do you have a Vercel account?** Yes · No · Not sure. If not, plan to sign up for one **with GitHub** (step 4), so the two are linked from the start. If they do, use it as it is: it doesn't matter how it was created, since Vercel links to GitHub when the repository is imported. If they belong to more than one Vercel team, ask which one the site goes under (their personal account is usual).
 3. **What name should appear on your saved work?** It shows publicly next to every change on GitHub. Offer their GitHub display name (from `gh api user --jq .name`, once signed in) as the first choice; most people use their real name, and a handle is fine.
 4. **Should your code be public or private?** Public (normal for portfolios) · Private
@@ -66,7 +81,7 @@ Required: **git**, the **GitHub CLI** (`gh`), and **Node.js** (the current LTS v
 
 You may run an install yourself when it needs no password and opens no window. Anything that asks for a password (`sudo`, an admin prompt) or opens an installer is the person's to run: give them the exact command or link and wait. If Homebrew isn't installed on a Mac, don't install it unasked; offer it or use the direct installers.
 
-After installing, a new terminal window may be needed before the commands are found. Re-run `scripts/check.sh` to confirm.
+After installing, a new terminal window may be needed before the commands are found. Run the checks in step 1 again to confirm.
 
 ## 3. Sign in to GitHub (required)
 
@@ -80,7 +95,7 @@ The GitHub CLI is how you create repositories and save work to GitHub on the per
    ```
 
    Tell them what will happen: a code appears, they press Enter to open the browser, paste the code there, and approve. Then they tell you they're done.
-3. Run `gh auth status` and confirm the username matches what they told you. If `check.sh` showed them already signed in, skip the sign-in and just confirm the username. If they're signed in to a different account (often a work one), don't sign it out: running the sign-in again adds the right account, and `gh auth switch --user <username>` makes it the active one. Tell them which account is active, and how to switch back.
+3. Run `gh auth status` and confirm the username matches what they told you. If the checks in step 1 showed them already signed in, skip the sign-in and just confirm the username. If they're signed in to a different account (often a work one), don't sign it out: running the sign-in again adds the right account, and `gh auth switch --user <username>` makes it the active one. Tell them which account is active, and how to switch back.
 4. Run `gh auth setup-git` so git uses that same sign-in when saving to GitHub.
 5. Set their name and email for git. For the email, suggest GitHub's private address, which keeps their real one off every public change:
 
@@ -119,7 +134,7 @@ The GitHub CLI already covers everything a website needs. GitHub's MCP server, a
 
 ## 6. Finish
 
-Run `scripts/check.sh` once more and give a short summary in plain words:
+Run the checks in step 1 once more and give a short summary in plain words:
 
 - What's set up, and the GitHub username and Vercel account it's tied to
 - What was skipped, and why

@@ -9,7 +9,7 @@ The person should end up with a site they own outright (code in their GitHub, ho
 
 ## If you were installed as a plugin
 
-If the person added *startstartstart!* from Claude's plugin directory, these skills are already on their computer, at `${CLAUDE_PLUGIN_ROOT}`. You can tell because that shows as a real folder path here rather than the literal text in braces. Skip the clone below and run scripts from that folder (`${CLAUDE_PLUGIN_ROOT}/skills/accounts-setup/scripts/check.sh`). When they come back later and say to keep going, the skills are still installed; just look at the project to find where you left off.
+If the person added *startstartstart!* from Claude's plugin directory, these skills are already on their computer, at `${CLAUDE_PLUGIN_ROOT}`. You can tell because that shows as a real folder path here rather than the literal text in braces. Skip the clone below and read the other files from that folder. When they come back later and say to keep going, the skills are still installed; just look at the project to find where you left off.
 
 ## If you're reading this from GitHub
 
@@ -19,7 +19,7 @@ The person usually starts by asking you to read this repository, rather than ins
 git clone --depth 1 https://github.com/helenvholmes/startstartstart "${TMPDIR:-/tmp}/startstartstart"
 ```
 
-Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy, and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
+Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy. If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
 
 ## How to work
 
@@ -42,9 +42,9 @@ Three rules shape every step here:
 
 First, work out whether this session runs on the person's own computer or on a remote or cloud machine (`../accounts-setup/SKILL.md` step 0 says how, and which steps depend on your tool). In the cloud, the steps marked **Cloud** below replace the local ones: nothing is installed, the work lives in the GitHub repository they made before starting, and they see drafts through Vercel preview links.
 
-Run `../accounts-setup/scripts/check.sh`. If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 3 works through Vercel's website too.
+Run the checks in step 1 of `accounts-setup` (`../accounts-setup/SKILL.md`). If git, the GitHub CLI or Node is missing, or they aren't signed in to GitHub, run the `accounts-setup` skill first and come back. The Vercel connector is strongly recommended (it lets you read build logs when something fails), but not required: step 3 works through Vercel's website too.
 
-**Cloud:** skip `check.sh`, which checks the person's own computer. Follow "In the cloud" in `accounts-setup` instead: confirm you can push to their repository and that the Vercel tools are there.
+**Cloud:** skip those checks, which are about the person's own computer. Follow "In the cloud" in `accounts-setup` instead: confirm you can push to their repository and that the Vercel tools are there.
 
 ## 1. Interview
 
