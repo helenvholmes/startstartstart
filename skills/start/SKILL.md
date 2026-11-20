@@ -55,15 +55,18 @@ Ask **one question at a time**, and skip any their earlier answers already cover
 
    A resume gives you a head start on describing them: use it to draft the intro and about page, and to suggest which roles and projects could become case studies. Everything you draft from it is a starting point for them to edit, in their voice; never add claims, titles or numbers that aren't in it. Keep personal details off the site (phone number, home address) unless they ask for them. LinkedIn profiles usually can't be read without signing in, so if they send a link, ask them to save the profile as a PDF instead (on their profile, the **More** or **Resources** button → **Save to PDF**; LinkedIn moves it around) and attach that. If they don't have either, carry on; ask for a few lines about their work when you write the about page.
 3. **What will go on it?** (pick multiple) Case studies · Writing · Photos · A resume
-4. **Any add-ons?** (pick multiple) Just pages · Animations · A contact form · Something more
-5. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
+4. **Want a testimonials section, with quotes from people you've worked with?** Yes, I have some · Yes, I'll collect some · No thanks
+
+   If they have some, ask in plain text for them to paste each quote with the person's name and role. LinkedIn recommendations and kind words from past reviews or emails are good sources; tell them to check each person is happy to be quoted publicly. If they'll collect them later, build the section with placeholders and remind them when they add real content.
+5. **Any add-ons?** (pick multiple) Just pages · Animations · A contact form · Something more
+6. **Do you have a look in mind?** I have a Figma file · I have sites or images I like · Not yet, surprise me
 
    If they have a Figma file, sites or images, ask in plain text for the links or images: links and images are both great, as many as they like. Read a Figma link with your Figma tools if you have them; if you don't, or it's private, ask them to export the frames as images and attach them. Look at everything they share, and say back in a line what you take from it (type, color, layout feel) so they can correct you.
-6. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
-7. **Do you have a domain name, like yourname.com?** No, not yet · Yes
+7. **Should any page be private, behind a password?** No · Yes, a deck or pitch · Yes, NDA work or references
+8. **Do you have a domain name, like yourname.com?** No, not yet · Yes
 
    If yes, follow up: **Where did you buy it?** GoDaddy · Namecheap · Squarespace · Cloudflare. If they're not sure, they can search their email for the domain name plus "receipt" or "renewal". Ask in plain text for the domain itself, and whether it shows an existing site now, since connecting it will replace that.
-8. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
+9. **Anything else you need that we haven't covered?** No, let's build · Yes (they type it)
 
 Assume they'll update the site later by asking their AI assistant, so content lives as files in the repo.
 
@@ -106,7 +109,9 @@ Build the plan with placeholder content that is clearly fake ("Project title", l
 - Responsive layouts from 320px up, light and dark themes from the same tokens, `prefers-reduced-motion` respected (gentler, not necessarily none)
 - Semantic HTML, visible focus styles, alt text fields required in the content model
 - A 404 page, page titles and descriptions, social share images, a sitemap, `robots.txt`
+- **A favicon from the first preview**, so the browser tab never shows a blank icon. If they shared a logo or mark, use it; otherwise make one from their initials (or first initial) in the site's own font and colors, on a solid background so it reads on light and dark tabs. Make it an SVG linked from every page with `<link rel="icon">`, plus a 180×180 `apple-touch-icon` PNG with no transparency for phone home screens. Use the framework's own icon convention where it has one. To make the PNG, draw the SVG onto a 180×180 canvas in the browser you're using and save it, rather than installing an image tool. Check it at tab size, and mention it in one line when you show the site so they can ask for a different one.
 - **Case studies shown once, as cards.** The work page (and any selected work on the home page) lists each case study a single time, as a card: cover image, title, a one-line summary, and the year. Don't also add a table or text list of the same projects; showing everything twice reads as filler.
+- **Testimonials, only if they asked for them.** A few short quotes, each with the person's name and role (and company, if they give it), on the home page near the work or at the end of the about page. Keep each quote word for word as they gave it; trim only with their OK, and never write, polish or invent one, since a made-up testimonial would be a false claim about a real person. Placeholders must be obviously fake ("Quote from someone you've worked with", "Name, Role"), and if no real quotes are in by the pre-launch check, hide the section rather than launching with placeholders.
 - **Contact: email first.** The site's job is getting them hired or contract work, so the easiest way to reach them is an email link, shown first and most prominently wherever contact appears (footer, about page, end of case studies). LinkedIn comes next. Add other profiles (GitHub, Dribbble, Instagram, …) only if they ask for them. Use clearly fake placeholders until they give real ones, and when you ask for the email, suggest one they're happy to have public, since anything on the page can be seen by anyone.
 - Security headers in `vercel.json` (or the framework's equivalent): CSP, `frame-ancestors`, `X-Content-Type-Options`, `Referrer-Policy`
 - A README in plain language: how to run it, how to add a project or post, how publishing works
@@ -130,7 +135,7 @@ They can always type something else instead, like a change to how it looks; make
 
 ### Adding real content
 
-Help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. Use what they gave you in the interview (their resume, links, images) to draft first, for them to edit.
+Help them swap the placeholders for real content, or show them how to do it themselves, whichever they'd rather. Use what they gave you in the interview (their resume, links, images) to draft first, for them to edit. If the site has a testimonials section still on placeholders, ask once for the quotes they've collected.
 
 **Once they've added real case studies**, offer a review in one line: "Want me to review your case studies the way a hiring manager would?" If yes, run the `review` skill from [helenvholmes/skills](https://github.com/helenvholmes/skills): if it isn't installed, read `skills/review/SKILL.md` from that repository, the same way as the audit skills. Offer it once; if they say not now, mention it again at hand-off.
 
