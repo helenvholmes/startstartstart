@@ -7,12 +7,16 @@ description: Take someone from "I want a portfolio site" to a live site on their
 
 The person should end up with a site they own outright (code in their GitHub, hosting in their Vercel account), that they understand well enough to update, and that passed a pre-launch audit before anyone saw it.
 
+## If you were installed as a plugin
+
+If the person added *startstartstart!* from Claude's plugin directory, these skills are already on their computer, at `${CLAUDE_PLUGIN_ROOT}`. You can tell because that shows as a real folder path here rather than the literal text in braces. Skip the clone below and run scripts from that folder (`${CLAUDE_PLUGIN_ROOT}/skills/accounts-setup/scripts/check.sh`). When they come back later and say to keep going, the skills are still installed; just look at the project to find where you left off.
+
 ## If you're reading this from GitHub
 
 The person usually starts by asking you to read this repository, rather than installing it. Before step 0, get a copy you can run scripts from, **outside their project folder** so nothing of this repository ends up in their site:
 
 ```
-git clone --depth 1 https://github.com/helenvholmes/portfolio-starter "${TMPDIR:-/tmp}/portfolio-starter"
+git clone --depth 1 https://github.com/helenvholmes/startstartstart "${TMPDIR:-/tmp}/startstartstart"
 ```
 
 Then read `skills/start/SKILL.md` and `skills/accounts-setup/SKILL.md` from that copy, and run scripts from there (`skills/accounts-setup/scripts/check.sh`). If git isn't installed yet, read the files from the web instead and start with `accounts-setup` step 2, which installs it; clone once it's there. When they come back in a later session and say to keep going, read the skills again the same way, then look at the project (its README, open pull requests, the Vercel project) to find where you left off.
@@ -179,7 +183,7 @@ Use this when they say yes at hand-off, or ask for it any time ("Submit my site 
 Never submit it for them, even if your GitHub tools could: it puts their name and site on a public page, so they send it themselves. Build a link to the showcase form with what you already know filled in, URL-encoding each value:
 
 ```
-https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml&title=Showcase:%20<name>&url=<live address>&name=<name>&role=<what they do>
+https://github.com/helenvholmes/startstartstart/issues/new?template=showcase.yml&title=Showcase:%20<name>&url=<live address>&name=<name>&role=<what they do>
 ```
 
 Use the custom domain if it's connected, otherwise the `*.vercel.app` address. Take the name and role from the site itself. Give them the link in one line: it opens a form on GitHub (they're already signed in from setup) where they can check the details, tick what's on the site, add a note about how it went, and click **Create**. Don't fill in the notes for them; that's their feedback to give.

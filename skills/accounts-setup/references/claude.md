@@ -8,7 +8,7 @@ The steps in `SKILL.md` that depend on the tool, for Claude Code in a terminal a
 
 **Cloud sessions** (claude.ai/code, or **Cloud** chosen as the environment in the desktop app) run on a remote machine, on a fresh clone of a GitHub repository. Follow "In the cloud" in `SKILL.md`, with these specifics:
 
-- The skills arrive because the person asked you to read them from github.com/helenvholmes/portfolio-starter. Clone it outside the project checkout, as `start` describes.
+- The skills arrive because the person asked you to read them from github.com/helenvholmes/startstartstart, or because they added *startstartstart!* from Claude's plugin directory. If they asked you to read them, clone the repository outside the project checkout, as `start` describes.
 - GitHub access comes through the Claude GitHub App. If you can't push, they reconnect GitHub at claude.ai/code and give the app access to this repository. The session can't create new repositories, so the person makes it on github.com first.
 - Connectors from their claude.ai account are passed in, already signed in; there's no `/mcp` step. If Vercel's tools are missing, they connect Vercel at claude.ai/customize/connectors (or add a custom connector with `https://mcp.vercel.com`), then start a new session on the same repository.
 - To disconnect later: claude.ai/customize/connectors, and GitHub's Settings → Applications for the Claude GitHub App.
@@ -59,4 +59,4 @@ Use the AskUserQuestion tool for the skills' interview and setup questions: one 
 
 ## Don't suggest `/plugin`
 
-People start this by pasting a message, not by installing a plugin, and `/plugin` commands don't work in the desktop app anyway. Don't send them to install anything from Claude's plugin menus.
+Most people start this by pasting a message; some add *startstartstart!* from Claude's plugin directory on claude.ai. Either way they already have what they need. `/plugin` commands don't work in the desktop app, so don't send them to install anything from Claude's plugin menus.

@@ -54,7 +54,7 @@ Keep it empty. Claude will fill it.
 ### 4. Paste this and press Enter
 
 ```
-Read startstartstart! at github.com/helenvholmes/portfolio-starter
+Read startstartstart! at github.com/helenvholmes/startstartstart
 and follow skills/start/SKILL.md to help me build a portfolio site in
 this folder. I'm new to GitHub, so explain each new term the first time
 it comes up, and never ask me to paste a password or token into this chat.
@@ -69,9 +69,9 @@ From here, Claude leads. Expect it to:
 5. **Build a first draft** with placeholder text and open it in a browser right away, so you can watch it change as Claude works. Then you'll get your site's address to check it on your phone.
 6. **Let you choose what's next**, one thing at a time: adding your real content, connecting your domain, setting up a password-protected page, or a check for accessibility, layout, speed and security before you share it.
 
-Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
+Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with *startstartstart!* at github.com/helenvholmes/startstartstart."
 
-You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
+You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/startstartstart."
 
 ## No desktop app? Use Claude in the cloud
 
@@ -101,14 +101,14 @@ Vercel is the service that puts your site on the internet.
 ### 4. Paste this and press Enter
 
 ```
-Read startstartstart! at github.com/helenvholmes/portfolio-starter
+Read startstartstart! at github.com/helenvholmes/startstartstart
 and follow skills/start/SKILL.md to help me build a portfolio site in
 this repository. This is a cloud session. I'm new to GitHub, so explain
 each new term the first time it comes up, and never ask me to paste a
 password or token into this chat.
 ```
 
-From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
+From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/startstartstart."
 
 ## Prefer the terminal?
 
@@ -122,7 +122,7 @@ If you're comfortable typing commands:
 ## If something goes wrong
 
 - **The Code tab asks you to upgrade:** your account doesn't have a paid plan, or you're signed in with a different account.
-- **Claude says it can't read the repository:** check the address in your message is exactly `github.com/helenvholmes/portfolio-starter`, then try again.
+- **Claude says it can't read the repository:** check the address in your message is exactly `github.com/helenvholmes/startstartstart`, then try again.
 - **Claude says it's in a cloud session but you meant to work on your computer:** start a new session and set where Claude runs to your computer. If you meant the cloud, follow [the cloud steps](#no-desktop-app-use-claude-in-the-cloud) instead.
 - **You pasted a password or token into the chat by mistake:** change that password, or delete the token on the site that made it (Claude can tell you where), then carry on.
 
@@ -130,7 +130,7 @@ If you're comfortable typing commands:
 
 Once your site is live with your real content, please share it. Seeing real sites is the best way for the next person to picture theirs, and it tells us the starter is working.
 
-- **[Submit your site](https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml)**: a short form on GitHub, signed in with the account your site is saved in. It asks for your address, your name, what you do, and (optionally) what was easy or confusing.
+- **[Submit your site](https://github.com/helenvholmes/startstartstart/issues/new?template=showcase.yml)**: a short form on GitHub, signed in with the account your site is saved in. It asks for your address, your name, what you do, and (optionally) what was easy or confusing.
 - Or ask Claude at the end of a session: "Submit my site to the *startstartstart!* showcase." It fills in what it knows and gives you the link to send.
 
 Only share a site you're happy for anyone to see. Changed your mind later? Open an issue and it comes down.
@@ -162,6 +162,16 @@ The pre-launch checks and the case study review come from [helenvholmes/skills](
 ```bash
 bash skills/accounts-setup/scripts/check.sh
 ```
+
+## What it runs and connects to
+
+Everything here is instructions for Claude, plus that one read-only script. Nothing runs in the background, and nothing is sent anywhere except the services below. Claude asks before each step that installs something or signs you in.
+
+- **On your computer:** installs git, the GitHub CLI and Node.js if they're missing, using your system's own installer (Homebrew, winget, apt and so on). It sets your git name and email, and creates your site's project in the folder you chose.
+- **GitHub:** signs you in through the GitHub CLI's browser sign-in, creates a repository for your site in your account, and saves your work there. It also downloads the pre-launch checks from [helenvholmes/skills](https://github.com/helenvholmes/skills) into a temporary folder.
+- **Vercel:** connects Claude to your Vercel account through Vercel's official connector (`https://mcp.vercel.com`) and puts your site live there.
+- **Your site's packages:** installs the packages your site needs from npm, and a browser for the pre-launch checks.
+- **Passwords and tokens:** never asked for in the chat. Every sign-in happens on the service's own website.
 
 ## License
 

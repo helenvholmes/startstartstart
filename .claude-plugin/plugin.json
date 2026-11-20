@@ -1,0 +1,17 @@
+{
+  "name": "startstartstart",
+  "displayName": "startstartstart!",
+  "version": "1.0.0",
+  "description": "Build your own portfolio website with Claude, no coding needed. Claude interviews you, builds the site, checks it for accessibility, layout, performance and security, and launches it on your own free GitHub and Vercel accounts.",
+  "author": {
+    "name": "Helen V. Holmes",
+    "url": "https://helenvholmes.com"
+  },
+  "homepage": "https://startstartstart.app",
+  "repository": "https://github.com/helenvholmes/startstartstart",
+  "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
+  "keywords": ["portfolio", "website", "personal-site", "beginner", "vercel", "github"],
+  "documentationUrl": "https://github.com/helenvholmes/startstartstart#readme",
+  "supportUrl": "https://github.com/helenvholmes/startstartstart/issues"
+}

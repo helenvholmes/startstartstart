@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for sharing! Once it's checked, your site goes on the [showcase](https://github.com/helenvholmes/portfolio-starter/tree/main/showcase) with your name, a screenshot of your home page, and a link.
+        Thanks for sharing! Once it's checked, your site goes on the [showcase](https://github.com/helenvholmes/startstartstart/tree/main/showcase) with your name, a screenshot of your home page, and a link.
 
         Only share a site that's live and that you're happy for anyone to see.
   - type: input

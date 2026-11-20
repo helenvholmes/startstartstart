@@ -15,7 +15,7 @@ A small static site that shows what people have built with *startstartstart!*, p
 
 ## Adding a submitted site
 
-People submit through the [showcase issue form](https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml), which labels the issue `showcase`.
+People submit through the [showcase issue form](https://github.com/helenvholmes/startstartstart/issues/new?template=showcase.yml), which labels the issue `showcase`.
 
 1. Open the site and check it's live, has real content, and is something you're happy to link to.
 2. Add an entry to `community` in `sites.json`:
