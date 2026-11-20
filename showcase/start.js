@@ -51,9 +51,16 @@ if (demo) {
     demo.classList.toggle("panel-open", n >= last); // the finished site opens beside the chat
   };
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  // Reduced motion: no loop, just the finished conversation and site.
+  const calm = matchMedia("(prefers-reduced-motion: reduce)");
+  const settle = () => {
+    demo.classList.remove("animated", "paused");
+    chat.classList.remove("typing");
     show(last);
     controls.hidden = true;
+  };
+  if (calm.matches) {
+    settle();
   } else {
     demo.classList.add("animated");
     let step = 0;
@@ -88,6 +95,14 @@ if (demo) {
       toggle.setAttribute("aria-label", paused ? "Play the demo" : "Pause the demo");
       chat.classList.remove("typing");
       run();
+    });
+
+    // Turning reduced motion on mid-visit stops the loop too.
+    calm.addEventListener("change", () => {
+      if (!calm.matches) return;
+      paused = true;
+      clearTimeout(timer);
+      settle();
     });
 
     // Only run while the demo is on screen.

@@ -81,7 +81,7 @@
           </div>
           <div class="demo-panel">
             <div class="panel-bar"><span><b>●</b> jun-park.vercel.app</span><span class="panel-close">×</span></div>
-            <div class="panel-view"><img src="shots/jun-park-full.jpg" alt="" width="1280" height="1915" loading="lazy"></div>
+            <div class="panel-view"><img src="shots/jun-park-full.webp" alt="" width="1280" height="2064" loading="lazy"></div>
           </div>
         </div>
         <div class="demo-controls">
@@ -146,7 +146,8 @@ it comes up, and never ask me to paste a password or token into this chat.</pre>
 
 <template id="card">
   <article class="card">
-    <a class="shot" target="_blank" rel="noopener"><img alt="" loading="lazy" width="1280" height="800"></a>
+    <!-- The screenshot is a second link to the same site, so it's left out of the tab order and hidden from screen readers: keyboard users get one stop per card, on the name. -->
+    <a class="shot" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img alt="" loading="lazy" width="1280" height="800"></a>
     <div class="body">
       <h3><a class="title" target="_blank" rel="noopener"></a></h3>
       <p class="role"></p>

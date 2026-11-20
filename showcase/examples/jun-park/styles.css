@@ -24,7 +24,8 @@ header { display: flex; justify-content: space-between; align-items: center; gap
 .name span { color: var(--accent); }
 nav { display: flex; gap: 1.5rem; font-size: .875rem; }
 nav a { text-decoration: none; color: var(--muted); }
-nav a:hover, nav a[aria-current] { color: var(--text); }
+nav a[aria-current] { color: var(--text); }
+@media (hover: hover) { nav a:hover { color: var(--text); } }
 nav a[aria-current] { text-decoration: underline; text-underline-offset: .35em; text-decoration-color: var(--accent); }
 .intro { padding: clamp(2.5rem, 9vw, 6rem) 0 clamp(2.5rem, 6vw, 4rem); }
 .intro h1 { font: 500 clamp(1.75rem, 4.6vw, 3rem)/1.18 var(--sans); letter-spacing: -.025em; margin: 0; max-width: 24ch; }
@@ -42,7 +43,7 @@ h2::before { content: "// "; }
 .project p { margin: 0; color: var(--muted); font-size: .8125rem; }
 .project .links { margin-top: auto; padding-top: .6rem; display: flex; gap: 1rem; font-size: .8125rem; }
 .project .links a { color: var(--accent); text-decoration: none; }
-.project .links a:hover { text-decoration: underline; }
+@media (hover: hover) { .project .links a:hover { text-decoration: underline; } }
 section + section { margin-top: clamp(3rem, 8vw, 5rem); }
 .cv { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 2rem 4rem; }
 .cv ol { list-style: none; margin: 0; padding: 0; }
@@ -81,14 +82,16 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .d-type output { min-width: 2.2em; }
 
 .d-chart { display: flex; align-items: flex-end; gap: 6%; padding: 18% 12% 12%; }
-.d-chart button { flex: 1; height: var(--h); padding: 0; border: 0; background: var(--accent); border-radius: 3px 3px 0 0; opacity: .5; cursor: pointer; position: relative; }
-.d-chart button:nth-child(even) { opacity: .8; }
-.d-chart button:hover, .d-chart button:focus-visible, .d-chart button.on { opacity: 1; }
+.d-chart button { flex: 1; height: var(--h); padding: 0; border: 0; background: var(--accent); border-radius: 3px 3px 0 0; opacity: .7; cursor: pointer; position: relative; }
+/* Pale bars at .7 reach 3:1 against the page (at .5 they were 2.23:1 light, 2.87:1 dark) */
+.d-chart button:nth-child(even) { opacity: 1; }
+.d-chart button:focus-visible, .d-chart button.on { opacity: 1; }
 .d-chart button::after { content: attr(data-day) " · " attr(data-value); position: absolute; left: 50%; bottom: calc(100% + .35rem); transform: translateX(-50%); white-space: nowrap; font: .6875rem var(--mono); color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .1rem .35rem; opacity: 0; pointer-events: none; }
-.d-chart button:hover::after, .d-chart button:focus-visible::after, .d-chart button.on::after { opacity: 1; }
+.d-chart button:focus-visible::after, .d-chart button.on::after { opacity: 1; }
+@media (hover: hover) { .d-chart button:hover, .d-chart button:hover::after { opacity: 1; } }
 
 .d-toggle { display: grid; place-items: center; }
-.switch { width: 5.5rem; height: 3rem; padding: .3rem; border: 0; border-radius: 999px; background: var(--line); cursor: pointer; display: flex; }
+.switch { width: 5.5rem; height: 3rem; padding: .3rem; border: 0; border-radius: 999px; background: var(--muted); cursor: pointer; display: flex; } /* off track: --muted, so the off state reaches 3:1 (--line was 1.27:1) */
 .switch[aria-checked="true"] { background: var(--accent); }
 .switch .knob { width: 2.4rem; height: 2.4rem; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .2); }
 .switch[aria-checked="true"] .knob { transform: translateX(2.5rem); }
@@ -99,7 +102,7 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 
 /* Case study page */
 .back { display: inline-block; font-size: .8125rem; color: var(--muted); text-decoration: none; }
-.back:hover { color: var(--text); }
+@media (hover: hover) { .back:hover { color: var(--text); } }
 .study-head { padding: clamp(2rem, 6vw, 4rem) 0 2rem; }
 .study-head .kicker { font-size: .8125rem; color: var(--muted); margin: 0 0 .75rem; }
 .study-head h1 { font: 500 clamp(1.75rem, 4.6vw, 3rem)/1.18 var(--sans); letter-spacing: -.025em; margin: 0; max-width: 24ch; }

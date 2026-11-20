@@ -35,7 +35,7 @@
   .intro p { margin: 0; color: var(--muted); max-width: 38ch; }
   .filters { display: flex; gap: .5rem; padding: 0 var(--space) 1.5rem; flex-wrap: wrap; }
   .filters button { font: inherit; font-size: .8125rem; border: 1px solid var(--line); border-radius: 999px; padding: .3rem .85rem; color: var(--muted); background: none; cursor: pointer; }
-  .filters button:hover { color: var(--text); border-color: var(--muted); }
+  @media (hover: hover) { .filters button:hover { color: var(--text); border-color: var(--muted); } }
   .filters button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
   button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   figure[hidden] { display: none; }
@@ -83,18 +83,19 @@
   .cta { display: inline-block; font-weight: 700; color: var(--bg); background: var(--accent); padding: .7rem 1.2rem; border-radius: 999px; text-decoration: none; }
   footer { padding: 2rem var(--space) 3rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   .email { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; color: var(--accent); text-decoration: none; }
-  .email:hover { text-decoration: underline; }
+  @media (hover: hover) { .email:hover { text-decoration: underline; } }
   footer .links { display: flex; gap: 1.25rem; align-items: center; color: var(--muted); font-size: .875rem; }
 </style>
 <script src="gallery.js" defer></script>
 </head>
 <body>
-<div class="banner"><a href="../../#examples">← All examples</a> · An example site for a fictional person, made to show what <a href="../../"><em>startstartstart!</em></a> can build.</div>
+<aside class="banner" aria-label="About this example"><a href="../../#examples"><span aria-hidden="true">←</span> All examples</a> · An example site for a fictional person, made to show what <a href="../../"><em>startstartstart!</em></a> can build.</aside>
 <header>
   <a class="name" href="#">Edda Lindqvist</a>
   <nav aria-label="Main"><a href="#" aria-current="page">Work</a><a href="#prints">Prints</a><a href="#about">About</a><a href="#contact">Commissions</a></nav>
 </header>
 
+<main>
 <section class="intro">
   <h1>Light,<br>slowly.</h1>
   <p>Landscape and editorial photographer based in Gothenburg. Available for commissions, assignments and print sales.</p>
@@ -152,6 +153,8 @@
     <a class="cta" href="mailto:studio@example.com?subject=Commission%20enquiry">Email about a commission</a>
   </div>
 </section>
+
+</main>
 
 <footer>
   <a class="email" href="mailto:studio@example.com">studio@example.com</a>
