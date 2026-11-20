@@ -1,4 +1,4 @@
-# Portfolio starter
+# *startstartstart!*
 
 Create your own portfolio website with Claude as the builder. No coding, GitHub, or previous Vercel knowledge necessary.
 
@@ -8,6 +8,8 @@ By the end you'll have:
 - Your code saved in your own GitHub account, so it's backed up and yours to keep
 - Hosting on your own Vercel account that updates the site every time you save a change
 - A site that's been checked for accessibility, layout, performance and security before anyone sees it
+
+Want to see what that looks like? Browse the [showcase](showcase/): example sites for three fictional people, and real sites people have built with this.
 
 There's nothing to install from here. You paste one message into Claude, and Claude reads the instructions in this repository and walks you through the rest.
 
@@ -52,7 +54,7 @@ Keep it empty. Claude will fill it.
 ### 4. Paste this and press Enter
 
 ```
-Read the portfolio starter at github.com/helenvholmes/portfolio-starter
+Read startstartstart! at github.com/helenvholmes/portfolio-starter
 and follow skills/start/SKILL.md to help me build a portfolio site in
 this folder. I'm new to GitHub, so explain each new term the first time
 it comes up, and never ask me to paste a password or token into this chat.
@@ -67,9 +69,9 @@ From here, Claude leads. Expect it to:
 5. **Build a first draft** with placeholder text and open it in a browser right away, so you can watch it change as Claude works. Then you'll get your site's address to check it on your phone.
 6. **Let you choose what's next**, one thing at a time: adding your real content, connecting your domain, setting up a password-protected page, or a check for accessibility, layout, speed and security before you share it.
 
-Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with the portfolio starter at github.com/helenvholmes/portfolio-starter."
+Once you've written your case studies, Claude offers to review them the way a hiring manager would. You can ask for that any time: "Review my case studies with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
 
-You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with the portfolio starter at github.com/helenvholmes/portfolio-starter."
+You can stop at any point and come back later: start a new session on the same folder and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
 
 ## No desktop app? Use Claude in the cloud
 
@@ -99,14 +101,14 @@ Vercel is the service that puts your site on the internet.
 ### 4. Paste this and press Enter
 
 ```
-Read the portfolio starter at github.com/helenvholmes/portfolio-starter
+Read startstartstart! at github.com/helenvholmes/portfolio-starter
 and follow skills/start/SKILL.md to help me build a portfolio site in
 this repository. This is a cloud session. I'm new to GitHub, so explain
 each new term the first time it comes up, and never ask me to paste a
 password or token into this chat.
 ```
 
-From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with the portfolio starter at github.com/helenvholmes/portfolio-starter."
+From here it's the same as the desktop app, except there's nothing to install, and you'll look at your drafts at your site's address instead of on your computer. To come back later, start a new session on the same repository at claude.ai/code and say "Let's keep going with *startstartstart!* at github.com/helenvholmes/portfolio-starter."
 
 ## Prefer the terminal?
 
@@ -123,6 +125,15 @@ If you're comfortable typing commands:
 - **Claude says it can't read the repository:** check the address in your message is exactly `github.com/helenvholmes/portfolio-starter`, then try again.
 - **Claude says it's in a cloud session but you meant to work on your computer:** start a new session and set where Claude runs to your computer. If you meant the cloud, follow [the cloud steps](#no-desktop-app-use-claude-in-the-cloud) instead.
 - **You pasted a password or token into the chat by mistake:** change that password, or delete the token on the site that made it (Claude can tell you where), then carry on.
+
+## Built something? Add it to the showcase
+
+Once your site is live with your real content, please share it. Seeing real sites is the best way for the next person to picture theirs, and it tells us the starter is working.
+
+- **[Submit your site](https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml)**: a short form on GitHub, signed in with the account your site is saved in. It asks for your address, your name, what you do, and (optionally) what was easy or confusing.
+- Or ask Claude at the end of a session: "Submit my site to the *startstartstart!* showcase." It fills in what it knows and gives you the link to send.
+
+Only share a site you're happy for anyone to see. Changed your mind later? Open an issue and it comes down.
 
 ## What it costs
 
@@ -141,6 +152,8 @@ The same message works in other AI coding agents (Codex, Cursor, Copilot, Gemini
 |---|---|
 | `start` | Interviews you about the site and what you know, recommends the simplest setup that fits, plans and builds it, shows it to you as it goes, runs the pre-launch checks, and puts it live on your own GitHub and Vercel |
 | `accounts-setup` | Installs git, the GitHub CLI and Node if they're missing, signs you in to GitHub, and connects your agent to Vercel (and optionally GitHub). Never asks you to paste a password or token. Claude-specific steps live in `references/claude.md`. |
+
+The [`showcase`](showcase/) folder is a small static site of example portfolios and community submissions. Its README says how to add a submitted site and how to deploy it.
 
 The pre-launch checks and the case study review come from [helenvholmes/skills](https://github.com/helenvholmes/skills), which `start` reads the same way. The review follows Brian Lovin's [advice on presenting design work](https://brianlovin.com/writing/how-to-give-a-great-product-design-portfolio-presentation).
 

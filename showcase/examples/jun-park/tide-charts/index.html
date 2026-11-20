@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tide charts · Jun Park (example)</title>
+<meta name="description" content="A case study from an example portfolio, built to show what startstartstart! can make.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../styles.css">
+<script src="../site.js" defer></script>
+</head>
+<body>
+<aside class="banner" aria-label="About this example"><a href="../../../#examples"><span aria-hidden="true">←</span> All examples</a> · An example site for a fictional person, made to show what <a href="../../../"><em>startstartstart!</em></a> can build.</aside>
+<div class="page">
+<header>
+  <a class="name" href="../">jun_park<span>_</span></a>
+  <nav aria-label="Main"><a href="../#work" aria-current="page">work</a><a href="../#cv">cv</a><a href="../#now">now</a><a href="../#contact">contact</a></nav>
+</header>
+<main>
+  <a class="back" href="../#work"><span aria-hidden="true">←</span> all work</a>
+<section class="study-head">
+  <p class="kicker">case study · Haneul Bank · 2024</p>
+  <h1>Tide charts: bar charts everyone can read</h1>
+  <p>The Haneul design system had beautiful charts that screen readers skipped entirely and keyboards couldn't reach. I rebuilt them so every value can be found by mouse, keyboard or voice.</p>
+</section>
+
+<div class="study-demo">
+  <div class="demo d-chart" role="group" aria-label="High tide in Incheon, Monday to Friday. Use the arrow keys to move between days."><button style="--h:40%" data-day="Mon" data-value="4.1 m"></button><button style="--h:72%" data-day="Tue" data-value="7.4 m" tabindex="-1"></button><button style="--h:55%" data-day="Wed" data-value="5.6 m" tabindex="-1"></button><button style="--h:90%" data-day="Thu" data-value="9.2 m" tabindex="-1"></button><button style="--h:64%" data-day="Fri" data-value="6.5 m" tabindex="-1"></button></div>
+  <p>Try it: hover a bar, or press Tab to reach the chart and the arrow keys to move between days.</p>
+</div>
+
+<dl class="facts">
+  <div><dt>role</dt><dd>Design systems engineer</dd></div>
+  <div><dt>team</dt><dd>2 engineers, 1 designer</dd></div>
+  <div><dt>timeline</dt><dd>One quarter</dd></div>
+  <div><dt>stack</dt><dd>Web components, SVG</dd></div>
+</dl>
+
+<article class="prose">
+  <h2>the problem</h2>
+  <p>Haneul’s charts were drawn as a single image. They looked right, but to a screen reader the whole chart was one word: “graphic.” Keyboard users couldn’t reach a single value, and the colours only just told the series apart.</p>
+  <p>Teams worked around it by pasting a table under every chart, which meant two things to keep in sync and pages twice as long.</p>
+
+  <h2>what I built</h2>
+  <ul>
+    <li><strong>One tab stop per chart.</strong> Tab reaches the chart once, then the arrow keys move between bars, and Home and End jump to the first and last. Fifty bars don’t mean fifty tab presses.</li>
+    <li><strong>Every bar has a name.</strong> Each one is announced as its label and value, like “Thu, 9.2 m,” and the chart says what it shows and how to move through it.</li>
+    <li><strong>Values on hover, focus and tap.</strong> The same label appears whichever way you got there, so nobody needs a mouse to read the numbers.</li>
+    <li><strong>Contrast that passes.</strong> Bars meet 3:1 against the background in light and dark mode, and series differ in shade as well as hue.</li>
+  </ul>
+  <p>Teams use it with one line: <code>&lt;tide-bar-chart&gt;</code>, passing the data in. Accessibility comes built in, so nobody has to remember it.</p>
+
+  <h2>results</h2>
+  <div class="results">
+    <div><b>14</b><span>products switched in the first quarter</span></div>
+    <div><b>0</b><span>chart issues in the next accessibility audit, down from 31</span></div>
+    <div><b>−2k</b><span>lines of duplicate table markup removed</span></div>
+  </div>
+  <p>The numbers are made up for this example, but they’re the kind of result a real case study would show.</p>
+</article>
+</main>
+
+<footer id="contact">
+  <span>Say hi: <a href="mailto:jun@example.com">jun@example.com</a></span>
+  <span><a href="#">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">Resume (PDF)</a></span>
+</footer>
+</div>
+</body>
+</html>

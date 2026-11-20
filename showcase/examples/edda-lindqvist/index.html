@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edda Lindqvist · Photographer (example)</title>
+<meta name="description" content="An example portfolio for a fictional photographer, built to show what startstartstart! can make.">
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --bg: #0f1011;
+    --text: #eceae6;
+    --muted: #8d8b87;
+    --line: #26282a;
+    --accent: #e8c170;
+    --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    --space: clamp(1rem, 3vw, 2.5rem);
+    color-scheme: dark light;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #f4f3f0; --text: #121212; --muted: #6a6864; --line: #dcdad5; --accent: #8a5a00; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 1rem/1.55 var(--sans); }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .banner { border-bottom: 1px solid var(--line); color: var(--muted); font-size: .8125rem; text-align: center; padding: .45rem 1rem; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem var(--space); gap: 1rem; flex-wrap: wrap; }
+  .name { font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
+  nav { display: flex; gap: 1.5rem; font-size: .875rem; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a[aria-current] { color: var(--text); }
+  .intro { padding: clamp(2rem, 8vw, 5rem) var(--space) clamp(2rem, 5vw, 3rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1.5rem 3rem; align-items: end; }
+  .intro h1 { margin: 0; font-size: clamp(2.5rem, 8vw, 6rem); line-height: .95; letter-spacing: -.035em; font-weight: 700; }
+  .intro p { margin: 0; color: var(--muted); max-width: 38ch; }
+  .filters { display: flex; gap: .5rem; padding: 0 var(--space) 1.5rem; flex-wrap: wrap; }
+  .filters button { font: inherit; font-size: .8125rem; border: 1px solid var(--line); border-radius: 999px; padding: .3rem .85rem; color: var(--muted); background: none; cursor: pointer; }
+  @media (hover: hover) { .filters button:hover { color: var(--text); border-color: var(--muted); } }
+  .filters button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  figure[hidden] { display: none; }
+  .open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+  .open .ph { transition: opacity .3s; }
+  @media (hover: hover) { .open:hover .ph { opacity: .88; } }
+  .photos { columns: 3 16rem; column-gap: 1rem; padding: 0 var(--space); }
+  figure { margin: 0 0 1rem; break-inside: avoid; }
+  .ph { border-radius: 2px; position: relative; overflow: hidden; }
+  figcaption { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); padding-top: .4rem; }
+  /* Illustrative "photos": landscapes drawn with gradients */
+  .dunes { aspect-ratio: 4/5; background: radial-gradient(circle at 70% 28%, #f6e2b5 0 6%, transparent 6.5%), linear-gradient(170deg, transparent 55%, #8c5a33 55.3% 68%, #6b4226 68.3%), linear-gradient(160deg, transparent 48%, #c48a55 48.3%), linear-gradient(#f2b27a, #e7956a 45%); }
+  .lake { aspect-ratio: 3/2; background: linear-gradient(transparent 52%, #1d2a33 52% 54%, #3f6378 54%, #233b48), linear-gradient(175deg, transparent 38%, #2b3b3a 38.3% 52%), linear-gradient(#9bb7c4, #d8e1df 50%); }
+  .city { aspect-ratio: 2/3; background: repeating-linear-gradient(90deg, transparent 0 8%, rgb(255 220 150 / .55) 8% 9%, transparent 9% 14%), linear-gradient(transparent 30%, #141820 30% 36%, transparent 36% 40%, #191e28 40%), linear-gradient(#24314a, #6b4d64); }
+  .fog { aspect-ratio: 1; background: linear-gradient(transparent 60%, rgb(255 255 255 / .6) 66%, transparent 74%), radial-gradient(ellipse at 30% 100%, #4b5a4c 0 40%, transparent 41%), radial-gradient(ellipse at 80% 100%, #3c4a3e 0 48%, transparent 49%), linear-gradient(#c9cfcb, #a9b3ad); }
+  .portrait2 { aspect-ratio: 4/5; background: radial-gradient(circle at 46% 36%, #d9b08f 0 13%, transparent 13.5%), radial-gradient(ellipse at 46% 100%, #6b7f73 0 38%, transparent 38.5%), linear-gradient(#e9e2d6, #cfc5b5); }
+  .portrait { aspect-ratio: 4/5; background: radial-gradient(circle at 50% 40%, #c79a7c 0 15%, transparent 15.5%), radial-gradient(ellipse at 50% 100%, #2c2420 0 40%, transparent 40.5%), linear-gradient(115deg, #4d2f2a, #8b4c3c); }
+  .sea { aspect-ratio: 16/10; background: radial-gradient(circle at 25% 62%, #ffd38a 0 4%, transparent 4.5%), linear-gradient(transparent 62%, #0c1d2c 62%), linear-gradient(#ef8d5c, #b94d55 40%, #3a2a4f 62%); }
+  .snow { aspect-ratio: 3/4; background: linear-gradient(150deg, transparent 50%, #f6f7f8 50.3%), linear-gradient(210deg, transparent 45%, #dfe4ea 45.3%), linear-gradient(#7c8fa6, #b8c5d2); }
+  .about { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 2rem 4rem; padding: clamp(3rem, 8vw, 6rem) var(--space); border-top: 1px solid var(--line); margin-top: 3rem; }
+  .about h2 { margin: 0; font-size: 1.5rem; letter-spacing: -.01em; }
+  .about p { margin: 0 0 1rem; max-width: 55ch; color: var(--muted); }
+  .clients { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .875rem; }
+  /* Photo viewer */
+  dialog.viewer { width: min(92vw, 70rem); max-height: 92vh; padding: 0; border: 0; background: transparent; color: var(--text); overflow: visible; }
+  dialog.viewer::backdrop { background: rgb(8 8 9 / .92); }
+  .viewer .frame { display: grid; place-items: center; }
+  .viewer .frame .ph { width: auto; height: min(78vh, 52rem); max-width: 100%; }
+  .viewer .bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .8rem; font-size: .875rem; color: #d6d4cf; }
+  .viewer .bar .controls { display: flex; gap: .5rem; }
+  .viewer .bar button { font: inherit; color: #eceae6; background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .15); border-radius: 999px; padding: .35rem .8rem; cursor: pointer; }
+  /* Prints and commissions */
+  .prints, .commission { padding: clamp(3rem, 8vw, 6rem) var(--space) 0; }
+  .prints h2, .commission h2 { margin: 0 0 .5rem; font-size: 1.5rem; letter-spacing: -.01em; }
+  .prints > p, .commission > p { margin: 0 0 1.75rem; color: var(--muted); max-width: 55ch; }
+  .print-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 1.5rem; }
+  .print-list .mat { padding: 9%; background: var(--line); border-radius: 2px; }
+  .print-list .mat .ph { aspect-ratio: 4 / 5; } /* every print tile the same shape */
+  .print-list h3 { margin: .9rem 0 .2rem; font-size: 1rem; }
+  .print-list p { margin: 0; color: var(--muted); font-size: .875rem; }
+  .print-list a { display: inline-block; margin-top: .5rem; font-size: .875rem; color: var(--accent); }
+  .commission { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem 4rem; border-top: 1px solid var(--line); margin-top: clamp(3rem, 8vw, 6rem); padding-bottom: clamp(3rem, 8vw, 5rem); }
+  .commission ul { margin: 0 0 1.5rem; padding-left: 1.1rem; color: var(--muted); }
+  .commission li { margin-bottom: .35rem; }
+  .cta { display: inline-block; font-weight: 700; color: var(--bg); background: var(--accent); padding: .7rem 1.2rem; border-radius: 999px; text-decoration: none; }
+  footer { padding: 2rem var(--space) 3rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .email { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; color: var(--accent); text-decoration: none; }
+  @media (hover: hover) { .email:hover { text-decoration: underline; } }
+  footer .links { display: flex; gap: 1.25rem; align-items: center; color: var(--muted); font-size: .875rem; }
+</style>
+<script src="gallery.js" defer></script>
+</head>
+<body>
+<aside class="banner" aria-label="About this example"><a href="../../#examples"><span aria-hidden="true">←</span> All examples</a> · An example site for a fictional person, made to show what <a href="../../"><em>startstartstart!</em></a> can build.</aside>
+<header>
+  <a class="name" href="#">Edda Lindqvist</a>
+  <nav aria-label="Main"><a href="#" aria-current="page">Work</a><a href="#prints">Prints</a><a href="#about">About</a><a href="#contact">Commissions</a></nav>
+</header>
+
+<main>
+<section class="intro">
+  <h1>Light,<br>slowly.</h1>
+  <p>Landscape and editorial photographer based in Gothenburg. Available for commissions, assignments and print sales.</p>
+</section>
+
+<div class="filters" role="group" aria-label="Show series"><button type="button" aria-pressed="true" data-series="all">All</button><button type="button" aria-pressed="false" data-series="landscape">Landscape</button><button type="button" aria-pressed="false" data-series="editorial">Editorial</button><button type="button" aria-pressed="false" data-series="portraits">Portraits</button></div>
+
+<section class="photos" aria-label="Photographs">
+  <figure data-series="landscape"><button class="open" type="button" aria-label="View larger: Erg Chebbi"><div class="ph dunes" role="img" aria-label="Sand dunes at sunset"></div></button><figcaption><span>Erg Chebbi</span><span>2025</span></figcaption></figure>
+  <figure data-series="landscape"><button class="open" type="button" aria-label="View larger: Vättern, morning"><div class="ph lake" role="img" aria-label="A still lake below a forested ridge"></div></button><figcaption><span>Vättern, morning</span><span>2024</span></figcaption></figure>
+  <figure data-series="editorial"><button class="open" type="button" aria-label="View larger: Night shift"><div class="ph city" role="img" aria-label="City windows lit at dusk"></div></button><figcaption><span>Night shift</span><span>2024</span></figcaption></figure>
+  <figure data-series="landscape"><button class="open" type="button" aria-label="View larger: Höga kusten"><div class="ph fog" role="img" aria-label="Fog between two hills"></div></button><figcaption><span>Höga kusten</span><span>2023</span></figcaption></figure>
+  <figure data-series="editorial portraits"><button class="open" type="button" aria-label="View larger: For Kustlinje magazine"><div class="ph portrait" role="img" aria-label="Portrait against a red wall"></div></button><figcaption><span>For Kustlinje magazine</span><span>2025</span></figcaption></figure>
+  <figure data-series="landscape"><button class="open" type="button" aria-label="View larger: Last ferry"><div class="ph sea" role="img" aria-label="Sun setting over a dark sea"></div></button><figcaption><span>Last ferry</span><span>2025</span></figcaption></figure>
+  <figure data-series="landscape"><button class="open" type="button" aria-label="View larger: Abisko"><div class="ph snow" role="img" aria-label="Snow-covered slopes"></div></button><figcaption><span>Abisko</span><span>2023</span></figcaption></figure>
+  <figure data-series="portraits"><button class="open" type="button" aria-label="View larger: Ceramicist, Studio Linn"><div class="ph portrait2" role="img" aria-label="Portrait of a ceramicist in her studio"></div></button><figcaption><span>Ceramicist, Studio Linn</span><span>2024</span></figcaption></figure>
+</section>
+
+<dialog class="viewer" aria-label="Photo viewer">
+  <div class="frame"></div>
+  <div class="bar"><span class="caption"></span><span class="controls"><button type="button" data-step="-1" aria-label="Previous photo">←</button><button type="button" data-step="1" aria-label="Next photo">→</button><button type="button" data-close aria-label="Close">Close</button></span></div>
+</dialog>
+
+<section class="prints" id="prints">
+  <h2>Prints</h2>
+  <p>Archival pigment prints, made and signed by me in small editions of 25. Shipped flat, unframed.</p>
+  <div class="print-list">
+    <div><div class="mat"><div class="ph dunes" role="img" aria-label="Sand dunes at sunset"></div></div><h3>Erg Chebbi</h3><p>30 × 40 cm · €180 &nbsp;|&nbsp; 50 × 70 cm · €340</p><a href="mailto:studio@example.com?subject=Print%20order%3A%20Erg%20Chebbi">Email to order</a></div>
+    <div><div class="mat"><div class="ph lake" role="img" aria-label="A still lake below a forested ridge"></div></div><h3>Vättern, morning</h3><p>30 × 40 cm · €180 &nbsp;|&nbsp; 50 × 70 cm · €340</p><a href="mailto:studio@example.com?subject=Print%20order%3A%20V%C3%A4ttern%2C%20morning">Email to order</a></div>
+    <div><div class="mat"><div class="ph fog" role="img" aria-label="Fog between two hills"></div></div><h3>Höga kusten</h3><p>30 × 40 cm · €180 &nbsp;|&nbsp; 50 × 70 cm · €340</p><a href="mailto:studio@example.com?subject=Print%20order%3A%20H%C3%B6ga%20kusten">Email to order</a></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About</h2>
+  <div>
+    <p>I photograph places at the edges of the day, mostly in the north. My work has run in travel and design magazines, and hangs in a few hotels I'm proud of.</p>
+    <p>I shoot on medium format and print everything myself.</p>
+    <div class="clients"><span>Selected clients:</span><span>Kustlinje</span><span>Northbound Travel</span><span>Hotel Skär</span><span>Studio Linn</span></div>
+  </div>
+</section>
+
+<section class="commission" id="contact">
+  <div>
+    <h2>Commissions</h2>
+    <p>I take on a handful of commissions each season: editorial assignments, hotels and architecture, and landscapes for print or brand work.</p>
+  </div>
+  <div>
+    <p>To get started, email me with:</p>
+    <ul>
+      <li>What it's for, and where the photos will be used</li>
+      <li>Location and rough dates</li>
+      <li>Your budget, if you have one</li>
+    </ul>
+    <a class="cta" href="mailto:studio@example.com?subject=Commission%20enquiry">Email about a commission</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <a class="email" href="mailto:studio@example.com">studio@example.com</a>
+  <div class="links"><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+</footer>
+</body>
+</html>

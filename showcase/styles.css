@@ -1,0 +1,250 @@
+/* Self-hosted fonts, under the SIL Open Font License (see fonts/OFL-newsreader.txt) */
+@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 300; font-display: swap; src: url("fonts/newsreader-light.woff2") format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 300; font-display: swap; src: url("fonts/newsreader-light-italic.woff2") format("woff2"); }
+
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #17171a;
+  --muted: #62626b;
+  --line: #e4e4de;
+  --accent: #85b0e5;
+  --accent-text: #121214; /* dark text: white on this light blue would be hard to read */
+  --sky: #6dadfb; /* the pixel sky's stars: blue in light mode */
+  --focus: #6694cd; /* keyboard focus outline: deeper than the accent so it's visible on light backgrounds */
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  /* Fluid type scale: each size grows from its phone value to its wide-screen value. */
+  --text-2xs: clamp(.75rem, .72rem + .1vw, .8125rem);
+  --text-xs: clamp(.8125rem, .78rem + .12vw, .875rem);
+  --text-sm: clamp(.875rem, .84rem + .15vw, .9375rem);
+  --text-ui: clamp(.9375rem, .9rem + .15vw, 1rem);
+  --text-body: clamp(.9375rem, .9rem + .2vw, 1.0625rem);
+  --text-h3: clamp(1.0625rem, 1rem + .3vw, 1.25rem);
+  --text-lead: clamp(1.0625rem, .98rem + .45vw, 1.375rem);
+  --text-h2: clamp(1.25rem, 1.1rem + .6vw, 1.75rem);
+  --text-display-sm: clamp(1.375rem, 1.2rem + .8vw, 2rem);
+  --text-display: clamp(2.25rem, 1rem + 5vw, 6rem); /* the rem part lets the headline follow the browser's text size (pure 6vw ignored it) */
+  --radius: 12px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121214;
+    --surface: #1b1b1f;
+    --text: #f1f1ee;
+    --muted: #a3a3ab;
+    --line: #2c2c32;
+    --accent: #85b0e5;
+    --accent-text: #121214;
+    --sky: #f1f1ee;
+    --focus: #85b0e5;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: var(--text-body)/1.6 var(--sans); }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* The twinkling pixel sky behind the header and hero (drawn by sky.js) */
+body { position: relative; }
+.sky { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; pointer-events: none; color: var(--sky); opacity: .9; -webkit-mask-image: linear-gradient(#000 calc(100% - 12rem), transparent); mask-image: linear-gradient(#000 calc(100% - 12rem), transparent); }
+/* A fainter echo of the sky further down, on the left (also sky.js) */
+.sky-echo { opacity: .4; -webkit-mask-image: linear-gradient(transparent, #000 35%, #000 65%, transparent); mask-image: linear-gradient(transparent, #000 35%, #000 65%, transparent); }
+
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 var(--gutter); }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-top: 1.25rem; padding-bottom: 1.25rem; }
+/* The startstartstart! logo, drawn by logo.js. Until it's drawn (or without JavaScript) the
+   plain wordmark shows instead. */
+.mark { display: inline-flex; align-items: center; text-decoration: none; font-weight: 800; font-size: 1.25rem; }
+.mark .logo { display: none; height: .8rem; width: auto; overflow: visible; }
+.has-logo .mark .logo { display: block; }
+.has-logo .mark .mark-text { display: none; }
+.top nav { display: flex; gap: 1.25rem; font-size: var(--text-ui); }
+.top nav a { color: var(--muted); text-decoration: none; }
+
+.hero { padding-top: clamp(3rem, 10vw, 6.5rem); padding-bottom: 0; }
+.hero h1 { font-family: var(--serif); font-weight: 300; font-size: var(--text-display); line-height: 1.08; letter-spacing: -.015em; margin: 0; max-width: 20ch; }
+.hero p { color: var(--muted); font-size: var(--text-lead); font-weight: 300; max-width: 46ch; margin: 1.5rem 0 2rem; }
+.actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+.btn { display: inline-block; padding: .7rem 1.25rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); text-decoration: none; font-weight: 600; font-size: var(--text-ui); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+
+section.wrap + section.wrap { margin-top: clamp(3.5rem, 9vw, 6rem); }
+/* The ornament between sections: the reversed floral heart (☙) from EB Garamond
+   (SIL Open Font License), drawn inline as SVG so no font has to load. */
+.ornament { display: flex; justify-content: center; margin: clamp(3.5rem, 9vw, 6rem) auto 4.5rem; color: var(--muted); }
+.ornament svg { width: auto; height: .86rem; fill: currentColor; opacity: .15; }
+/* Section heading lockups: the heading, with its text underneath. */
+.head { margin-bottom: 2rem; display: grid; gap: .5rem; }
+.head h2 { margin: 0; font-size: var(--text-h2); letter-spacing: -.01em; }
+.head p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: clamp(1.25rem, 3vw, 2rem); }
+.grid[data-list="examples"] { grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr)); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.shot { display: block; aspect-ratio: 16 / 10; background: var(--line); overflow: hidden; border-bottom: 1px solid var(--line); }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s ease; }
+.shot.no-shot img { display: none; }
+.shot.peekable { position: relative; }
+.shot.peekable img { position: absolute; top: 0; left: 0; height: auto; object-fit: initial; }
+.body { padding: 1.1rem 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+.card h3 { margin: 0; font-size: var(--text-h3); }
+.card h3 a { text-decoration: none; }
+.role { margin: 0; color: var(--muted); font-size: var(--text-ui); }
+.prompt { margin: .35rem 0 0; font-family: var(--serif); font-weight: 300; font-style: italic; font-size: var(--text-ui); }
+.tags { list-style: none; padding: 0; margin: auto 0 0; padding-top: .75rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags li { font-size: var(--text-2xs); border: 1px solid var(--line); border-radius: 999px; padding: .15rem .6rem; color: var(--muted); }
+
+.empty { color: var(--muted); }
+.empty-card { background: color-mix(in srgb, var(--surface) 60%, transparent); border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: .25rem; min-height: 14rem; justify-content: center; }
+.empty-card h3 { margin: 0; font-family: var(--serif); font-weight: 300; font-size: var(--text-display-sm); }
+.empty-card p { color: var(--muted); margin: 0 0 1rem; max-width: 40ch; }
+
+
+.foot { color: var(--muted); font-size: var(--text-sm); padding-top: 3rem; padding-bottom: 3rem; }
+
+/* Start with one message: the prompt and the demo */
+.head p a { color: var(--text); }
+.prompt-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 1.75rem); }
+.prompt-box pre { margin: 0 0 1.25rem; font: var(--text-sm)/1.65 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: normal; overflow-wrap: anywhere; }
+.prompt-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.prompt-actions .btn { font: inherit; font-weight: 600; font-size: var(--text-ui); cursor: pointer; }
+.btn:focus-visible, .demo-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.copied { color: var(--muted); font-size: var(--text-sm); }
+
+.demo { margin: 0; }
+.demo-window { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.demo-bar { display: flex; align-items: center; gap: .4rem; padding: .6rem .9rem; border-bottom: 1px solid var(--line); font-size: var(--text-2xs); color: var(--muted); }
+.demo-bar i { width: .6rem; height: .6rem; border-radius: 50%; background: var(--line); }
+.demo-bar span { margin-left: .5rem; }
+.demo-chat { min-width: 0; height: 100%; padding: 1.25rem clamp(1rem, 4vw, 3rem); display: flex; flex-direction: column; justify-content: flex-end; gap: .7rem; overflow: hidden; font-size: var(--text-sm); line-height: 1.5; }
+.msg { max-width: min(88%, 34rem); }
+.msg p { margin: 0; }
+.msg.user { align-self: flex-end; background: var(--bg); border: 1px solid var(--line); border-radius: 14px 14px 4px 14px; padding: .6rem .85rem; }
+.msg.agent { align-self: flex-start; }
+.msg .ask { margin-top: .55rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .55rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: .2rem .7rem; font-size: var(--text-xs); color: var(--muted); transition: background-color .25s, color .25s, border-color .25s; }
+.chip.pick.on { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+.work .line { color: var(--muted); }
+.work .line::first-letter { color: var(--accent); }
+/* The finished site, shown as an artifact: a card in the chat, and a side panel
+   that slides open beside the conversation. */
+.demo-body { height: 28rem; display: grid; grid-template-columns: 1fr 0fr; transition: grid-template-columns .7s cubic-bezier(.3, .7, .2, 1); }
+.demo.panel-open .demo-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+.artifact-chip { display: flex; align-items: center; gap: .65rem; margin-top: .55rem; padding: .55rem .8rem .55rem .55rem; width: fit-content; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.artifact-chip b { display: block; font-weight: 600; }
+.artifact-chip small { display: block; color: var(--muted); font-size: var(--text-2xs); }
+.artifact-icon { width: 2rem; height: 2rem; border-radius: 6px; border: 1px solid var(--line); background: linear-gradient(var(--line) 0 0) 50% 30% / 60% 2px no-repeat, linear-gradient(var(--line) 0 0) 50% 50% / 60% 2px no-repeat, linear-gradient(var(--line) 0 0) 40% 70% / 40% 2px no-repeat, var(--surface); }
+.demo.panel-open .artifact-chip { border-color: var(--accent); }
+.demo-panel { min-width: 0; overflow: hidden; display: flex; flex-direction: column; border-left: 1px solid var(--line); background: var(--bg); }
+.demo:not(.panel-open) .demo-panel { border-left-color: transparent; }
+.panel-bar { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .55rem .9rem; border-bottom: 1px solid var(--line); font-size: var(--text-2xs); white-space: nowrap; }
+.panel-bar b { color: #2ea36b; font-weight: 400; }
+.panel-close { color: var(--muted); font-size: var(--text-sm); line-height: 1; }
+.panel-view { flex: 1; min-height: 0; overflow: hidden; }
+.panel-view img { width: 100%; min-width: 22rem; height: auto; }
+/* The inline preview inside the chat is for narrow screens, where there's no room for
+   the side panel. */
+.live-card { display: none; position: relative; margin-top: .55rem; width: min(17rem, 100%); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.live-card img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.live-card span { display: block; padding: .4rem .6rem; font-size: var(--text-2xs); border-top: 1px solid var(--line); }
+.live-card b { color: #2ea36b; font-weight: 400; }
+@media (max-width: 40rem) {
+  .demo.panel-open .demo-body { grid-template-columns: 1fr 0fr; }
+  .demo-panel { display: none; }
+  .artifact-chip { display: none; }
+  .live-card { display: block; }
+  .demo.animated .live.on .live-card img { animation: page-load 1.1s cubic-bezier(.3, .6, .3, 1) .35s both; }
+  .demo.animated .live.on .live-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform-origin: left; animation: page-bar 1.1s cubic-bezier(.3, .6, .3, 1) .35s both; z-index: 1; }
+}
+
+.demo.animated .msg:not(.on), .demo.animated .line:not(.on) { display: none; }
+.demo.animated .msg.on, .demo.animated .line.on { animation: rise .35s ease-out both; }
+.demo-chat.typing::after { content: "• • •"; align-self: flex-start; color: var(--muted); letter-spacing: .1em; animation: blink 1s ease-in-out infinite; }
+@keyframes rise { from { opacity: 0; transform: translateY(.4rem); } }
+@keyframes blink { 50% { opacity: .35; } }
+
+
+/* Video-style controls along the bottom of the demo window */
+.demo-controls { display: flex; align-items: center; gap: .75rem; padding: .5rem .75rem; border-top: 1px solid var(--line); }
+.demo-controls[hidden] { display: none; }
+.demo-toggle { flex: none; display: grid; place-items: center; width: 2rem; height: 2rem; padding: 0; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 50%; cursor: pointer; }
+.demo-toggle svg { width: .875rem; height: .875rem; fill: currentColor; grid-area: 1 / 1; }
+.demo-toggle .icon-play, .demo.paused .demo-toggle .icon-pause { display: none; }
+.demo.paused .demo-toggle .icon-play { display: block; }
+.demo-progress { flex: 1; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.demo-progress span { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s ease-out; }
+
+/* Hover effects only on devices with a mouse or trackpad, so a tapped item on a
+   phone doesn't stay highlighted. */
+@media (hover: hover) {
+  .top nav a:hover { color: var(--text); }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary:hover { filter: brightness(1.05); }
+  .card:hover .shot img { transform: scale(1.02); }
+  /* Card peek is driven by app.js, so the usual hover zoom is off for these. */
+  .card:hover .shot.peekable img { transform: none; }
+  .card h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .demo-toggle:hover { border-color: var(--muted); }
+}
+@media (hover: hover) and (prefers-reduced-motion: reduce) {
+  .card:hover .shot img { transform: none; }
+}
+
+/* Hero entrance: the headline, intro and buttons fade up in turn on page load.
+   With reduced motion they only fade. */
+@keyframes hero-in { from { opacity: 0; transform: translateY(.75rem); } }
+@keyframes hero-fade { from { opacity: 0; } }
+.hero h1, .hero p, .hero .actions { animation: hero-in .6s cubic-bezier(.2, .7, .2, 1) both; }
+.hero p { animation-delay: .12s; }
+.hero .actions { animation-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero h1, .hero p, .hero .actions { animation-name: hero-fade; }
+}
+
+/* Copy button feedback: the label flips to "✓ Copied" with a small pop. Both labels
+   share one grid cell, so the button keeps its width. Reduced motion: a plain swap. */
+.copy { display: inline-grid; }
+.copy > span { grid-area: 1 / 1; transition: opacity .2s, transform .2s; }
+.copy .copy-done { opacity: 0; transform: translateY(.4em); }
+.copy.done .copy-label { opacity: 0; transform: translateY(-.4em); }
+.copy.done .copy-done { opacity: 1; transform: none; }
+.copy.done { animation: copy-pop .35s cubic-bezier(.3, .7, .3, 1.4); }
+@keyframes copy-pop { 40% { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) {
+  .copy > span { transition: opacity .15s; transform: none !important; }
+  .copy.done { animation: none; }
+}
+
+/* Demo deploy moment: the site in the side panel loads in from top to bottom, with a
+   thin progress line under its address bar, like a page arriving. (The demo only animates
+   when reduced motion is off.) */
+.demo.animated.panel-open .panel-view img { animation: page-load 1.1s cubic-bezier(.3, .6, .3, 1) .5s both; }
+.demo.animated.panel-open .panel-bar::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent); transform-origin: left; animation: page-bar 1.1s cubic-bezier(.3, .6, .3, 1) .5s both; }
+@keyframes page-load { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes page-bar { 0% { transform: scaleX(0); opacity: 1; } 85% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+
+/* Smooth jumps: in-page links (Start yours, the nav) glide to their section instead
+   of jumping, and stop a little short so the heading isn't flush with the top.
+   With reduced motion they jump instantly. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+section[id] { scroll-margin-top: 1.5rem; }
+
+/* Section reveals (start.js): headings fade up as they scroll into view. With reduced
+   motion they only fade. */
+.reveal-ready .head { opacity: 0; transform: translateY(1rem); transition: opacity .6s ease-out, transform .6s cubic-bezier(.2, .7, .2, 1); }
+.reveal-ready .head.revealed { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .head { transform: none; }
+}

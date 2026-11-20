@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priya Raman · Brand and web designer (example)</title>
+<meta name="description" content="An example portfolio for a fictional freelance designer, built to show what startstartstart! can make.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<aside class="banner" aria-label="About this example"><a href="../../#examples"><span aria-hidden="true">←</span> All examples</a> · An example site for a fictional person, made to show what <a href="../../"><em>startstartstart!</em></a> can build.</aside>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#"><b aria-hidden="true"></b>Priya Raman</a>
+    <nav aria-label="Main"><a href="#services">Services</a><a href="#work">Work</a><a href="#writing">Writing</a><a class="btn" href="#contact">Start a project</a></nav>
+  </header>
+
+<main>
+  <section class="hero">
+    <div>
+      <h1>Brands and websites for <span>small businesses</span> with big plans.</h1>
+      <p>I'm a freelance designer helping cafés, clinics and independent shops look as good as they are.</p>
+      <a class="btn" href="#contact">Get in touch</a><span class="avail">Booking projects from March</span>
+    </div>
+    <div class="shapes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </section>
+
+  <section id="services">
+    <h2>What I can help with</h2>
+    <div class="services">
+      <div class="service"><div class="dot" style="background:var(--accent)"></div><h3>Brand identity</h3><p>Logo, colours, type and a short guide your team can actually follow.</p><div class="price">From £2,800 · 4 weeks</div></div>
+      <div class="service"><div class="dot" style="background:var(--mint)"></div><h3>Websites</h3><p>A fast, accessible site you can update yourself, without a monthly platform fee.</p><div class="price">From £3,200 · 5 weeks</div></div>
+      <div class="service"><div class="dot" style="background:var(--pink)"></div><h3>Packaging and print</h3><p>Labels, menus and signage, ready for your printer.</p><div class="price">From £950 · 2 weeks</div></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Recent projects</h2>
+    <div class="work">
+      <a class="project" href="bloom-and-bean/"><div class="cover" style="background:var(--pop);color:#1d1530">Bloom&nbsp;&amp;&nbsp;Bean</div><div class="body"><h3>A neighbourhood café's new look</h3><p>Identity, menus and a website that doubled online orders.</p><small>Brand · Web · 2025</small></div></a>
+      <a class="project" href="#"><div class="cover" style="background:var(--mint);color:var(--mint-ink)">kindred.</div><div class="body"><h3>Physio clinic, three locations</h3><p>A calm, clear brand and booking-first website.</p><small>Brand · Web · 2025</small></div></a>
+      <a class="project" href="#"><div class="cover" style="background:var(--pink);color:var(--pink-ink)">Tiny Fern</div><div class="body"><h3>Plant shop packaging</h3><p>A label system that scales from 12 products to 80.</p><small>Packaging · 2024</small></div></a>
+    </div>
+  </section>
+
+  <section>
+    <blockquote><p>“Priya understood what we were going for in one conversation. Customers keep telling us the new menus are the first thing they notice.”</p><footer>Sam, owner of Bloom &amp; Bean (a fictional café)</footer></blockquote>
+  </section>
+
+  <section id="writing" class="writing">
+    <h2>Writing</h2>
+    <ul>
+      <li><a href="#">What a small business actually needs from a website</a><span>Oct 2025</span></li>
+      <li><a href="writing/how-i-price/">How I price brand projects, and why I share it</a><span>Jun 2025</span></li>
+      <li><a href="#">Five questions to ask before you hire a designer</a><span>Feb 2025</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <div>
+      <h2>Tell me about your project</h2>
+      <p>The quickest way to reach me is email. I reply within two working days.</p>
+      <a class="email" href="mailto:hi@example.com">hi@example.com</a>
+      <p style="margin-top:1rem"><a href="#">LinkedIn</a> · <a href="#">Dribbble</a></p>
+    </div>
+    <form id="contact-form" aria-describedby="form-note">
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>What are you working on?<textarea name="message" required></textarea></label>
+      <button class="btn" type="submit">Send</button>
+      <small id="form-note" style="color:var(--muted)">On a real site this goes through a form service like Formspree. This example doesn't send anything.</small>
+      <p class="sent" id="sent" role="status" hidden></p>
+    </form>
+  </section>
+
+</main>
+
+  <footer class="foot"><span>© 2026 Priya Raman (fictional)</span><span>Based in Leeds, working everywhere</span></footer>
+</div>
+</body>
+</html>

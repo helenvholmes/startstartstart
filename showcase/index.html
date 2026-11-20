@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>startstartstart!: a product portfolio builder</title>
+<meta name="description" content="Portfolio sites people have built with startstartstart! and an AI coding agent, with no coding or GitHub experience needed.">
+<meta property="og:title" content="startstartstart!: a product portfolio builder">
+<meta property="og:description" content="Portfolio sites people have built with startstartstart! and an AI coding agent.">
+<meta property="og:image" content="https://startstartstart.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="startstartstart! Your own portfolio site, built by agents.">
+<meta property="og:url" content="https://startstartstart.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="startstartstart!">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://startstartstart.app/">
+<link rel="preload" href="fonts/newsreader-light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+<script src="start.js" defer></script>
+<script src="sky.js" defer></script>
+<script src="logo.js" defer></script>
+</head>
+<body>
+<canvas class="sky" aria-hidden="true"></canvas>
+<canvas class="sky sky-echo" aria-hidden="true"></canvas>
+<canvas class="sky sky-echo" aria-hidden="true"></canvas>
+<header class="wrap top">
+  <a class="mark" href="./"><svg class="logo" role="img" aria-label="startstartstart!"></svg><span class="mark-text"><em>startstartstart!</em></span></a>
+  <nav aria-label="Main">
+    <a href="#examples">Examples</a>
+    <a href="#community">Showcase</a>
+    <a href="https://github.com/helenvholmes/portfolio-starter">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <h1>Your own portfolio site,<br> built by agents.</h1>
+    <p>No coding experience required. Prompts set up so you can go from 0 to a deployed, public website in a little under an hour.</p>
+    <div class="actions">
+      <a class="btn primary" href="#get-started">Start yours</a>
+      <a class="btn" href="https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml">Submit your site</a>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><svg viewBox="15 -383 910 508" width="11" height="6"><path transform="scale(1,-1)" d="M790 -125Q766 -125 748 -113Q729 -101 729 -79Q729 -70 734 -62Q738 -53 747 -53Q755 -53 761 -56Q767 -60 772 -65Q777 -69 782 -72Q788 -75 795 -75Q818 -75 832 -50Q847 -25 847 3Q847 29 832 50Q818 71 792 71Q784 71 776 68Q768 66 760 64Q751 60 740 57Q730 54 717 54Q692 54 671 72Q650 89 636 117Q621 145 613 177Q589 173 568 166Q548 158 529 147Q522 143 522 141Q522 139 529 135Q552 124 568 108Q583 91 583 65Q583 22 556 -8Q528 -38 487 -54Q446 -69 405 -69Q357 -69 304 -56Q250 -44 199 -20Q148 4 106 38Q65 72 40 116Q15 159 15 211Q15 237 22 264Q30 292 46 310Q61 329 85 329Q106 329 123 318Q140 308 140 287Q140 269 131 258Q122 246 99 247Q95 247 90 248Q86 248 81 249Q59 226 59 193Q59 169 74 154Q89 138 112 130Q135 123 159 123Q200 123 228 152Q257 180 285 215Q305 241 328 266Q350 290 378 306Q407 321 445 321Q471 321 492 309Q513 297 526 276Q538 256 538 230Q538 211 527 194Q516 177 505 169Q501 167 506 165Q511 163 515 167Q531 181 554 196Q577 210 608 217Q608 221 608 225Q607 229 607 233Q607 272 626 306Q646 340 680 360Q714 381 755 381Q763 381 767 376Q771 371 775 365Q779 359 782 354Q786 350 791 350Q796 350 799 354Q802 359 805 365Q808 371 812 377Q816 383 823 383Q837 383 846 374Q855 365 855 351Q855 320 834 298Q812 275 781 275Q763 275 754 282Q745 289 738 297Q732 304 726 310Q719 315 707 315Q693 315 678 301Q663 287 654 266Q644 245 644 223Q656 225 668 226Q681 226 693 226Q711 226 734 220Q758 214 780 204Q801 194 815 181Q829 168 829 154Q829 144 827 134Q825 125 818 117Q843 111 868 88Q892 64 908 32Q925 1 925 -31Q925 -56 908 -60Q891 -64 874 -64Q859 -87 838 -106Q818 -125 790 -125ZM735 97Q752 97 762 110Q773 123 773 139Q773 153 756 162Q739 172 715 176Q691 181 671 181H653Q665 149 688 123Q710 97 735 97Z"/></svg></div>
+  <section class="wrap" id="start" aria-labelledby="start-title">
+    <div class="head">
+      <h2 id="start-title">How it works</h2>
+      <p>Paste one prompt into your coding agent, answer a few questions, and it plans, builds and publishes your site.</p>
+    </div>
+    <figure class="demo">
+      <div class="demo-window">
+        <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span>~/Documents/portfolio</span></div>
+        <div class="demo-body" aria-hidden="true">
+          <div class="demo-chat">
+            <div class="msg user" data-step="1"><p>Read <em>startstartstart!</em> at github.com/helenvholmes/portfolio-starter and follow skills/start/SKILL.md to help me build a portfolio site in this folder…</p></div>
+            <div class="msg agent" data-step="2"><p>What's the site mainly for?</p>
+              <div class="chips"><span class="chip pick" data-step="3">Getting hired</span><span class="chip">Getting contracting work</span></div>
+            </div>
+            <div class="msg agent" data-step="4"><p>What will go on it?</p>
+              <div class="chips"><span class="chip pick" data-step="5">Case studies</span><span class="chip">Writing</span><span class="chip">Photos</span><span class="chip pick" data-step="5">A resume</span></div>
+            </div>
+            <div class="msg agent" data-step="6"><p>A site to get hired, with case studies and your resume. I'll build it with Astro: plain pages, nothing to break. Pages: home, work, about. Free to host on Vercel.</p>
+              <p class="ask">Sound good?</p>
+              <div class="chips"><span class="chip pick" data-step="7">Yes, build it</span><span class="chip">Change something</span></div>
+            </div>
+            <div class="msg agent work" data-step="8">
+              <p class="line" data-step="8">✓ Created your GitHub repo and connected Vercel</p>
+              <p class="line" data-step="9">✓ Built your pages with placeholder content</p>
+            </div>
+            <div class="msg agent live" data-step="10">
+              <p>Your site is live.</p>
+              <div class="artifact-chip"><span class="artifact-icon"></span><span><b>jun-park.vercel.app</b><small>Website · Live</small></span></div>
+              <div class="live-card"><img src="shots/jun-park.jpg" alt="" width="1280" height="800"><span><b>●</b> jun-park.vercel.app</span></div>
+              <p class="ask">What do you want to work on next?</p>
+            </div>
+          </div>
+          <div class="demo-panel">
+            <div class="panel-bar"><span><b>●</b> jun-park.vercel.app</span><span class="panel-close">×</span></div>
+            <div class="panel-view"><img src="shots/jun-park-full.webp" alt="" width="1280" height="2064" loading="lazy"></div>
+          </div>
+        </div>
+        <div class="demo-controls">
+          <button class="demo-toggle" type="button" aria-label="Pause the demo">
+            <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg>
+            <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4a.8.8 0 0 0 1.2.7l8.4-5.2a.8.8 0 0 0 0-1.4L5.7 2.1a.8.8 0 0 0-1.2.7z"/></svg>
+          </button>
+          <div class="demo-progress" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><svg viewBox="15 -383 910 508" width="11" height="6"><path transform="scale(1,-1)" d="M790 -125Q766 -125 748 -113Q729 -101 729 -79Q729 -70 734 -62Q738 -53 747 -53Q755 -53 761 -56Q767 -60 772 -65Q777 -69 782 -72Q788 -75 795 -75Q818 -75 832 -50Q847 -25 847 3Q847 29 832 50Q818 71 792 71Q784 71 776 68Q768 66 760 64Q751 60 740 57Q730 54 717 54Q692 54 671 72Q650 89 636 117Q621 145 613 177Q589 173 568 166Q548 158 529 147Q522 143 522 141Q522 139 529 135Q552 124 568 108Q583 91 583 65Q583 22 556 -8Q528 -38 487 -54Q446 -69 405 -69Q357 -69 304 -56Q250 -44 199 -20Q148 4 106 38Q65 72 40 116Q15 159 15 211Q15 237 22 264Q30 292 46 310Q61 329 85 329Q106 329 123 318Q140 308 140 287Q140 269 131 258Q122 246 99 247Q95 247 90 248Q86 248 81 249Q59 226 59 193Q59 169 74 154Q89 138 112 130Q135 123 159 123Q200 123 228 152Q257 180 285 215Q305 241 328 266Q350 290 378 306Q407 321 445 321Q471 321 492 309Q513 297 526 276Q538 256 538 230Q538 211 527 194Q516 177 505 169Q501 167 506 165Q511 163 515 167Q531 181 554 196Q577 210 608 217Q608 221 608 225Q607 229 607 233Q607 272 626 306Q646 340 680 360Q714 381 755 381Q763 381 767 376Q771 371 775 365Q779 359 782 354Q786 350 791 350Q796 350 799 354Q802 359 805 365Q808 371 812 377Q816 383 823 383Q837 383 846 374Q855 365 855 351Q855 320 834 298Q812 275 781 275Q763 275 754 282Q745 289 738 297Q732 304 726 310Q719 315 707 315Q693 315 678 301Q663 287 654 266Q644 245 644 223Q656 225 668 226Q681 226 693 226Q711 226 734 220Q758 214 780 204Q801 194 815 181Q829 168 829 154Q829 144 827 134Q825 125 818 117Q843 111 868 88Q892 64 908 32Q925 1 925 -31Q925 -56 908 -60Q891 -64 874 -64Q859 -87 838 -106Q818 -125 790 -125ZM735 97Q752 97 762 110Q773 123 773 139Q773 153 756 162Q739 172 715 176Q691 181 671 181H653Q665 149 688 123Q710 97 735 97Z"/></svg></div>
+  <section class="wrap" id="examples" aria-labelledby="examples-title">
+    <div class="head">
+      <h2 id="examples-title">What it can make</h2>
+      <p>Four example sites for fictional people, each from a different kind of interview answer. Yours will look like you, not like these.</p>
+    </div>
+    <div class="grid" data-list="examples">
+      <p class="empty">Loading examples…</p>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><svg viewBox="15 -383 910 508" width="11" height="6"><path transform="scale(1,-1)" d="M790 -125Q766 -125 748 -113Q729 -101 729 -79Q729 -70 734 -62Q738 -53 747 -53Q755 -53 761 -56Q767 -60 772 -65Q777 -69 782 -72Q788 -75 795 -75Q818 -75 832 -50Q847 -25 847 3Q847 29 832 50Q818 71 792 71Q784 71 776 68Q768 66 760 64Q751 60 740 57Q730 54 717 54Q692 54 671 72Q650 89 636 117Q621 145 613 177Q589 173 568 166Q548 158 529 147Q522 143 522 141Q522 139 529 135Q552 124 568 108Q583 91 583 65Q583 22 556 -8Q528 -38 487 -54Q446 -69 405 -69Q357 -69 304 -56Q250 -44 199 -20Q148 4 106 38Q65 72 40 116Q15 159 15 211Q15 237 22 264Q30 292 46 310Q61 329 85 329Q106 329 123 318Q140 308 140 287Q140 269 131 258Q122 246 99 247Q95 247 90 248Q86 248 81 249Q59 226 59 193Q59 169 74 154Q89 138 112 130Q135 123 159 123Q200 123 228 152Q257 180 285 215Q305 241 328 266Q350 290 378 306Q407 321 445 321Q471 321 492 309Q513 297 526 276Q538 256 538 230Q538 211 527 194Q516 177 505 169Q501 167 506 165Q511 163 515 167Q531 181 554 196Q577 210 608 217Q608 221 608 225Q607 229 607 233Q607 272 626 306Q646 340 680 360Q714 381 755 381Q763 381 767 376Q771 371 775 365Q779 359 782 354Q786 350 791 350Q796 350 799 354Q802 359 805 365Q808 371 812 377Q816 383 823 383Q837 383 846 374Q855 365 855 351Q855 320 834 298Q812 275 781 275Q763 275 754 282Q745 289 738 297Q732 304 726 310Q719 315 707 315Q693 315 678 301Q663 287 654 266Q644 245 644 223Q656 225 668 226Q681 226 693 226Q711 226 734 220Q758 214 780 204Q801 194 815 181Q829 168 829 154Q829 144 827 134Q825 125 818 117Q843 111 868 88Q892 64 908 32Q925 1 925 -31Q925 -56 908 -60Q891 -64 874 -64Q859 -87 838 -106Q818 -125 790 -125ZM735 97Q752 97 762 110Q773 123 773 139Q773 153 756 162Q739 172 715 176Q691 181 671 181H653Q665 149 688 123Q710 97 735 97Z"/></svg></div>
+  <section class="wrap" id="community" aria-labelledby="community-title">
+    <div class="head">
+      <h2 id="community-title">Built with the starter</h2>
+      <p>Real sites from people who used it.</p>
+    </div>
+    <div class="grid" data-list="community">
+      <div class="empty-card">
+        <h3>Be the first.</h3>
+        <p>Made a site with <em>startstartstart!</em>? Share it here so the next person can see what's possible.</p>
+        <a class="btn primary" href="https://github.com/helenvholmes/portfolio-starter/issues/new?template=showcase.yml">Submit your site</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><svg viewBox="15 -383 910 508" width="11" height="6"><path transform="scale(1,-1)" d="M790 -125Q766 -125 748 -113Q729 -101 729 -79Q729 -70 734 -62Q738 -53 747 -53Q755 -53 761 -56Q767 -60 772 -65Q777 -69 782 -72Q788 -75 795 -75Q818 -75 832 -50Q847 -25 847 3Q847 29 832 50Q818 71 792 71Q784 71 776 68Q768 66 760 64Q751 60 740 57Q730 54 717 54Q692 54 671 72Q650 89 636 117Q621 145 613 177Q589 173 568 166Q548 158 529 147Q522 143 522 141Q522 139 529 135Q552 124 568 108Q583 91 583 65Q583 22 556 -8Q528 -38 487 -54Q446 -69 405 -69Q357 -69 304 -56Q250 -44 199 -20Q148 4 106 38Q65 72 40 116Q15 159 15 211Q15 237 22 264Q30 292 46 310Q61 329 85 329Q106 329 123 318Q140 308 140 287Q140 269 131 258Q122 246 99 247Q95 247 90 248Q86 248 81 249Q59 226 59 193Q59 169 74 154Q89 138 112 130Q135 123 159 123Q200 123 228 152Q257 180 285 215Q305 241 328 266Q350 290 378 306Q407 321 445 321Q471 321 492 309Q513 297 526 276Q538 256 538 230Q538 211 527 194Q516 177 505 169Q501 167 506 165Q511 163 515 167Q531 181 554 196Q577 210 608 217Q608 221 608 225Q607 229 607 233Q607 272 626 306Q646 340 680 360Q714 381 755 381Q763 381 767 376Q771 371 775 365Q779 359 782 354Q786 350 791 350Q796 350 799 354Q802 359 805 365Q808 371 812 377Q816 383 823 383Q837 383 846 374Q855 365 855 351Q855 320 834 298Q812 275 781 275Q763 275 754 282Q745 289 738 297Q732 304 726 310Q719 315 707 315Q693 315 678 301Q663 287 654 266Q644 245 644 223Q656 225 668 226Q681 226 693 226Q711 226 734 220Q758 214 780 204Q801 194 815 181Q829 168 829 154Q829 144 827 134Q825 125 818 117Q843 111 868 88Q892 64 908 32Q925 1 925 -31Q925 -56 908 -60Q891 -64 874 -64Q859 -87 838 -106Q818 -125 790 -125ZM735 97Q752 97 762 110Q773 123 773 139Q773 153 756 162Q739 172 715 176Q691 181 671 181H653Q665 149 688 123Q710 97 735 97Z"/></svg></div>
+  <section class="wrap get-started" id="get-started" aria-labelledby="get-started-title">
+    <div class="head">
+      <h2 id="get-started-title">Let's get you started</h2>
+      <p>Open a coding agent, like Claude Code, Codex or Cursor, in an empty folder and paste this in. It takes it from there. <a href="https://github.com/helenvholmes/portfolio-starter#readme">Full setup guide</a></p>
+    </div>
+    <div class="prompt-box">
+      <pre id="starter-prompt">Read startstartstart! at github.com/helenvholmes/portfolio-starter
+and follow skills/start/SKILL.md to help me build a portfolio site in
+this folder. I'm new to GitHub, so explain each new term the first time
+it comes up, and never ask me to paste a password or token into this chat.</pre>
+      <div class="prompt-actions">
+        <button class="btn primary copy" type="button" data-copy="starter-prompt"><span class="copy-label">Copy prompt</span><span class="copy-done" aria-hidden="true">✓ Copied</span></button>
+        <span class="copied" role="status"></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>Made with <a href="https://github.com/helenvholmes/portfolio-starter"><em>startstartstart!</em></a>. Built with <span role="img" aria-label="love">♥</span> by <a href="https://helenvholmes.com">helenvholmes</a>. <a href="https://github.com/helenvholmes/portfolio-starter">Open source</a> on GitHub.</span>
+</footer>
+
+<template id="card">
+  <article class="card">
+    <!-- The screenshot is a second link to the same site, so it's left out of the tab order and hidden from screen readers: keyboard users get one stop per card, on the name. -->
+    <a class="shot" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img alt="" loading="lazy" width="1280" height="800"></a>
+    <div class="body">
+      <h3><a class="title" target="_blank" rel="noopener"></a></h3>
+      <p class="role"></p>
+      <p class="prompt"></p>
+      <ul class="tags"></ul>
+    </div>
+  </article>
+</template>
+</body>
+</html>

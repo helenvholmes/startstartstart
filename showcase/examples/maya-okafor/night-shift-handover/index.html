@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebuilding night-shift handover · Maya Okafor (example)</title>
+<meta name="description" content="A case study from an example portfolio for a fictional product designer, built to show what startstartstart! can make.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<aside class="banner" aria-label="About this example"><a href="../../../#examples"><span aria-hidden="true">←</span> All examples</a> · An example site for a fictional person, made to show what <a href="../../../"><em>startstartstart!</em></a> can build.</aside>
+<div class="wrap">
+  <header class="site">
+    <a class="wordmark" href="../">Maya Okafor</a>
+    <nav aria-label="Main"><a href="../#work" aria-current="page">Work</a><a href="../#about">About</a><a href="../#contact">Contact</a></nav>
+  </header>
+  <main>
+    <a class="back" href="../#work"><span aria-hidden="true">←</span> All work</a>
+    <header class="study-head">
+      <p class="tags">Healthcare · Mobile · 2025</p>
+      <h1>Rebuilding night-shift handover</h1>
+      <p class="lede">Cutting a 40-minute paper ritual to ten, for 1,200 nurses across three hospitals.</p>
+    </header>
+
+    <dl class="facts">
+      <div><dt>My role</dt><dd>Lead product designer</dd></div>
+      <div><dt>Team</dt><dd>1 PM, 4 engineers, 2 nurse advisors</dd></div>
+      <div><dt>Timeline</dt><dd>7 months, research to rollout</dd></div>
+      <div><dt>Outcome</dt><dd>Handover down from 40 to 10 minutes</dd></div>
+    </dl>
+
+    <div class="study-cover" role="img" aria-label="The handover app on a phone">
+      <div class="phone"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>At every shift change, the outgoing nurse walks the incoming one through each patient: medications due, tests pending, anything that changed overnight. On the wards we worked with, that happened on paper. It took around 40 minutes a shift, and details slipped through when a sheet was out of date or someone's handwriting was hard to read.</p>
+      <p>An earlier attempt had put the paper form on a tablet, field for field. Nurses stopped using it within a month.</p>
+
+      <h2>What I learned</h2>
+      <p>I sat in on 14 handovers, day and night, and interviewed 22 nurses. The form wasn't the problem. The order was: nurses don't think about patients bed by bed, they think about who needs attention first.</p>
+      <blockquote class="quote">“I don't need everything about every patient. I need to know who's going to need me in the next hour.”<cite>Charge nurse, surgical ward</cite></blockquote>
+      <ul>
+        <li>The most important information was what had <em>changed</em>, not the full history.</li>
+        <li>Handover happened standing up, in corridors, often one-handed.</li>
+        <li>Nurses trusted information they'd written themselves more than anything auto-filled.</li>
+      </ul>
+
+      <h2>Designing it</h2>
+      <p>My first version was a smarter checklist. In testing it was faster, but nurses still read every field aloud, so most of the time came back. The breakthrough was dropping the form entirely: each patient became a card, sorted by urgency, showing only what had changed since the last shift. Everything else was one tap away.</p>
+      <div class="compare">
+        <figure>
+          <div class="pane" style="background: var(--cover-3)"><div class="sheet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <figcaption>Before: a paper sheet per patient, read top to bottom.</figcaption>
+        </figure>
+        <figure>
+          <div class="pane" style="background: var(--cover-2)"><div class="patients"><b></b><b></b><b></b><b></b></div></div>
+          <figcaption>After: patient cards sorted by urgency, changes first.</figcaption>
+        </figure>
+      </div>
+      <p>We tested five rounds of prototypes on the wards, on real shifts, with the nurse advisors deciding what counted as urgent. I kept a "write it yourself" note on every card, because the research showed nurses wouldn't trust a summary they hadn't touched.</p>
+
+      <h2>Results</h2>
+      <div class="stats">
+        <div><b>10 min</b><span>average handover, down from 40</span></div>
+        <div><b>94%</b><span>of nurses using it daily after three months</span></div>
+        <div><b>30%</b><span>fewer missed-medication reports</span></div>
+      </div>
+      <p>It's now the standard handover at all three hospitals, and two more are piloting it.</p>
+
+      <h2>What I'd do differently</h2>
+      <p>I'd bring the night shift in earlier. Our first two rounds of research happened mostly during the day, and night-shift nurses, who do a third of all handovers, had needs we only found late: fewer people around to ask, and a much stronger need to see what the day team had already tried.</p>
+    </article>
+
+    <nav class="next" aria-label="More work">
+      <a href="../#work"><small>Back to</small><strong>All work</strong></a>
+      <a href="../#work"><small>Next case study</small><strong>A design system for three products →</strong></a>
+    </nav>
+  </main>
+</div>
+</body>
+</html>

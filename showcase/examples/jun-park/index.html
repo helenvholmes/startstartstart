@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jun Park · Design engineer (example)</title>
+<meta name="description" content="An example portfolio for a fictional design engineer, built to show what startstartstart! can make.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<aside class="banner" aria-label="About this example"><a href="../../#examples"><span aria-hidden="true">←</span> All examples</a> · An example site for a fictional person, made to show what <a href="../../"><em>startstartstart!</em></a> can build.</aside>
+<div class="page">
+<header>
+  <a class="name" href="#">jun_park<span>_</span></a>
+  <nav aria-label="Main"><a href="#work">work</a><a href="#cv">cv</a><a href="#now">now</a><a href="#contact">contact</a></nav>
+</header>
+
+<main>
+<section class="intro">
+  <h1>Design engineer who builds the <em>interactive</em> bits designers draw.</h1>
+  <p>Six years as a frontend engineer, the last two on a design systems team in Seoul. I care about motion, type and the details that make an interface feel considered.</p>
+  <span class="status">Open to design engineering roles</span>
+</section>
+
+<section id="work" aria-labelledby="work-title">
+  <h2 id="work-title">selected work</h2>
+  <div class="projects">
+    <article class="project">
+      <div class="demo d-grid"><div class="frame" tabindex="0" role="application" aria-roledescription="draggable frame" aria-label="Frame. Drag it, or use the arrow keys, to snap it to the grid."><span class="size" aria-hidden="true">3×2</span></div></div>
+      <div class="info">
+        <h3>Snapgrid</h3>
+        <p>A layout tool that snaps to your design system's spacing scale. 2.1k stars.</p>
+        <div class="links"><a href="#">Live demo</a><a href="#">Code</a></div>
+      </div>
+    </article>
+    <article class="project">
+      <div class="demo d-type"><span class="glyphs" aria-hidden="true">Aa</span><label class="weight">wght <input type="range" min="100" max="900" step="1" value="400" aria-label="Font weight"><output>400</output></label></div>
+      <div class="info">
+        <h3>Weight shift</h3>
+        <p>Scroll-linked variable font experiments, written up as a short essay.</p>
+        <div class="links"><a href="#">Live demo</a><a href="#">Write-up</a></div>
+      </div>
+    </article>
+    <article class="project">
+      <div class="demo d-chart" role="group" aria-label="High tide in Incheon, Monday to Friday. Use the arrow keys to move between days."><button style="--h:40%" data-day="Mon" data-value="4.1 m"></button><button style="--h:72%" data-day="Tue" data-value="7.4 m" tabindex="-1"></button><button style="--h:55%" data-day="Wed" data-value="5.6 m" tabindex="-1"></button><button style="--h:90%" data-day="Thu" data-value="9.2 m" tabindex="-1"></button><button style="--h:64%" data-day="Fri" data-value="6.5 m" tabindex="-1"></button></div>
+      <div class="info">
+        <h3>Tide charts</h3>
+        <p>Accessible chart components for the Haneul design system, with keyboard and screen reader support.</p>
+        <div class="links"><a href="tide-charts/">Case study</a></div>
+      </div>
+    </article>
+    <article class="project">
+      <div class="demo d-toggle"><button class="switch" role="switch" aria-checked="true" aria-label="Example switch"><span class="knob"></span></button></div>
+      <div class="info">
+        <h3>Small controls</h3>
+        <p>A library of form controls with springy, reduced-motion-aware animation.</p>
+        <div class="links"><a href="#">Live demo</a><a href="#">Code</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="cv" id="cv" aria-labelledby="cv-title">
+  <div>
+    <h2 id="cv-title">cv</h2>
+    <ol>
+      <li><span>2023–now</span><span><b>Haneul Bank</b>, design systems engineer</span></li>
+      <li><span>2020–2023</span><span><b>Ridge</b>, frontend engineer</span></li>
+      <li><span>2019–2020</span><span><b>Freelance</b>, sites for studios</span></li>
+      <li><span>2019</span><span><b>Seorin University</b>, BS computer science</span></li>
+    </ol>
+  </div>
+  <div class="now" id="now">
+    <h2 id="now-title">now</h2>
+    <small class="updated">Updated November 2026</small>
+    <p>Learning to animate with springs instead of curves.</p>
+    <p>Rebuilding Snapgrid's engine so it runs in a worker.</p>
+    <p>Reading about typography for small screens.</p>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <span>Say hi: <a href="mailto:jun@example.com">jun@example.com</a></span>
+  <span><a href="#">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">Resume (PDF)</a></span>
+</footer>
+</div>
+</body>
+</html>
