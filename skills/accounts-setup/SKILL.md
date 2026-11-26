@@ -28,7 +28,7 @@ Work so everything can be undone: show changes before making them, make each one
 
 Three steps depend on which agent and app you're running in: how the person runs a command themselves (step 3), how an MCP server is added and signed in to (steps 4 and 5), and how they're removed (step 6). Everything else is the same everywhere.
 
-- **If you are Claude** (Claude Code in a terminal, the Claude desktop app's Code tab, or an IDE extension), read `references/claude.md` now and follow it at those steps.
+- **If you are Claude** (Claude Code in a terminal, the Claude desktop app's Code tab, or an IDE extension), read `references/running-in-claude.md` now and follow it at those steps.
 - **Otherwise**, use your own tool's documented way of letting the person run a command themselves and of adding a remote MCP server, and say which you're using. If you don't know your tool's way, Vercel's `add-mcp` helper configures most agents: `npx -y add-mcp@2.6.1 https://mcp.vercel.com -g`.
 
 ### In the cloud

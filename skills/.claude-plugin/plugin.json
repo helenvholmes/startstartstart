@@ -1,7 +1,7 @@
 {
   "name": "startstartstart",
   "displayName": "startstartstart!",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Build your own portfolio website with Claude, no coding needed. Claude interviews you, builds the site, checks it for accessibility, layout, performance and security, and launches it on your own free GitHub and Vercel accounts.",
   "author": {
     "name": "Helen V. Holmes",

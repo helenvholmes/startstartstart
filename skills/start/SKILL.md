@@ -48,7 +48,7 @@ Run the checks in step 1 of `accounts-setup` (`../accounts-setup/SKILL.md`). If 
 
 ## 1. Interview
 
-Ask **one question at a time**, and skip any their earlier answers already cover. If your tool can show a multiple-choice question card (in Claude, see `../accounts-setup/references/claude.md`), use it for every question below: the choices make answering quick, and the person can always type their own answer instead. Keep each question to one line and each choice to a few words. Where a question has no card choices, ask it in plain text. Don't comment on each answer; go straight to the next question.
+Ask **one question at a time**, and skip any their earlier answers already cover. If your tool can show a multiple-choice question card (in Claude, see `../accounts-setup/references/running-in-claude.md`), use it for every question below: the choices make answering quick, and the person can always type their own answer instead. Keep each question to one line and each choice to a few words. Where a question has no card choices, ask it in plain text. Don't comment on each answer; go straight to the next question.
 
 1. **What's the site mainly for?** Getting hired · Getting contracting work
 2. **Do you have a resume you can share?** Yes, I'll attach it · Here's my LinkedIn instead · Not right now
@@ -116,7 +116,7 @@ Build the plan with placeholder content that is clearly fake ("Project title", l
 - Security headers in `vercel.json` (or the framework's equivalent): CSP, `frame-ancestors`, `X-Content-Type-Options`, `Referrer-Policy`
 - A README in plain language: how to run it, how to add a project or post, how publishing works
 
-**Show it right away.** As soon as the first version builds, start the dev server in the background and open its address in a browser the person can see: your tool's built-in browser or preview pane if it has one (in Claude, see `../accounts-setup/references/claude.md`), otherwise their default browser. Leave it running while you work, so every change shows up as you make it, and tell them the address in one line. **Cloud:** there's no server they can open; skip this and use their site's address in step 5.
+**Show it right away.** As soon as the first version builds, start the dev server in the background and open its address in a browser the person can see: your tool's built-in browser or preview pane if it has one (in Claude, see `../accounts-setup/references/running-in-claude.md`), otherwise their default browser. Leave it running while you work, so every change shows up as you make it, and tell them the address in one line. **Cloud:** there's no server they can open; skip this and use their site's address in step 5.
 
 Commit in small steps with messages that say why, and push to `main` when there's something worth looking at. Explain commit and push in a sentence the first time.
 

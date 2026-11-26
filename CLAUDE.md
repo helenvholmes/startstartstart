@@ -16,6 +16,8 @@ Changes only to `showcase/` or the root `README.md` don't need a new version.
 
 Keep `skills/` to Markdown, JSON, the licence and the PNG icon. The directory refuses scripts and programs from organisations it hasn't verified, so a check that needs a command goes into a skill as instructions instead. `claude plugin validate ./skills` runs the local checks.
 
+Never name a file in `skills/` `CLAUDE.md`, `CLAUDE.local.md` or `AGENTS.md`, in any mix of upper and lower case, and don't add `.claude/rules`, `.claude/skills`, `.claude/commands` or `.claude/agents` folders. The directory refuses all of these. That's why version 1.1.0 was turned down for `references/claude.md`.
+
 ## When the directory listing goes live
 
 The README and the showcase's "Let's get you started" section each have a commented-out callout for installing from Claude's directory. Uncomment both and replace `DIRECTORY_LINK` with the listing's public link (**Copy public link** at claude.ai/directory/manage).
