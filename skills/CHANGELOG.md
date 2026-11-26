@@ -2,6 +2,10 @@
 
 What changed in each version of the *startstartstart!* plugin. The version is the one in `.claude-plugin/plugin.json`.
 
+## 1.1.1 (26 November 2026)
+
+- Renamed `accounts-setup/references/claude.md` to `running-in-claude.md`. The directory refuses any file named `CLAUDE.md`, in upper or lower case, so 1.1.0 couldn't be listed. The page's content hasn't changed.
+
 ## 1.1.0 (20 November 2026)
 
 - New sites get a favicon while they're being built: the person's logo if they shared one, otherwise their initials in the site's own font and colors, with an icon for phone home screens too.
